@@ -18,6 +18,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('shadcn-dashboard', function () {
         return Inertia::render('shadcn-dashboard');
     })->name('shadcn-dashboard');
+
+    Route::get('test', function () {
+        return Inertia::render('test');
+    })->name('test');
 });
 
 require __DIR__.'/settings.php';
