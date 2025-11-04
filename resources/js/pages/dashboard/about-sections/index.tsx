@@ -44,20 +44,20 @@ export default function AboutSectionsIndex({ aboutSections }: Props) {
       <AppSidebar />
       <SidebarInset>
         <SiteHeader />
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          <Head title="About Sections" />
-          
+        <div className="flex flex-1 flex-col gap-4 p-4 md:gap-6 md:p-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold">About Sections</h1>
-              <p className="text-muted-foreground">Manage about me sections</p>
+              <h1 className="text-3xl font-bold tracking-tight">About Sections</h1>
+              <p className="text-muted-foreground">
+                Manage your homepage about sections
+              </p>
             </div>
-            <Button asChild>
-              <Link href="/admin/about-sections/create">
+            <Link href="/admin/about-sections/create">
+              <Button>
                 <Plus className="mr-2 h-4 w-4" />
-                Add Section
-              </Link>
-            </Button>
+                Add New About Section
+              </Button>
+            </Link>
           </div>
 
           <div className="rounded-md border">

@@ -47,20 +47,20 @@ export default function CertificatesIndex({ certificates }: Props) {
       <AppSidebar />
       <SidebarInset>
         <SiteHeader />
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          <Head title="Certificates" />
-          
+        <div className="flex flex-1 flex-col gap-4 p-4 md:gap-6 md:p-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold">Certificates</h1>
-              <p className="text-muted-foreground">Manage certifications</p>
+              <h1 className="text-3xl font-bold tracking-tight">Certificates</h1>
+              <p className="text-muted-foreground">
+                Manage your homepage certificate campaigns
+              </p>
             </div>
-            <Button asChild>
-              <Link href="/admin/certificates/create">
+            <Link href="/admin/certificates/create">
+              <Button>
                 <Plus className="mr-2 h-4 w-4" />
-                Add Certificate
-              </Link>
-            </Button>
+                Add New Certificate
+              </Button>
+            </Link>
           </div>
 
           <div className="rounded-md border">

@@ -35,6 +35,7 @@ interface Props {
   videos: Video[]
 }
 
+
 export default function VideosIndex({ videos }: Props) {
   const handleDelete = (id: number) => {
     if (confirm('Are you sure you want to delete this video?')) {
@@ -47,21 +48,22 @@ export default function VideosIndex({ videos }: Props) {
       <AppSidebar />
       <SidebarInset>
         <SiteHeader />
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          <Head title="Videos" />
-          
+        <div className="flex flex-1 flex-col gap-4 p-4 md:gap-6 md:p-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold">Videos</h1>
-              <p className="text-muted-foreground">Manage all videos</p>
+              <h1 className="text-3xl font-bold tracking-tight">Videos</h1>
+              <p className="text-muted-foreground">
+                Manage your video content and analytics
+              </p>
             </div>
-            <Button asChild>
-              <Link href="/admin/videos/create">
+            <Link href="/admin/videos/create">
+              <Button>
                 <Plus className="mr-2 h-4 w-4" />
-                Add Video
-              </Link>
-            </Button>
+                Add New Video
+              </Button>
+            </Link>
           </div>
+
 
           <div className="rounded-md border">
             <Table>

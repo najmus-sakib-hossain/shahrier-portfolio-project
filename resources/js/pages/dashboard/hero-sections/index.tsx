@@ -46,20 +46,20 @@ export default function HeroSectionsIndex({ heroSections }: Props) {
       <AppSidebar />
       <SidebarInset>
         <SiteHeader />
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          <Head title="Hero Sections" />
-          
+        <div className="flex flex-1 flex-col gap-4 p-4 md:gap-6 md:p-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold">Hero Sections</h1>
-              <p className="text-muted-foreground">Manage homepage hero sections</p>
+              <h1 className="text-3xl font-bold tracking-tight">Hero Sections</h1>
+              <p className="text-muted-foreground">
+                Manage your homepage hero sections
+              </p>
             </div>
-            <Button asChild>
-              <Link href="/admin/hero-sections/create">
+            <Link href="/admin/hero-sections/create">
+              <Button>
                 <Plus className="mr-2 h-4 w-4" />
-                Add Hero Section
-              </Link>
-            </Button>
+                Add New Hero Section
+              </Button>
+            </Link>
           </div>
 
           <div className="rounded-md border">

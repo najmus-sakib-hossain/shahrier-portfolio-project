@@ -45,20 +45,20 @@ export default function StatisticsIndex({ statistics }: Props) {
       <AppSidebar />
       <SidebarInset>
         <SiteHeader />
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          <Head title="Statistics" />
-          
+        <div className="flex flex-1 flex-col gap-4 p-4 md:gap-6 md:p-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold">Statistics</h1>
-              <p className="text-muted-foreground">Manage homepage statistics</p>
+              <h1 className="text-3xl font-bold tracking-tight">Statistics</h1>
+              <p className="text-muted-foreground">
+                Manage your homepage statistics
+              </p>
             </div>
-            <Button asChild>
-              <Link href="/admin/statistics/create">
+            <Link href="/admin/statistics/create">
+              <Button>
                 <Plus className="mr-2 h-4 w-4" />
-                Add Statistic
-              </Link>
-            </Button>
+                Add New Statistic
+              </Button>
+            </Link>
           </div>
 
           <div className="rounded-md border">

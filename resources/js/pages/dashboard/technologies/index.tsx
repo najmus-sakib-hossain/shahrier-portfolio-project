@@ -45,20 +45,20 @@ export default function TechnologiesIndex({ technologies }: Props) {
       <AppSidebar />
       <SidebarInset>
         <SiteHeader />
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          <Head title="Technologies" />
-          
+        <div className="flex flex-1 flex-col gap-4 p-4 md:gap-6 md:p-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold">Technologies</h1>
-              <p className="text-muted-foreground">Manage all technologies</p>
+              <h1 className="text-3xl font-bold tracking-tight">Technologies</h1>
+              <p className="text-muted-foreground">
+                Manage your homepage technologies
+              </p>
             </div>
-            <Button asChild>
-              <Link href="/admin/technologies/create">
+            <Link href="/admin/technologies/create">
+              <Button>
                 <Plus className="mr-2 h-4 w-4" />
-                Add Technology
-              </Link>
-            </Button>
+                Add New Technology
+              </Button>
+            </Link>
           </div>
 
           <div className="rounded-md border">

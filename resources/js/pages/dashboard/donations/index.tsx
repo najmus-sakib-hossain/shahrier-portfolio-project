@@ -47,20 +47,20 @@ export default function DonationsIndex({ donations }: Props) {
       <AppSidebar />
       <SidebarInset>
         <SiteHeader />
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          <Head title="Donations" />
-          
+        <div className="flex flex-1 flex-col gap-4 p-4 md:gap-6 md:p-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold">Donations</h1>
-              <p className="text-muted-foreground">Manage donation campaigns</p>
+              <h1 className="text-3xl font-bold tracking-tight">Donations</h1>
+              <p className="text-muted-foreground">
+                Manage your homepage donation campaigns
+              </p>
             </div>
-            <Button asChild>
-              <Link href="/admin/donations/create">
+            <Link href="/admin/donations/create">
+              <Button>
                 <Plus className="mr-2 h-4 w-4" />
-                Add Donation
-              </Link>
-            </Button>
+                Add New Donation
+              </Button>
+            </Link>
           </div>
 
           <div className="rounded-md border">

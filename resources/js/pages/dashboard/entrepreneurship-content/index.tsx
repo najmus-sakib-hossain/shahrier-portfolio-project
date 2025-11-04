@@ -47,20 +47,20 @@ export default function EntrepreneurshipContentIndex({ content }: Props) {
       <AppSidebar />
       <SidebarInset>
         <SiteHeader />
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          <Head title="Entrepreneurship Content" />
-          
+        <div className="flex flex-1 flex-col gap-4 p-4 md:gap-6 md:p-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold">Entrepreneurship Content</h1>
-              <p className="text-muted-foreground">Manage entrepreneurship blogs, quotes, and innovations</p>
+              <h1 className="text-3xl font-bold tracking-tight">Entrepreneurship Content</h1>
+              <p className="text-muted-foreground">
+                Manage your homepage entrepreneurship content
+              </p>
             </div>
-            <Button asChild>
-              <Link href="/admin/entrepreneurship-content/create">
+            <Link href="/admin/entrepreneurship-content/create">
+              <Button>
                 <Plus className="mr-2 h-4 w-4" />
-                Add Content
-              </Link>
-            </Button>
+                Add New Entrepreneurship Content
+              </Button>
+            </Link>
           </div>
 
           <div className="rounded-md border">
