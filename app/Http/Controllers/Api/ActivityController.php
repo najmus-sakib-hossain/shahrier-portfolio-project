@@ -7,6 +7,11 @@ use App\Models\BlogPost;
 use App\Models\Video;
 use App\Models\Event;
 use App\Models\Book;
+use App\Models\Donation;
+use App\Models\Award;
+use App\Models\Certificate;
+use App\Models\LifeEvent;
+use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
@@ -88,7 +93,7 @@ class ActivityController extends Controller
     }
     
     /**
-     * Get visitor statistics (simulated for now - you can integrate with actual analytics)
+     * Get content activity statistics
      */
     public function getVisitorStats(Request $request)
     {
@@ -101,25 +106,30 @@ class ActivityController extends Controller
             $dates[] = Carbon::now()->subDays($i)->format('Y-m-d');
         }
         
-        // For now, we'll return aggregated activity data as a proxy for visitors
-        // You can replace this with actual analytics data later
+        // Get actual content activity data for all content types
         $activityData = collect($dates)->map(function ($date) {
-            // Get activity for this date
+            // Get actual counts for each content type on this date
             $blogCount = BlogPost::whereDate('created_at', $date)->count();
             $videoCount = Video::whereDate('created_at', $date)->count();
             $eventCount = Event::whereDate('created_at', $date)->count();
             $bookCount = Book::whereDate('created_at', $date)->count();
-            
-            // Calculate "desktop" and "mobile" based on activity
-            // This is a placeholder - integrate with real analytics
-            $totalActivity = ($blogCount * 10) + ($videoCount * 15) + ($eventCount * 8) + ($bookCount * 5);
-            $desktop = intval($totalActivity * 0.6 + rand(50, 150));
-            $mobile = intval($totalActivity * 0.4 + rand(50, 150));
+            $donationCount = Donation::whereDate('created_at', $date)->count();
+            $awardCount = Award::whereDate('created_at', $date)->count();
+            $certificateCount = Certificate::whereDate('created_at', $date)->count();
+            $lifeEventCount = LifeEvent::whereDate('created_at', $date)->count();
+            $teamCount = Team::whereDate('created_at', $date)->count();
             
             return [
                 'date' => $date,
-                'desktop' => $desktop,
-                'mobile' => $mobile,
+                'blogs' => $blogCount,
+                'videos' => $videoCount,
+                'events' => $eventCount,
+                'books' => $bookCount,
+                'donations' => $donationCount,
+                'awards' => $awardCount,
+                'certificates' => $certificateCount,
+                'lifeEvents' => $lifeEventCount,
+                'team' => $teamCount,
             ];
         });
         

@@ -12,6 +12,12 @@ class HomeController extends Controller
 {
     public function index()
     {
+        // Return the Index page (landing page with SHAHRIAR text)
+        return Inertia::render('Index');
+    }
+    
+    public function home()
+    {
         $hero = HeroSection::where('is_active', true)
             ->orderBy('order')
             ->first();

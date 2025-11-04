@@ -30,26 +30,58 @@ import {
   ToggleGroupItem,
 } from "@/components/ui/toggle-group"
 
-export const description = "An interactive area chart showing visitor statistics"
+export const description = "An interactive area chart showing content activity"
 
 const chartConfig = {
-  visitors: {
-    label: "Visitors",
+  blogs: {
+    label: "Blogs",
+    color: "hsl(217, 91%, 60%)", // Bright blue
   },
-  desktop: {
-    label: "Desktop",
-    color: "var(--primary)",
+  videos: {
+    label: "Videos",
+    color: "hsl(142, 71%, 45%)", // Bright green
   },
-  mobile: {
-    label: "Mobile",
-    color: "var(--primary)",
+  events: {
+    label: "Events",
+    color: "hsl(271, 81%, 60%)", // Purple
+  },
+  books: {
+    label: "Books",
+    color: "hsl(24, 95%, 53%)", // Orange
+  },
+  donations: {
+    label: "Donations",
+    color: "hsl(340, 82%, 52%)", // Pink/Red
+  },
+  awards: {
+    label: "Awards",
+    color: "hsl(45, 93%, 47%)", // Gold/Yellow
+  },
+  certificates: {
+    label: "Certificates",
+    color: "hsl(198, 93%, 60%)", // Cyan
+  },
+  lifeEvents: {
+    label: "Life Events",
+    color: "hsl(280, 67%, 60%)", // Magenta
+  },
+  team: {
+    label: "Team Members",
+    color: "hsl(160, 60%, 45%)", // Teal
   },
 } satisfies ChartConfig
 
 interface ChartData {
   date: string
-  desktop: number
-  mobile: number
+  blogs: number
+  videos: number
+  events: number
+  books: number
+  donations: number
+  awards: number
+  certificates: number
+  lifeEvents: number
+  team: number
 }
 
 export function ChartAreaInteractive() {
@@ -82,7 +114,7 @@ export function ChartAreaInteractive() {
         const response = await fetch(`/api/activity/visitors?days=${days}`)
         
         if (!response.ok) {
-          throw new Error('Failed to fetch visitor data')
+          throw new Error('Failed to fetch content activity data')
         }
         
         const result = await response.json()
@@ -110,12 +142,12 @@ export function ChartAreaInteractive() {
   return (
     <Card className="@container/card">
       <CardHeader>
-        <CardTitle>Total Visitors</CardTitle>
+        <CardTitle>Content Activity</CardTitle>
         <CardDescription>
           <span className="hidden @[540px]/card:block">
-            {timeRange === "90d" && "Total for the last 3 months"}
-            {timeRange === "30d" && "Total for the last 30 days"}
-            {timeRange === "7d" && "Total for the last 7 days"}
+            {timeRange === "90d" && "Content created in the last 3 months"}
+            {timeRange === "30d" && "Content created in the last 30 days"}
+            {timeRange === "7d" && "Content created in the last 7 days"}
           </span>
           <span className="@[540px]/card:hidden">
             {timeRange === "90d" && "Last 3 months"}
@@ -177,27 +209,111 @@ export function ChartAreaInteractive() {
           >
             <AreaChart data={filteredData}>
               <defs>
-                <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
+                <linearGradient id="fillBlogs" x1="0" y1="0" x2="0" y2="1">
                   <stop
                     offset="5%"
-                    stopColor="var(--color-desktop)"
-                    stopOpacity={1.0}
-                  />
-                  <stop
-                    offset="95%"
-                    stopColor="var(--color-desktop)"
-                    stopOpacity={0.1}
-                  />
-                </linearGradient>
-                <linearGradient id="fillMobile" x1="0" y1="0" x2="0" y2="1">
-                  <stop
-                    offset="5%"
-                    stopColor="var(--color-mobile)"
+                    stopColor="var(--color-blogs)"
                     stopOpacity={0.8}
                   />
                   <stop
                     offset="95%"
-                    stopColor="var(--color-mobile)"
+                    stopColor="var(--color-blogs)"
+                    stopOpacity={0.1}
+                  />
+                </linearGradient>
+                <linearGradient id="fillVideos" x1="0" y1="0" x2="0" y2="1">
+                  <stop
+                    offset="5%"
+                    stopColor="var(--color-videos)"
+                    stopOpacity={0.8}
+                  />
+                  <stop
+                    offset="95%"
+                    stopColor="var(--color-videos)"
+                    stopOpacity={0.1}
+                  />
+                </linearGradient>
+                <linearGradient id="fillEvents" x1="0" y1="0" x2="0" y2="1">
+                  <stop
+                    offset="5%"
+                    stopColor="var(--color-events)"
+                    stopOpacity={0.8}
+                  />
+                  <stop
+                    offset="95%"
+                    stopColor="var(--color-events)"
+                    stopOpacity={0.1}
+                  />
+                </linearGradient>
+                <linearGradient id="fillBooks" x1="0" y1="0" x2="0" y2="1">
+                  <stop
+                    offset="5%"
+                    stopColor="var(--color-books)"
+                    stopOpacity={0.8}
+                  />
+                  <stop
+                    offset="95%"
+                    stopColor="var(--color-books)"
+                    stopOpacity={0.1}
+                  />
+                </linearGradient>
+                <linearGradient id="fillDonations" x1="0" y1="0" x2="0" y2="1">
+                  <stop
+                    offset="5%"
+                    stopColor="var(--color-donations)"
+                    stopOpacity={0.8}
+                  />
+                  <stop
+                    offset="95%"
+                    stopColor="var(--color-donations)"
+                    stopOpacity={0.1}
+                  />
+                </linearGradient>
+                <linearGradient id="fillAwards" x1="0" y1="0" x2="0" y2="1">
+                  <stop
+                    offset="5%"
+                    stopColor="var(--color-awards)"
+                    stopOpacity={0.8}
+                  />
+                  <stop
+                    offset="95%"
+                    stopColor="var(--color-awards)"
+                    stopOpacity={0.1}
+                  />
+                </linearGradient>
+                <linearGradient id="fillCertificates" x1="0" y1="0" x2="0" y2="1">
+                  <stop
+                    offset="5%"
+                    stopColor="var(--color-certificates)"
+                    stopOpacity={0.8}
+                  />
+                  <stop
+                    offset="95%"
+                    stopColor="var(--color-certificates)"
+                    stopOpacity={0.1}
+                  />
+                </linearGradient>
+                <linearGradient id="fillLifeEvents" x1="0" y1="0" x2="0" y2="1">
+                  <stop
+                    offset="5%"
+                    stopColor="var(--color-lifeEvents)"
+                    stopOpacity={0.8}
+                  />
+                  <stop
+                    offset="95%"
+                    stopColor="var(--color-lifeEvents)"
+                    stopOpacity={0.1}
+                  />
+                </linearGradient>
+                <linearGradient id="fillTeam" x1="0" y1="0" x2="0" y2="1">
+                  <stop
+                    offset="5%"
+                    stopColor="var(--color-team)"
+                    stopOpacity={0.8}
+                  />
+                  <stop
+                    offset="95%"
+                    stopColor="var(--color-team)"
                     stopOpacity={0.1}
                   />
                 </linearGradient>
@@ -231,18 +347,68 @@ export function ChartAreaInteractive() {
                   />
                 }
               />
+              {/* Reversed order - bottom to top, so they stack from left */}
               <Area
-                dataKey="mobile"
+                dataKey="team"
                 type="natural"
-                fill="url(#fillMobile)"
-                stroke="var(--color-mobile)"
+                fill="url(#fillTeam)"
+                stroke="var(--color-team)"
                 stackId="a"
               />
               <Area
-                dataKey="desktop"
+                dataKey="lifeEvents"
                 type="natural"
-                fill="url(#fillDesktop)"
-                stroke="var(--color-desktop)"
+                fill="url(#fillLifeEvents)"
+                stroke="var(--color-lifeEvents)"
+                stackId="a"
+              />
+              <Area
+                dataKey="certificates"
+                type="natural"
+                fill="url(#fillCertificates)"
+                stroke="var(--color-certificates)"
+                stackId="a"
+              />
+              <Area
+                dataKey="awards"
+                type="natural"
+                fill="url(#fillAwards)"
+                stroke="var(--color-awards)"
+                stackId="a"
+              />
+              <Area
+                dataKey="donations"
+                type="natural"
+                fill="url(#fillDonations)"
+                stroke="var(--color-donations)"
+                stackId="a"
+              />
+              <Area
+                dataKey="books"
+                type="natural"
+                fill="url(#fillBooks)"
+                stroke="var(--color-books)"
+                stackId="a"
+              />
+              <Area
+                dataKey="events"
+                type="natural"
+                fill="url(#fillEvents)"
+                stroke="var(--color-events)"
+                stackId="a"
+              />
+              <Area
+                dataKey="videos"
+                type="natural"
+                fill="url(#fillVideos)"
+                stroke="var(--color-videos)"
+                stackId="a"
+              />
+              <Area
+                dataKey="blogs"
+                type="natural"
+                fill="url(#fillBlogs)"
+                stroke="var(--color-blogs)"
                 stackId="a"
               />
             </AreaChart>

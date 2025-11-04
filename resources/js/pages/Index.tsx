@@ -17,7 +17,7 @@ const Home = () => {
     const timeoutRef = useRef<number | null>(null);
 
     return (
-        <div className="bg-background relative flex min-h-screen w-full items-center justify-center overflow-hidden">
+        <div className="bg-[#0f0f0f] relative flex min-h-screen w-full items-center justify-center overflow-hidden">
 
             <div className="max-w-7xl absolute top-8 md:top-16 px-8 w-full z-10">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center">
@@ -57,7 +57,7 @@ const Home = () => {
                         timeoutRef.current = null;
                     }, 300) as any;
                 }
-            }} className="border absolute bottom-4 py-4 px-8 bg-background text-foreground hover:bg-muted font-semibold text-lg rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl z-30">
+            }} className="absolute bottom-4 py-4 px-8 bg-white text-black hover:bg-[#e7e7e7] hover:text-[#0f0f0f] font-semibold text-lg rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl z-30">
                 Play Now
             </motion.button>
 

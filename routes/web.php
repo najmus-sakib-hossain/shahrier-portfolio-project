@@ -31,7 +31,7 @@ use App\Http\Controllers\Api\ActivityController;
 
 // Frontend Routes
 Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'home'])->name('home');
 Route::get('/aboutme', [AboutController::class, 'index'])->name('aboutme');
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs');
 Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blogs.show');
