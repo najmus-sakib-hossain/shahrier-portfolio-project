@@ -13,26 +13,24 @@ import { ArrowLeft } from 'lucide-react'
 
 export default function CreateEntrepreneurshipContent() {
   const { data, setData, post, processing, errors } = useForm({
+    type: '',
     title: '',
-    description: '',
-    entrepreneurshipcontent_url: '',
-    thumbnail: '',
-    platform: 'YouTube',
-    category: '',
-    duration: '',
-    is_short: false,
-    views: 0,
-    published_at: '',
+    content: '',
+    image: '',
+    author: '',
+    publish_date: '',
+    is_featured: false,
+    order: 0,
   })
 
   const handleSubmit: FormEventHandler = (e) => {
     e.preventDefault()
-    post('/admin/entrepreneurshipcontents')
+    post('/admin/entrepreneurship-content')
   }
 
   return (
     <>
-      <Head title="Create EntrepreneurshipContent - Admin" />
+      <Head title="Create Entrepreneurship Content - Admin" />
       <SidebarProvider
         style={
           {
@@ -46,31 +44,45 @@ export default function CreateEntrepreneurshipContent() {
           <SiteHeader />
           <div className="flex flex-1 flex-col gap-4 p-4 md:gap-6 md:p-6">
             <div className="flex items-center gap-4">
-              <Link href="/admin/entrepreneurshipcontents">
+              <Link href="/admin/entrepreneurship-content">
                 <Button variant="ghost" size="icon">
                   <ArrowLeft className="h-4 w-4" />
                 </Button>
               </Link>
               <div>
-                <h1 className="text-3xl font-bold tracking-tight">Create EntrepreneurshipContent</h1>
-                <p className="text-muted-foreground">Add a new entrepreneurshipcontent to your website</p>
+                <h1 className="text-3xl font-bold tracking-tight">Create Entrepreneurship Content</h1>
+                <p className="text-muted-foreground">Add new entrepreneurship content</p>
               </div>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <Card>
                 <CardHeader>
-                  <CardTitle>EntrepreneurshipContent Details</CardTitle>
-                  <CardDescription>Enter the details of your entrepreneurshipcontent</CardDescription>
+                  <CardTitle>Content Details</CardTitle>
+                  <CardDescription>Enter the details of your entrepreneurship content</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="type">Type</Label>
+                    <Input
+                      id="type"
+                      value={data.type}
+                      onChange={(e) => setData('type', e.target.value)}
+                      placeholder="e.g., blog, quote, event, innovation"
+                      required
+                    />
+                    {errors.type && (
+                      <p className="text-sm text-red-600">{errors.type}</p>
+                    )}
+                  </div>
+
                   <div className="space-y-2">
                     <Label htmlFor="title">Title</Label>
                     <Input
                       id="title"
                       value={data.title}
                       onChange={(e) => setData('title', e.target.value)}
-                      placeholder="Enter entrepreneurshipcontent title"
+                      placeholder="Enter content title"
                       required
                     />
                     {errors.title && (
@@ -79,107 +91,78 @@ export default function CreateEntrepreneurshipContent() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="description">Description</Label>
+                    <Label htmlFor="content">Content</Label>
                     <Textarea
-                      id="description"
-                      value={data.description}
-                      onChange={(e) => setData('description', e.target.value)}
-                      placeholder="Enter entrepreneurshipcontent description"
-                      rows={4}
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="entrepreneurshipcontent_url">EntrepreneurshipContent URL</Label>
-                    <Input
-                      id="entrepreneurshipcontent_url"
-                      value={data.entrepreneurshipcontent_url}
-                      onChange={(e) => setData('entrepreneurshipcontent_url', e.target.value)}
-                      placeholder="https://youtube.com/watch?v=..."
+                      id="content"
+                      value={data.content}
+                      onChange={(e) => setData('content', e.target.value)}
+                      placeholder="Enter content"
+                      rows={6}
                       required
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="thumbnail">Thumbnail URL</Label>
+                    <Label htmlFor="image">Image URL</Label>
                     <Input
-                      id="thumbnail"
-                      value={data.thumbnail}
-                      onChange={(e) => setData('thumbnail', e.target.value)}
-                      placeholder="https://example.com/thumbnail.jpg"
+                      id="image"
+                      value={data.image}
+                      onChange={(e) => setData('image', e.target.value)}
+                      placeholder="https://example.com/image.jpg"
                     />
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="platform">Platform</Label>
+                      <Label htmlFor="author">Author</Label>
                       <Input
-                        id="platform"
-                        value={data.platform}
-                        onChange={(e) => setData('platform', e.target.value)}
-                        placeholder="YouTube, Vimeo, etc."
+                        id="author"
+                        value={data.author}
+                        onChange={(e) => setData('author', e.target.value)}
+                        placeholder="Author name"
                       />
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="category">Category</Label>
+                      <Label htmlFor="publish_date">Publish Date</Label>
                       <Input
-                        id="category"
-                        value={data.category}
-                        onChange={(e) => setData('category', e.target.value)}
-                        placeholder="e.g., Tutorial, Vlog"
+                        id="publish_date"
+                        type="date"
+                        value={data.publish_date}
+                        onChange={(e) => setData('publish_date', e.target.value)}
+                        required
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="duration">Duration (e.g., 10:30)</Label>
+                      <Label htmlFor="order">Display Order</Label>
                       <Input
-                        id="duration"
-                        value={data.duration}
-                        onChange={(e) => setData('duration', e.target.value)}
-                        placeholder="10:30"
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="views">Views</Label>
-                      <Input
-                        id="views"
+                        id="order"
                         type="number"
-                        value={data.views}
-                        onChange={(e) => setData('views', parseInt(e.target.value) || 0)}
+                        value={data.order}
+                        onChange={(e) => setData('order', parseInt(e.target.value))}
                       />
                     </div>
-                  </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="published_at">Publish Date</Label>
-                    <Input
-                      id="published_at"
-                      type="date"
-                      value={data.published_at}
-                      onChange={(e) => setData('published_at', e.target.value)}
-                    />
-                  </div>
-
-                  <div className="flex items-center space-x-2">
-                    <Switch
-                      id="is_short"
-                      checked={data.is_short}
-                      onCheckedChange={(checked) => setData('is_short', checked)}
-                    />
-                    <Label htmlFor="is_short">Short EntrepreneurshipContent (&lt; 60 seconds)</Label>
+                    <div className="flex items-center space-x-2 pt-8">
+                      <Switch
+                        id="is_featured"
+                        checked={data.is_featured}
+                        onCheckedChange={(checked) => setData('is_featured', checked)}
+                      />
+                      <Label htmlFor="is_featured">Featured</Label>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
 
               <div className="flex gap-4">
                 <Button type="submit" disabled={processing}>
-                  {processing ? 'Creating...' : 'Create EntrepreneurshipContent'}
+                  {processing ? 'Creating...' : 'Create Content'}
                 </Button>
-                <Link href="/admin/entrepreneurshipcontents">
+                <Link href="/admin/entrepreneurship-content">
                   <Button type="button" variant="outline">
                     Cancel
                   </Button>

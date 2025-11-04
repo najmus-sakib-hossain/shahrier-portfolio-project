@@ -23,11 +23,13 @@ class AboutSectionController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'type' => 'required|string',
+            'section_type' => 'required|string',
             'title' => 'required|string|max:255',
             'content' => 'required|string',
             'image' => 'nullable|string',
+            'additional_data' => 'nullable|json',
             'order' => 'integer',
+            'is_active' => 'boolean',
         ]);
 
         AboutSection::create($validated);
@@ -43,11 +45,13 @@ class AboutSectionController extends Controller
     public function update(Request $request, string $id)
     {
         $validated = $request->validate([
-            'type' => 'required|string',
+            'section_type' => 'required|string',
             'title' => 'required|string|max:255',
             'content' => 'required|string',
             'image' => 'nullable|string',
+            'additional_data' => 'nullable|json',
             'order' => 'integer',
+            'is_active' => 'boolean',
         ]);
 
         $aboutSection = AboutSection::findOrFail($id);
