@@ -1,13 +1,38 @@
 import { Calendar, MapPin } from "lucide-react";
 import pattern from "../../../assets/events/banner_vector.png";
 import pattern_bottom from "../../../assets/events/bottom_vector.png";
-import img1 from "../../../assets/entepreneourship/slider_1.jpeg";
-import img2 from "../../../assets/entepreneourship/slider_2.jpeg";
-import img3 from "../../../assets/entepreneourship/slider_3.jpeg";
-import img4 from "../../../assets/entepreneourship/slider_4.jpeg";
 
-const Banner = () => {
-  const images = [img1, img3, img4, img2];
+const Banner = ({ featuredEvents = [] }) => {
+  // Default events if none provided
+  const defaultEvents = [
+    {
+      featured_image: "/assets/entepreneourship/slider_1.jpeg",
+      title: "Tech Innovations Conference 2024",
+      event_date: "2024-06-10",
+      location: "San Francisco, CA"
+    },
+    {
+      featured_image: "/assets/entepreneourship/slider_3.jpeg",
+      title: "Tech Innovations Conference 2024",
+      event_date: "2024-06-10",
+      location: "San Francisco, CA"
+    },
+    {
+      featured_image: "/assets/entepreneourship/slider_4.jpeg",
+      title: "Tech Innovations Conference 2024",
+      event_date: "2024-06-10",
+      location: "San Francisco, CA"
+    },
+    {
+      featured_image: "/assets/entepreneourship/slider_2.jpeg",
+      title: "Tech Innovations Conference 2024",
+      event_date: "2024-06-10",
+      location: "San Francisco, CA"
+    }
+  ];
+
+  const displayEvents = featuredEvents.length >= 4 ? featuredEvents.slice(0, 4) : defaultEvents;
+
   return (
     <div className="bg-slate-50 relative min-h-screen">
       {/* Background Patterns */}
@@ -46,43 +71,51 @@ const Banner = () => {
               lgTranslateX: "lg:-translate-x-32",
               lgTranslateY: "lg:translate-y-12",
             },
-          ].map((style, index) => (
-            <div
-              key={index}
-              className={`group w-88 h-[500px] relative rounded-2xl overflow-hidden transition-all duration-500 ease-in-out 
-              ${style.lgRotate} ${style.lgTranslateX} ${style.lgTranslateY}
-              lg:hover:rotate-0 lg:hover:translate-x-0 lg:hover:translate-y-0 lg:hover:scale-105 lg:group-hover:z-10`}
-            >
-              {/* Image */}{" "}
-              <img
-                className="w-full h-full object-cover rounded-2xl"
-                src={images[index]}
-                alt=""
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
-              {/* Text Overlay */}
-              <div className="absolute inset-0 flex flex-col items-start justify-end text-white p-4">
-                <a href="/ai-summit">
-                  {" "}
-                  <h1 className="text-3xl font-semibold mb-6">
-                    Tech Innovations Conference 2024
-                  </h1>
-                </a>
-                <div className="flex items-center gap-2 mb-2">
-                  <p className="text-slate-300">
-                    <Calendar size={24} />
-                  </p>
-                  <p className="text-slate-300">June 10, 2024</p>
-                </div>
-                <div className="flex items-center gap-2 mb-2">
-                  <p className="text-slate-300">
-                    <MapPin size={24} />
-                  </p>
-                  <p className="text-slate-300">San Francisco, CA</p>
+          ].map((style, index) => {
+            const event = displayEvents[index];
+            return (
+              <div
+                key={event?.id || index}
+                className={`group w-88 h-[500px] relative rounded-2xl overflow-hidden transition-all duration-500 ease-in-out 
+                ${style.lgRotate} ${style.lgTranslateX} ${style.lgTranslateY}
+                lg:hover:rotate-0 lg:hover:translate-x-0 lg:hover:translate-y-0 lg:hover:scale-105 lg:group-hover:z-10`}
+              >
+                {/* Image */}
+                <img
+                  className="w-full h-full object-cover rounded-2xl"
+                  src={event?.featured_image || "/assets/events/default.png"}
+                  alt={event?.title || "Event"}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                {/* Text Overlay */}
+                <div className="absolute inset-0 flex flex-col items-start justify-end text-white p-4">
+                  <a href="/ai-summit">
+                    <h1 className="text-3xl font-semibold mb-6">
+                      {event?.title || "Tech Innovations Conference 2024"}
+                    </h1>
+                  </a>
+                  <div className="flex items-center gap-2 mb-2">
+                    <p className="text-slate-300">
+                      <Calendar size={24} />
+                    </p>
+                    <p className="text-slate-300">
+                      {event?.event_date ? new Date(event.event_date).toLocaleDateString('en-US', { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric' 
+                      }) : 'June 10, 2024'}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <p className="text-slate-300">
+                      <MapPin size={24} />
+                    </p>
+                    <p className="text-slate-300">{event?.location || "San Francisco, CA"}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

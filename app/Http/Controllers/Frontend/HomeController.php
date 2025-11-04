@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\HeroSection;
 use App\Models\Statistic;
+use App\Models\IndexPageSetting;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -12,8 +13,12 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $indexPage = IndexPageSetting::with('activeLogos')->where('is_active', true)->first();
+        
         // Return the Index page (landing page with SHAHRIAR text)
-        return Inertia::render('Index');
+        return Inertia::render('Index', [
+            'indexPage' => $indexPage,
+        ]);
     }
     
     public function home()

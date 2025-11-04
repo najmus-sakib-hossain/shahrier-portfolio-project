@@ -54,6 +54,10 @@ const data = {
       isActive: true,
       items: [
         {
+          title: "Landing Page",
+          url: "/admin/index-page",
+        },
+        {
           title: "Hero Sections",
           url: "/admin/hero-sections",
         },

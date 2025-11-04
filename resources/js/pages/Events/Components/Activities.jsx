@@ -1,10 +1,15 @@
-import img1 from "../../../assets/events/event_activites_1.png";
-import img2 from "../../../assets/events/event_activities_2.png";
-import img3 from "../../../assets/events/event_activites_3.png";
-import img4 from "../../../assets/events/event_activites_4.png";
+const Activities = ({ upcomingEvents = [] }) => {
+  // Get first 4 events for the grid
+  const events = upcomingEvents.slice(0, 4);
+  
+  // Default images if no events
+  const defaultImages = [
+    "/assets/events/event_activites_1.png",
+    "/assets/events/event_activities_2.png",
+    "/assets/events/event_activites_3.png",
+    "/assets/events/event_activites_4.png"
+  ];
 
-
-const Activities = () => {
   return (
     <div className="w-11/12 lg:w-9/12 mx-auto py-18">
       <div className="grid grid-cols-1 lg:grid-cols-3 place-items-center gap-12 ">
@@ -20,23 +25,21 @@ const Activities = () => {
         <div className="lg:col-span-2">
           <div className="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-6 mb-6">
             <div className="w-full lg:col-span-2 lg:row-span-2">
-             
                 <div className="w-full h-72">
                   <img
                     className="w-full h-full object-cover rounded-xl"
-                    src={img1}
-                    alt=""
+                    src={events[0]?.featured_image || defaultImages[0]}
+                    alt={events[0]?.title || "Event"}
                   />
                 </div>
-          
             </div>
             <div className="w-full lg:col-span-1 lg:row-span-1"></div>
             <div className="w-full lg:col-span-1 lg:row-span-1 ">
               <div className="w-full h-36">
                 <img
                   className="w-full h-full object-cover rounded-xl"
-                  src={img2}
-                  alt=""
+                  src={events[1]?.featured_image || defaultImages[1]}
+                  alt={events[1]?.title || "Event"}
                 />
               </div>
             </div>
@@ -47,8 +50,8 @@ const Activities = () => {
               <div className="w-full h-36">
                 <img
                   className="w-full h-full object-cover rounded-xl"
-                  src={img3}
-                  alt=""
+                  src={events[2]?.featured_image || defaultImages[2]}
+                  alt={events[2]?.title || "Event"}
                 />
               </div>
             </div>
@@ -56,8 +59,8 @@ const Activities = () => {
               <div className="w-full h-72">
                 <img
                   className="w-full h-full object-cover rounded-xl"
-                  src={img4}
-                  alt=""
+                  src={events[3]?.featured_image || defaultImages[3]}
+                  alt={events[3]?.title || "Event"}
                 />
               </div>
             </div>

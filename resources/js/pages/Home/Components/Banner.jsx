@@ -37,7 +37,7 @@ const Banner = ({ hero, statistics }) => {
             <div className="h-[500px] md:h-[600px] lg:h-[800px] relative">
 
               <img
-                src={hero?.banner_image || "./assets/home_banner.png"}
+                src={hero?.image_url || "/assets/home_banner.png"}
                 alt="Home Banner"
                 className="w-full h-full object-cover"
               />

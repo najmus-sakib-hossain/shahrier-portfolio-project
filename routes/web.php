@@ -27,6 +27,7 @@ use App\Http\Controllers\Admin\AboutSectionController;
 use App\Http\Controllers\Admin\AwardController;
 use App\Http\Controllers\Admin\CertificateController;
 use App\Http\Controllers\Admin\EntrepreneurshipContentController;
+use App\Http\Controllers\Admin\IndexPageController;
 use App\Http\Controllers\Api\ActivityController;
 
 // Frontend Routes
@@ -77,6 +78,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('awards', AwardController::class);
         Route::resource('certificates', CertificateController::class);
         Route::resource('entrepreneurship-content', EntrepreneurshipContentController::class);
+        
+        // Index Page Management
+        Route::get('index-page', [IndexPageController::class, 'index'])->name('index-page.index');
+        Route::post('index-page/update', [IndexPageController::class, 'update'])->name('index-page.update');
+        Route::post('index-page/logos', [IndexPageController::class, 'storeLogo'])->name('index-page.logos.store');
+        Route::put('index-page/logos/{logo}', [IndexPageController::class, 'updateLogo'])->name('index-page.logos.update');
+        Route::delete('index-page/logos/{logo}', [IndexPageController::class, 'deleteLogo'])->name('index-page.logos.delete');
+        Route::post('index-page/logos/reorder', [IndexPageController::class, 'reorderLogos'])->name('index-page.logos.reorder');
     });
 });
 

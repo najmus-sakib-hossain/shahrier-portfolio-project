@@ -8,7 +8,7 @@ import travel from "../../../assets/life_events/travel.svg";
 import achievement from "../../../assets/life_events/achievement.svg";
 import All from "./All";
 
-const categories = [
+const categoryIcons = [
   { id: "all", label: "All", icon: all },
   { id: "work", label: "Work", icon: work },
   { id: "education", label: "Education", icon: education },
@@ -18,27 +18,32 @@ const categories = [
   { id: "achievement", label: "Achievement", icon: achievement },
 ];
 
-// Content for each tab
-const categoryContent = {
-  all: <All />,
-  work: "Work-related experiences, job changes, promotions, and career highlights.",
-  education:
-    "Education journey including schools, universities, and certifications.",
-  meetup: "Networking and social meetups with like-minded individuals.",
-  family: "Memorable family moments and important life events.",
-  travel: "Exciting travel experiences, destinations visited, and adventures.",
-  achievement: "Milestones and accomplishments achieved throughout life.",
-};
-
-const Category = () => {
+const Category = ({ lifeEvents = [], categories = [] }) => {
   const [selectedCategory, setSelectedCategory] = useState("all");
+
+  // Build categories from database if available, otherwise use default icons
+  const availableCategories = categories.length > 0 
+    ? [{ id: "all", label: "All", icon: all }, ...categories.map(cat => {
+        const iconData = categoryIcons.find(c => c.id.toLowerCase() === cat.toLowerCase());
+        return {
+          id: cat.toLowerCase(),
+          label: cat,
+          icon: iconData?.icon || all
+        };
+      })]
+    : categoryIcons;
+
+  // Filter life events by selected category
+  const filteredEvents = selectedCategory === "all" 
+    ? lifeEvents 
+    : lifeEvents.filter(event => event.category?.toLowerCase() === selectedCategory);
 
   return (
     <div className="bg-slate-950 py-12">
       <div className="w-11/12 lg:w-9/12 mx-auto">
         {/* Category Tabs */}
         <div className="grid grid-cols-1 lg:grid-cols-7 gap-8">
-          {categories.map((category) => (
+          {availableCategories.map((category) => (
             <div
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
@@ -71,7 +76,7 @@ const Category = () => {
 
       {/* Tab Content Section */}
       <div className="mt-10 text-white">
-        {categoryContent[selectedCategory]}
+        <All lifeEvents={filteredEvents} />
       </div>
     </div>
   );
