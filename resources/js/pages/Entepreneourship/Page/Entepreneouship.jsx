@@ -5,15 +5,15 @@ import Innovation from "../Components/Innovation";
 import Quotes from "../Components/Quotes";
 import Navbar from "@/components/Navbar";
 
-const Entepreneouship = () => {
+const Entepreneouship = ({ blogs, quotes, events, innovations }) => {
   return (
     <div>
       <Navbar />
       <Banner />
-      <Quotes />
-      <Innovation />
-      <Events />
-      <Blogs />
+      <Quotes quotes={quotes} />
+      <Innovation innovations={innovations} />
+      <Events events={events} />
+      <Blogs blogs={blogs} />
     </div>
   );
 };

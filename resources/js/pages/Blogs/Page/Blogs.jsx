@@ -2,12 +2,12 @@ import AllBlog from "../Components/AllBlog";
 import Banner from "../Components/Banner";
 import Navbar from "@/components/Navbar";
 
-const Blogs = () => {
+const Blogs = ({ blogs }) => {
   return (
     <div>
       <Navbar />
       <Banner />
-      <AllBlog />
+      <AllBlog blogs={blogs} />
     </div>
   );
 };

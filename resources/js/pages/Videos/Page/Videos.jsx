@@ -3,13 +3,13 @@ import AllVideos from "../Components/AllVideos";
 import ShortVideos from "../Components/ShortVideos";
 import Navbar from "@/components/Navbar";
 
-const Videos = () => {
+const Videos = ({ videos, shortVideos }) => {
   return (
     <div>
       <Navbar />
-      <Banner />
-      <AllVideos />
-      <ShortVideos />
+      <Banner videos={videos} />
+      <AllVideos videos={videos} />
+      <ShortVideos videos={shortVideos} />
     </div>
   );
 };

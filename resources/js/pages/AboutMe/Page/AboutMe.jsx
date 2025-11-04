@@ -9,16 +9,20 @@ import Associate from "../Components/Associate";
 import BannerExp from "../Components/BannerExp";
 import Navbar from "@/components/Navbar";
 
-const Aboutus = () => {
+const Aboutus = ({ sections, awards }) => {
+  const storySection = sections?.find(s => s.type === 'story');
+  const impactSection = sections?.find(s => s.type === 'impact');
+  const travelSection = sections?.find(s => s.type === 'travel');
+
   return (
     <div>
       <Navbar />
       <BannerExp />
       <Report />
-      <Awards />
-      <Story />
-      <Impact />
-      <Travel />
+      <Awards awards={awards} />
+      <Story section={storySection} />
+      <Impact section={impactSection} />
+      <Travel section={travelSection} />
       <Corporate />
       <Associate />
     </div>

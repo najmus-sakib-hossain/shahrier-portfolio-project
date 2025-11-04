@@ -3,13 +3,13 @@ import AllEvents from "../Components/AllEvents";
 import Banner from "../Components/Banner";
 import Navbar from "@/components/Navbar";
 
-const Events = () => {
+const Events = ({ upcomingEvents, pastEvents, featuredEvents }) => {
   return (
     <div>
       <Navbar />
-      <Banner />
-      <Activities />
-      <AllEvents />
+      <Banner featuredEvents={featuredEvents} />
+      <Activities upcomingEvents={upcomingEvents} />
+      <AllEvents pastEvents={pastEvents} upcomingEvents={upcomingEvents} />
     </div>
   );
 };

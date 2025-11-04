@@ -5,15 +5,15 @@ import Review from "../Components/Review";
 import RecommendedBooks from "../Components/RecommendedBooks";
 import Navbar from "@/components/Navbar";
 
-const Books = () => {
+const Books = ({ recommendedBooks, allBooks }) => {
   return (
     <div>
       <Navbar />
-      <Banner />
-      <Highlights />
-      <Summary />
-      <Review />
-      <RecommendedBooks />s
+      <Banner books={allBooks} />
+      <Highlights books={allBooks} />
+      <Summary books={allBooks} />
+      <Review books={allBooks} />
+      <RecommendedBooks books={recommendedBooks} />
     </div>
   );
 };
