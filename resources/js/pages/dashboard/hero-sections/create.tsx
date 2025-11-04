@@ -18,7 +18,11 @@ export default function CreateHeroSection() {
     tagline: '',
     description: '',
     image_url: '',
-    social_links: '',
+    social_links: {
+      linkedin: '',
+      dribbble: '',
+      behance: '',
+    },
     is_active: true,
     order: 0,
   })
@@ -116,20 +120,43 @@ export default function CreateHeroSection() {
                       id="image_url"
                       value={data.image_url}
                       onChange={(e) => setData('image_url', e.target.value)}
-                      placeholder="https://example.com/image.jpg"
+                      placeholder="/assets/home_banner.png"
                     />
+                    <p className="text-xs text-muted-foreground">Enter image path from /assets/ folder</p>
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="social_links">Social Links (JSON format)</Label>
-                    <Textarea
-                      id="social_links"
-                      value={data.social_links}
-                      onChange={(e) => setData('social_links', e.target.value)}
-                      placeholder='{"facebook": "url", "twitter": "url"}'
-                      rows={3}
-                    />
-                    <p className="text-xs text-muted-foreground">Enter JSON formatted social links</p>
+                  <div className="space-y-4">
+                    <Label>Social Media Links</Label>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="linkedin" className="text-sm font-normal">LinkedIn URL</Label>
+                      <Input
+                        id="linkedin"
+                        value={data.social_links.linkedin}
+                        onChange={(e) => setData('social_links', { ...data.social_links, linkedin: e.target.value })}
+                        placeholder="https://www.linkedin.com/in/username"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="dribbble" className="text-sm font-normal">Dribbble URL</Label>
+                      <Input
+                        id="dribbble"
+                        value={data.social_links.dribbble}
+                        onChange={(e) => setData('social_links', { ...data.social_links, dribbble: e.target.value })}
+                        placeholder="https://dribbble.com/username"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="behance" className="text-sm font-normal">Behance URL</Label>
+                      <Input
+                        id="behance"
+                        value={data.social_links.behance}
+                        onChange={(e) => setData('social_links', { ...data.social_links, behance: e.target.value })}
+                        placeholder="https://www.behance.net/username"
+                      />
+                    </div>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">

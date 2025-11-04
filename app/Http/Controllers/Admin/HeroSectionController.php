@@ -36,10 +36,14 @@ class HeroSectionController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|string|max:255',
-            'subtitle' => 'required|string|max:255',
+            'subtitle' => 'required|string',
+            'tagline' => 'required|string|max:255',
             'description' => 'required|string',
-            'banner_image' => 'nullable|string',
-            'social_links' => 'nullable|json',
+            'image_url' => 'nullable|string',
+            'social_links' => 'nullable|array',
+            'social_links.linkedin' => 'nullable|url',
+            'social_links.dribbble' => 'nullable|url',
+            'social_links.behance' => 'nullable|url',
             'is_active' => 'boolean',
             'order' => 'integer',
         ]);
@@ -77,10 +81,14 @@ class HeroSectionController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|string|max:255',
-            'subtitle' => 'required|string|max:255',
+            'subtitle' => 'required|string',
+            'tagline' => 'required|string|max:255',
             'description' => 'required|string',
-            'banner_image' => 'nullable|string',
-            'social_links' => 'nullable|json',
+            'image_url' => 'nullable|string',
+            'social_links' => 'nullable|array',
+            'social_links.linkedin' => 'nullable|url',
+            'social_links.dribbble' => 'nullable|url',
+            'social_links.behance' => 'nullable|url',
             'is_active' => 'boolean',
             'order' => 'integer',
         ]);

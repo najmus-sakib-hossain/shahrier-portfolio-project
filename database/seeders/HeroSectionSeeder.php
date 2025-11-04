@@ -19,11 +19,11 @@ class HeroSectionSeeder extends Seeder
             'image_url' => '/assets/home_banner.png',
             'tagline' => 'Entrepreneur',
             'description' => 'Connecting brands & people through experiences.',
-            'social_links' => json_encode([
-                ['name' => 'Linkedin', 'url' => 'https://www.linkedin.com/in/mohammadshahriarkhan/', 'icon' => 'linkedin'],
-                ['name' => 'Dribble', 'url' => '#', 'icon' => 'dribble'],
-                ['name' => 'Behance', 'url' => '#', 'icon' => 'behance'],
-            ]),
+            'social_links' => [
+                'linkedin' => 'https://www.linkedin.com/in/mohammadshahriarkhan/',
+                'dribbble' => 'https://dribbble.com',
+                'behance' => 'https://www.behance.net',
+            ],
             'is_active' => true,
             'order' => 1,
         ]);

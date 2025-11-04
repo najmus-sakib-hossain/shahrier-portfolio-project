@@ -49,7 +49,7 @@ const Banner = ({ hero, statistics }) => {
                 }}
               >
                 <p className="text-4xl lg:text-6xl font-semibold p-5 lg:p-20">
-                  {hero?.description || "Embrace the extraordinary. Live your fullest life."}
+                  {hero?.subtitle || "Embrace the extraordinary. Live your fullest life."}
                 </p>
               </div>
             </div>
@@ -77,47 +77,53 @@ const Banner = ({ hero, statistics }) => {
             <div className="h-[500px] md:h-[600px] lg:h-[800px] flex flex-col justify-center">
               <div className="flex items-center gap-4 px-5 lg:px-20 mb-6 lg:mt-48">
                 <p className="text-3xl font-medium text-slate-900">
-                  {hero?.subtitle || "Entrepreneur"}
+                  {hero?.tagline || "Entrepreneur"}
                 </p>
                 <div className="w-20 h-1 bg-slate-900"></div>
               </div>
               <h1 className="text-4xl lg:text-6xl font-semibold text-slate-900 px-5 lg:px-20">
-                Connecting brands & people through experiences.
+                {hero?.description || "Connecting brands & people through experiences."}
               </h1>
             </div>
 
             <div className="py-[46px] bg-slate-900">
-              <div className="flex items-center justify-center gap-4">
+              <div className="flex items-center justify-center gap-6 flex-wrap px-4">
                 <h1 className="text-lg font-bold text-white">Social Media:</h1>
 
                 {hero?.social_links?.linkedin && (
-                  <div className="flex items-center gap-4">
-                    <img src={linkedin} alt="" />
-                    <a
-                      className="text-lg text-white font-normal"
-                      href={hero.social_links.linkedin}
-                    >
-                      Linkedin
-                    </a>
-                  </div>
+                  <a
+                    href={hero.social_links.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+                  >
+                    <img src={linkedin} alt="LinkedIn" className="w-5 h-5" />
+                    <span className="text-lg text-white font-normal">LinkedIn</span>
+                  </a>
                 )}
 
                 {hero?.social_links?.dribbble && (
-                  <div className="flex items-center gap-4">
-                    <img src={dribble} alt="" />
-                    <a className="text-lg text-white font-normal" href={hero.social_links.dribbble}>
-                      Dribble
-                    </a>
-                  </div>
+                  <a
+                    href={hero.social_links.dribbble}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+                  >
+                    <img src={dribble} alt="Dribbble" className="w-5 h-5" />
+                    <span className="text-lg text-white font-normal">Dribbble</span>
+                  </a>
                 )}
 
                 {hero?.social_links?.behance && (
-                  <div className="flex items-center gap-4">
-                    <img src={behance} alt="" />
-                    <a className="text-lg text-white font-normal" href={hero.social_links.behance}>
-                      Behance
-                    </a>
-                  </div>
+                  <a
+                    href={hero.social_links.behance}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+                  >
+                    <img src={behance} alt="Behance" className="w-5 h-5" />
+                    <span className="text-lg text-white font-normal">Behance</span>
+                  </a>
                 )}
               </div>
             </div>
