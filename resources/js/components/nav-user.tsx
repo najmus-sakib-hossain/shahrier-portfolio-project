@@ -4,6 +4,7 @@ import {
   ChevronsUpDown,
   CreditCard,
   LogOut,
+  Palette,
   Sparkles,
 } from "lucide-react"
 
@@ -78,12 +79,6 @@ export function NavUser({
               </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuGroup>
-              <DropdownMenuItem>
-                <Sparkles />
-                Upgrade to Pro
-              </DropdownMenuItem>
-            </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem>
@@ -91,12 +86,8 @@ export function NavUser({
                 Account
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <CreditCard />
-                Billing
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Bell />
-                Notifications
+                <Palette />
+                Theme
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
