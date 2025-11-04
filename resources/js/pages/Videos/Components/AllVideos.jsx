@@ -1,5 +1,4 @@
 import { useState } from "react";
-import playFill from "../../../assets/videos/play-fill.svg";
 
 const AllVideos = ({ videos = [] }) => {
   const [visibleVideos, setVisibleVideos] = useState(3);
@@ -65,7 +64,7 @@ const AllVideos = ({ videos = [] }) => {
                 />
                 <div className="flex items-center gap-2 absolute bottom-10 left-4">
                   <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
-                    <img src={playFill} alt="Play" className="w-8 h-8" />
+                    <img src="/assets/videos/play-fill.svg" alt="Play" className="w-8 h-8" />
                   </div>
                   <h3 className="text-xl font-semibold text-white hidden lg:block">
                     {video.title}

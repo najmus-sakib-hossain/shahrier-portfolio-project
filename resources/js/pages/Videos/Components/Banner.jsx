@@ -1,6 +1,4 @@
-import playFill from "../../../assets/videos/play-fill.svg";
-import vectorRight from "../../../assets/videos/vector_right.svg";
-import vectorleft from "../../../assets/videos/vector_left.svg";
+import { useState } from "react";
 
 const Banner = ({ videos = [] }) => {
   // Default videos if none provided
@@ -28,13 +26,13 @@ const Banner = ({ videos = [] }) => {
     <div className="bg-slate-100 py-18 relative">
       <div className="absolute top-0 right-0 hidden lg:block">
         <div>
-          <img src={vectorRight} alt="" />
+          <img src="/assets/videos/vector_right.svg" alt="" />
         </div>
       </div>
 
       <div className="absolute bottom-0 left-0 hidden lg:block">
         <div>
-          <img src={vectorleft} alt="" />
+          <img src="/assets/videos/vector_left.svg" alt="" />
         </div>
       </div>
       <div className="w-11/12 lg:w-9/12 mx-auto mt-24">
@@ -51,7 +49,7 @@ const Banner = ({ videos = [] }) => {
                 />
                 <div className="flex items-center gap-2 absolute bottom-10 left-4">
                   <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
-                    <img src={playFill} alt="Play" className="w-8 h-8" />
+                    <img src="/assets/videos/play-fill.svg" alt="Play" className="w-8 h-8" />
                   </div>
                   <h3 className="text-4xl font-semibold text-white hidden lg:block">
                     {displayVideos[0].title}
@@ -71,7 +69,7 @@ const Banner = ({ videos = [] }) => {
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
-                    <img src={playFill} alt="Play" className="w-8 h-8" />
+                    <img src="/assets/videos/play-fill.svg" alt="Play" className="w-8 h-8" />
                   </div>
                 </div>
               </div>

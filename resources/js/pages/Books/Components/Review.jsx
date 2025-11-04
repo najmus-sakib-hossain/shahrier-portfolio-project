@@ -1,5 +1,4 @@
 import React from "react";
-import colon from "../../../assets/books/colon.svg";
 
 const Review = ({ books = [] }) => {
   const book = books[0];
@@ -15,7 +14,7 @@ const Review = ({ books = [] }) => {
             {book?.review || "The Nightingale has easily found its way to one of my favorite books to recommend. Although some may feel daunted by the over 300 page book, it is worth every page. The characters are well written and relatable. Isabelle is definitely one of my all time favorite heroes."}
           </p>
           <div className="absolute -top-8 z-0 hidden lg:block">
-            <img src={colon} alt="" />
+            <img src="/assets/books/colon.svg" alt="" />
           </div>
         </div>
 
