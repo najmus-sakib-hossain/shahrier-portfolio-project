@@ -52,14 +52,7 @@ const All = () => {
             </div>
 
             <p className="text-slate-700">
-              Lorem ipsum dolor sit amet consectetur. Viverra interdum at
-              elementum adipiscing placerat dignissim sagittis. Morbi donec
-              etiam cursus nunc odio non eu eu. Ultricies nulla at neque tortor
-              aliquet sit. Sed urna convallis donec nullam tellus posuere amet.
-              Nisi ac nunc sit augue massa massa sollicitudin aliquam. Morbi
-              donec etiam cursus nunc odio non eu eu. Ultricies nulla at neque
-              tortor aliquet sit. Sed urna convallis donec nullam tellus posuere
-              amet. Nisi ac nunc sit augue massa massa sollicitudin aliquam.
+              The SWOT analysis framework has been instrumental in my strategic planning, helping me identify strengths, weaknesses, opportunities, and threats in various aspects of my life and career. By leveraging this tool, I've developed winning strategies that have led to successful outcomes in entrepreneurship, technology innovation, and personal growth. This approach has enabled me to make informed decisions, mitigate risks, and capitalize on emerging opportunities in the dynamic landscape of business and technology.
             </p>
           </div>
         </div>
@@ -96,14 +89,7 @@ const All = () => {
             </div>
 
             <p className="text-slate-700">
-              Lorem ipsum dolor sit amet consectetur. Viverra interdum at
-              elementum adipiscing placerat dignissim sagittis. Morbi donec
-              etiam cursus nunc odio non eu eu. Ultricies nulla at neque tortor
-              aliquet sit. Sed urna convallis donec nullam tellus posuere amet.
-              Nisi ac nunc sit augue massa massa sollicitudin aliquam. Morbi
-              donec etiam cursus nunc odio non eu eu. Ultricies nulla at neque
-              tortor aliquet sit. Sed urna convallis donec nullam tellus posuere
-              amet. Nisi ac nunc sit augue massa massa sollicitudin aliquam.
+              The SWOT analysis framework has been instrumental in my strategic planning, helping me identify strengths, weaknesses, opportunities, and threats in various aspects of my life and career. By leveraging this tool, I've developed winning strategies that have led to successful outcomes in entrepreneurship, technology innovation, and personal growth. This approach has enabled me to make informed decisions, mitigate risks, and capitalize on emerging opportunities in the dynamic landscape of business and technology.
             </p>
           </div>
 
@@ -168,14 +154,7 @@ const All = () => {
             </div>
 
             <p className="text-slate-700">
-              Lorem ipsum dolor sit amet consectetur. Viverra interdum at
-              elementum adipiscing placerat dignissim sagittis. Morbi donec
-              etiam cursus nunc odio non eu eu. Ultricies nulla at neque tortor
-              aliquet sit. Sed urna convallis donec nullam tellus posuere amet.
-              Nisi ac nunc sit augue massa massa sollicitudin aliquam. Morbi
-              donec etiam cursus nunc odio non eu eu. Ultricies nulla at neque
-              tortor aliquet sit. Sed urna convallis donec nullam tellus posuere
-              amet. Nisi ac nunc sit augue massa massa sollicitudin aliquam.
+              The SWOT analysis framework has been instrumental in my strategic planning, helping me identify strengths, weaknesses, opportunities, and threats in various aspects of my life and career. By leveraging this tool, I've developed winning strategies that have led to successful outcomes in entrepreneurship, technology innovation, and personal growth. This approach has enabled me to make informed decisions, mitigate risks, and capitalize on emerging opportunities in the dynamic landscape of business and technology.
             </p>
           </div>
         </div>

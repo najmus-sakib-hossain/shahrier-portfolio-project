@@ -13,9 +13,7 @@ const Activities = () => {
             Last Events Activities
           </h1>
           <p className="text-slate-900">
-            Lorem ipsum dolor sit amet consectetur. Malesuada orci molestie
-            blandit quam risus. Et aliquam sed diam dui sem morbi ornare etiam.
-            Vitae velit ipsum gravida etiam vel pretium nam aenean enim.
+            Explore the highlights from my recent events and activities, where I've engaged with communities, shared insights, and collaborated on innovative projects. These moments capture the essence of networking, learning, and growth in the entrepreneurial and tech space, showcasing the dynamic experiences that shape my journey.
           </p>
         </div>
 

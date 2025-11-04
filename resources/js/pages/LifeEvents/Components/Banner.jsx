@@ -2,7 +2,7 @@ import bannerImg from "../../../assets/life_events/life_events_banner.png";
 import frame from "../../../assets/life_events/pattern_bg.png";
 const Banner = () => {
   return (
-    <div className="bg-white w-full mx-auto p-2 lg:p-6 relative overflow-hidden">
+    <div className="bg-white w-full mx-auto p-2 lg:p-6 pt-0 lg:pt-0 relative overflow-hidden">
       <div className="absolute right-4 hidden lg:block w-[56
       0px]">
         <img src={frame} alt="" className="w-full" />

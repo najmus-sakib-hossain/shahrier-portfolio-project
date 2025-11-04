@@ -16,12 +16,7 @@ const Innovation = () => {
             Igniting Innovation: A Startup Journey
           </h1>
           <p className="text-slate-900">
-            Lorem ipsum dolor sit amet consectetur. Malesuada orci molestie
-            blandit quam risus. Et aliquam sed diam dui sem morbi ornare etiam.
-            Vitae velit ipsum gravida etiam vel pretium nam aenean enim. Lorem
-            ipsum dolor sit amet consectetur. Malesuada orci molestie blandit
-            quam risus. Et aliquam sed diam dui sem morbi ornare etiam. Vitae
-            velit ipsum gravida etiam vel pretium nam aenean enim.
+            Embarking on a journey of innovation, I've founded and nurtured several startups that push the boundaries of technology and creativity. From NexKraft's focus on next-generation technological advancements to Mechani's engineering solutions, Huistle's innovative platforms, and Mindshaper's transformative ideas, each venture represents a step towards transforming bold concepts into impactful realities. This entrepreneurial path has been about more than just building companies—it's about fostering a culture of innovation that drives progress and creates lasting value in the digital world.
           </p>
         </div>
 

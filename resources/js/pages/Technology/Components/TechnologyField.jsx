@@ -72,7 +72,7 @@ const TechnologyField = () => {
               Contribution to the field of technology
             </h1>
 
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p>Shahriar Khan has made significant contributions to the field of technology through innovative solutions and leadership in digital transformation.</p>
             <p>Shahriar Khan has pioneered innovative technology solutions through Nexkraft LTD, focusing on AI integration, cloud migration, and digital transformation.</p>
             <p>He has led research initiatives in emerging technologies and contributed to the development of user-centric digital platforms.</p>
             <p>His work in process optimization has helped businesses improve efficiency and reduce operational costs through technology adoption.</p>
