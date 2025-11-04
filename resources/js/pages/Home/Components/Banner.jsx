@@ -35,11 +35,6 @@ const Banner = () => {
           {/* Background Image Section */}
           <div className="lg:col-span-2 h-full">
             <div className="h-[500px] md:h-[600px] lg:h-[800px] relative">
-              <img
-                src="./home_banner.png"
-                alt="Home Banner"
-                className="w-full h-full object-cover"
-              />
               <div
                 className="absolute inset-0 w-full h-full flex items-end justify-start text-white"
                 style={{
@@ -120,7 +115,7 @@ const Banner = () => {
           </div>
 
           {/* Right Section */}
-          <div className="lg:col-span-1 h-full">
+          {/* <div className="lg:col-span-1 h-full">
             <div className="h-[500px] md:h-[600px] lg:h-[800px] flex flex-col justify-center">
               <div className="flex items-center gap-4 px-5 lg:px-20 mb-6 lg:mt-48">
                 <p className="text-3xl font-medium text-slate-900">
@@ -162,7 +157,13 @@ const Banner = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
+
+          <img
+            src="./home_banner.png"
+            alt="Home Banner"
+            className="w-full h-full object-cover"
+          />
         </div>
       )}
     </div>
