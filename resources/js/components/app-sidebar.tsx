@@ -42,7 +42,7 @@ const data = {
   teams: [
     {
       name: "Shahrier Portfolio",
-      logo: GalleryVerticalEnd,
+      logo: "/assets/about_me/about_me_banner.png",
       plan: "Admin",
     },
   ],

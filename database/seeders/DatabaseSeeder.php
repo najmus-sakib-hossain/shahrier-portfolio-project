@@ -15,10 +15,11 @@ class DatabaseSeeder extends Seeder
     {
         // Create default admin user
         User::firstOrCreate(
-            ['email' => 'test@example.com'],
+            ['email' => 'shahrier@gmail.com'],
             [
-                'name' => 'Test User',
-                'password' => 'password',
+                'name' => 'Shahrier',
+                'password' => 'shahrier@password',
+                'avatar' => '/assets/life_events/life_events_banner.png',
                 'email_verified_at' => now(),
             ]
         );
