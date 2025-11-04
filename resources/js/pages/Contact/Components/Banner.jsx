@@ -1,11 +1,8 @@
-import contactImg from "../../../assets/contact/contact_banner_bg.png";
-import coffeeMug from "../../../assets/contact/cofffee_icon.svg";
-
 const Banner = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${contactImg})`,
+        backgroundImage: `url(/assets/contact/contact_banner_bg.png)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: "800px",
@@ -23,7 +20,7 @@ const Banner = () => {
                 Let's talk over a cup of coffee!
               </h3>
               <div>
-                <img src={coffeeMug} alt="" />
+                <img src="/assets/contact/cofffee_icon.svg" alt="" />
               </div>
             </div>
 

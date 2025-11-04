@@ -13,15 +13,33 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
+        // Create default admin user
         User::firstOrCreate(
-            ['email' => 'test@example.com'],
+            ['email' => 'shahrier@gmail.com'],
             [
-                'name' => 'Test User',
-                'password' => 'password',
+                'name' => 'Shahrier',
+                'password' => 'shahrier@password',
+                'avatar' => '/assets/life_events/life_events_banner.png',
                 'email_verified_at' => now(),
             ]
         );
+
+        // Seed all content
+        $this->call([
+            IndexPageSeeder::class,
+            HeroSectionSeeder::class,
+            StatisticSeeder::class,
+            BlogPostSeeder::class,
+            BookSeeder::class,
+            EventSeeder::class,
+            VideoSeeder::class,
+            TechnologySeeder::class,
+            DonationSeeder::class,
+            LifeEventSeeder::class,
+            AboutSectionSeeder::class,
+            AwardSeeder::class,
+            CertificateSeeder::class,
+            EntrepreneurshipContentSeeder::class,
+        ]);
     }
 }

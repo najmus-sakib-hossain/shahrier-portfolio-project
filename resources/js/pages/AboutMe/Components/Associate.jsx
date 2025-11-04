@@ -1,7 +1,4 @@
 import React from "react";
-import associateImg from "../../../assets/about_me/associate.png";
-import eClub from "../../../assets/about_me/e-club.svg";
-import basis from "../../../assets/about_me/basis.svg";
 
 const Associate = () => {
   return (
@@ -9,7 +6,7 @@ const Associate = () => {
       <div
         className=" h-[700px] relative bg-cover bg-center"
         style={{
-          backgroundImage: `linear-gradient(to top, #020617aa, #02061700), url(${associateImg})`,
+          backgroundImage: `linear-gradient(to top, #020617aa, #02061700), url(/assets/about_me/associate.png)`,
           borderRadius: "20px",
         }}
       >
@@ -22,10 +19,10 @@ const Associate = () => {
           </p>
 
           <div className="flex items-center flex-wrap lg:flex-nowrap gap-4 mb-12">
-            <img src={eClub} alt="" />
-            <img src={basis} alt="" />
-            <img src={basis} alt="" />
-            <img src={basis} alt="" />
+            <img src="/assets/about_me/e-club.svg" alt="" />
+            <img src="/assets/about_me/basis.svg" alt="" />
+            <img src="/assets/about_me/basis.svg" alt="" />
+            <img src="/assets/about_me/basis.svg" alt="" />
           </div>
         </div>
       </div>

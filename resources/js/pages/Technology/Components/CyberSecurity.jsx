@@ -1,7 +1,6 @@
-import cyberSecurityImg from "../../../assets/technology/cyber_security_image.png";
-import frame from "../../../assets/technology/frame.svg";
+import React from "react";
 
-const CyberSecurity = () => {
+const CyberSecurity = ({ technologies = [] }) => {
   return (
     <div className="bg-[#2E5AFF] py-18">
       <div className="w-11/12 lg:w-9/12 mx-auto text-white">
@@ -22,9 +21,9 @@ const CyberSecurity = () => {
 
           <div>
             <div className="relative z-10">
-              <img src={cyberSecurityImg} alt="" />
+              <img src="/assets/technology/cyber_security_image.png" alt="" />
               <div className="absolute hidden lg:block -top-8 -right-8 -z-10">
-                <img src={frame} alt="" />
+                <img src="/assets/technology/frame.svg" alt="" />
               </div>
             </div>
           </div>

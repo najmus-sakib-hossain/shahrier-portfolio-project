@@ -1,9 +1,3 @@
-import img1 from "../../../assets/about_me/shahriar_khan4.png";
-import img2 from "../../../assets/about_me/shahriar_khan3.png";
-import img3 from "../../../assets/about_me/shahriar_khan2.png";
-import img4 from "../../../assets/about_me/shahriar_khan1.png";
-import bgPattern from "../../../assets/about_me/corporate_journey.png";
-
 const Impact = () => {
   const allImpact = [
     "Innovation and Product Development",
@@ -20,7 +14,7 @@ const Impact = () => {
     <div
       className="py-10 w-full mx-auto"
       style={{
-        backgroundImage: `url(${bgPattern})`,
+        backgroundImage: `url(/assets/about_me/corporate_journey.png)`,
 
         backgroundPosition: "center",
       }}
@@ -29,7 +23,7 @@ const Impact = () => {
         <div className="lg:col-span-1">
           <div className="overflow-hidden w-[460px] h-[332px]">
             <img
-              src={img1}
+              src="/assets/about_me/shahriar_khan4.png"
               alt=""
               className="transition-transform duration-500 ease-in-out hover:scale-105  w-full h-full object-cover"
             />
@@ -37,7 +31,7 @@ const Impact = () => {
 
           <div className="-translate-y-28 transition-transform duration-500 hover:rotate-6 w-[460px] h-[332px]">
             <img
-              src={img2}
+              src="/assets/about_me/shahriar_khan3.png"
               alt=""
               className="transition-transform duration-500 hover:scale-110 w-full h-full object-cover"
             />
@@ -56,7 +50,7 @@ const Impact = () => {
         <div className="lg:col-span-1 ml-20">
           <div className="overflow-hidden w-[460px] h-[332px]">
             <img
-              src={img3}
+              src="/assets/about_me/shahriar_khan2.png"
               alt=""
               className="transition-transform duration-500 ease-in-out hover:scale-105 w-full h-full object-cover"
             />
@@ -64,7 +58,7 @@ const Impact = () => {
 
           <div className="-translate-y-28 transition-transform duration-500 hover:-rotate-6 w-[460px] h-[332px]">
             <img
-              src={img4}
+              src="/assets/about_me/shahriar_khan1.png"
               alt=""
               className="transition-transform duration-500 hover:scale-110 w-full h-full object-cover"
             />

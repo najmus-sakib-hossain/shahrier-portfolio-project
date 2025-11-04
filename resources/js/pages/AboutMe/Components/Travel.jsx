@@ -1,8 +1,3 @@
-import worldMap from "../../../assets/about_me/world_map.png";
-import turkey from "../../../assets/about_me/turkey.svg";
-import canada from "../../../assets/about_me/canada.svg";
-import china from "../../../assets/about_me/china.svg";
-import usa from "../../../assets/about_me/usa.svg";
 const Travel = () => {
   return (
     <div className="pt-16 bg-[#2E5AFF]">
@@ -15,7 +10,7 @@ const Travel = () => {
 
       <div className="relative">
         <div className="w-full lg:-mt-56">
-          <img className="w-full h-full object-cover" src={worldMap} alt="" />
+          <img className="w-full h-full object-cover" src="/assets/about_me/world_map.png" alt="" />
         </div>
 
         <div className="absolute right-32 bottom-12 hidden lg:block">
@@ -24,7 +19,7 @@ const Travel = () => {
           </h1>
           <div className="flex items-center gap-2 mb-3">
             <div>
-              <img src={turkey} alt="" />
+              <img src="/assets/about_me/turkey.svg" alt="" />
             </div>
 
             <h2 className="text-white font-semibold text-lg">Turkey</h2>
@@ -32,7 +27,7 @@ const Travel = () => {
 
           <div className="flex items-center gap-2 mb-3">
             <div>
-              <img src={canada} alt="" />
+              <img src="/assets/about_me/canada.svg" alt="" />
             </div>
 
             <h2 className="text-white font-semibold text-lg">Canada</h2>
@@ -40,7 +35,7 @@ const Travel = () => {
 
           <div className="flex items-center gap-2 mb-3">
             <div>
-              <img src={china} alt="" />
+              <img src="/assets/about_me/china.svg" alt="" />
             </div>
 
             <h2 className="text-white font-semibold text-lg">China</h2>
@@ -48,7 +43,7 @@ const Travel = () => {
 
           <div className="flex items-center gap-2 mb-3">
             <div>
-              <img src={usa} alt="" />
+              <img src="/assets/about_me/usa.svg" alt="" />
             </div>
 
             <h2 className="text-white font-semibold text-lg">USA</h2>

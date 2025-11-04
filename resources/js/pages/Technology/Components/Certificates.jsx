@@ -2,16 +2,17 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import certificate_1 from "../../../assets/technology/certificate_1.png";
-import certificate_2 from "../../../assets/technology/certificate_2.png";
-import certificate_3 from "../../../assets/technology/certificate_3.png";
-const Certificates = () => {
-  const images = [
-    { img: certificate_1 },
-    { img: certificate_2 },
-    { img: certificate_3 },
-    { img: certificate_1 },
+
+const Certificates = ({ certificates = [] }) => {
+  // Default certificates if none provided
+  const defaultCertificates = [
+    { certificate_image: "/assets/technology/certificate_1.png" },
+    { certificate_image: "/assets/technology/certificate_2.png" },
+    { certificate_image: "/assets/technology/certificate_3.png" },
+    { certificate_image: "/assets/technology/certificate_1.png" },
   ];
+
+  const displayCertificates = certificates.length > 0 ? certificates : defaultCertificates;
 
   const NextArrow = ({ onClick }) => (
     <div
@@ -35,12 +36,12 @@ const Certificates = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: Math.min(3, displayCertificates.length),
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 1024, settings: { slidesToShow: Math.min(2, displayCertificates.length) } },
       { breakpoint: 768, settings: { slidesToShow: 1 } },
     ],
   };
@@ -54,20 +55,22 @@ const Certificates = () => {
         Shahriar Khan holds various professional certifications in technology, cybersecurity, and business management. These credentials validate his expertise and commitment to staying current with industry standards and best practices.
       </p>
 
-      <Slider {...settings}>
-        {images.map((image, index) => (
-          <div key={index} className="px-2">
-            <div className="w-full h-[400px] relative rounded-2xl overflow-hidden">
-              {/* Image */}
-              <img
-                className="w-full h-full object-contain rounded-2xl"
-                src={image.img}
-                alt=""
-              />
+      {displayCertificates.length > 0 && (
+        <Slider {...settings}>
+          {displayCertificates.map((cert, index) => (
+            <div key={cert.id || index} className="px-2">
+              <div className="w-full h-[400px] relative rounded-2xl overflow-hidden">
+                {/* Image */}
+                <img
+                  className="w-full h-full object-contain rounded-2xl"
+                  src={cert.certificate_image || "/assets/technology/certificate_1.png"}
+                  alt={cert.title || "Certificate"}
+                />
+              </div>
             </div>
-          </div>
-        ))}
-      </Slider>
+          ))}
+        </Slider>
+      )}
     </div>
   );
 };

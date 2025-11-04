@@ -1,11 +1,9 @@
-import bannerImg from "../../../assets/life_events/life_events_banner.png";
-import frame from "../../../assets/life_events/pattern_bg.png";
 const Banner = () => {
   return (
     <div className="bg-background w-full mx-auto p-2 lg:p-6 pt-0 lg:pt-0 relative overflow-hidden">
       <div className="absolute right-4 hidden lg:block w-[56
       0px]">
-        <img src={frame} alt="" className="w-full" />
+        <img src="/assets/life_events/pattern_bg.png" alt="" className="w-full" />
       </div>
 
       <div className="bg-[#0035F9] rounded-2xl">
@@ -27,7 +25,7 @@ const Banner = () => {
 
           <div className="lg:w-1/2 relative">
             <div>
-              <img src={bannerImg} alt="" />
+              <img src="/assets/life_events/life_events_banner.png" alt="" />
             </div>
           </div>
         </div>

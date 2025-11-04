@@ -2,7 +2,6 @@ import { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import img from "../../../assets/videos/video_thumbline.png";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 
 const NextArrow = ({ onClick }) => (
@@ -23,31 +22,34 @@ const PrevArrow = ({ onClick }) => (
   </div>
 );
 
-const ShortVideos = () => {
+const ShortVideos = ({ videos = [] }) => {
   const [activeVideo, setActiveVideo] = useState(null);
 
-  const videos = [
+  // Default videos if none provided
+  const defaultVideos = [
     {
       id: 1,
-      thumbnail: img,
-      videoSrc: "https://www.youtube.com/embed/gzzRFU8CcG8?si=N8P-kmSGfbyjp6jB",
+      thumbnail: "/assets/videos/video_thumbline.png",
+      video_url: "https://www.youtube.com/embed/gzzRFU8CcG8?si=N8P-kmSGfbyjp6jB",
     },
     {
       id: 2,
-      thumbnail: img,
-      videoSrc: "https://www.youtube.com/embed/gzzRFU8CcG8?si=N8P-kmSGfbyjp6jB",
+      thumbnail: "/assets/videos/video_thumbline.png",
+      video_url: "https://www.youtube.com/embed/gzzRFU8CcG8?si=N8P-kmSGfbyjp6jB",
     },
     {
       id: 3,
-      thumbnail: img,
-      videoSrc: "https://www.youtube.com/embed/gzzRFU8CcG8?si=N8P-kmSGfbyjp6jB",
+      thumbnail: "/assets/videos/video_thumbline.png",
+      video_url: "https://www.youtube.com/embed/gzzRFU8CcG8?si=N8P-kmSGfbyjp6jB",
     },
     {
       id: 4,
-      thumbnail: img,
-      videoSrc: "https://www.youtube.com/embed/gzzRFU8CcG8?si=N8P-kmSGfbyjp6jB",
+      thumbnail: "/assets/videos/video_thumbline.png",
+      video_url: "https://www.youtube.com/embed/gzzRFU8CcG8?si=N8P-kmSGfbyjp6jB",
     },
   ];
+
+  const displayVideos = videos.length > 0 ? videos : defaultVideos;
 
   const handlePlayVideo = (id) => {
     setActiveVideo(id);
@@ -57,7 +59,7 @@ const ShortVideos = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: Math.min(4, displayVideos.length),
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
@@ -65,7 +67,7 @@ const ShortVideos = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: Math.min(2, displayVideos.length),
         },
       },
       {
@@ -84,46 +86,48 @@ const ShortVideos = () => {
           Short Videos
         </h1>
 
-        <Slider {...settings}>
-          {videos.map((video) => (
-            <div key={video.id} className="relative w-64 h-[500px] p-4">
-              {activeVideo === video.id ? (
-                <div className="relative w-full h-[500px] pb-[56.25%]">
-                  <iframe
-                    className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
-                    src={video.videoSrc}
-                    title={`YouTube video player for video ${video.id}`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              ) : (
-                <>
-                  <img
-                    src={video.thumbnail}
-                    alt={`Thumbnail for video ${video.id}`}
-                    className="w-full h-full object-cover rounded-xl shadow-lg"
-                  />
+        {displayVideos.length > 0 && (
+          <Slider {...settings}>
+            {displayVideos.map((video) => (
+              <div key={video.id} className="relative w-64 h-[500px] p-4">
+                {activeVideo === video.id ? (
+                  <div className="relative w-full h-[500px] pb-[56.25%]">
+                    <iframe
+                      className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
+                      src={video.video_url}
+                      title={video.title || `YouTube video player for video ${video.id}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                ) : (
+                  <>
+                    <img
+                      src={video.thumbnail || "/assets/videos/video_thumbline.png"}
+                      alt={video.title || `Thumbnail for video ${video.id}`}
+                      className="w-full h-full object-cover rounded-xl shadow-lg"
+                    />
 
-                  <button
-                    onClick={() => handlePlayVideo(video.id)}
-                    className="w-16 h-16 bg-[#2E5AFF] shadow-lg absolute top-[40%] left-[35%] flex items-center justify-center text-secondary rounded-full"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-8 h-8 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
+                    <button
+                      onClick={() => handlePlayVideo(video.id)}
+                      className="w-16 h-16 bg-[#2E5AFF] shadow-lg absolute top-[40%] left-[35%] flex items-center justify-center text-secondary rounded-full"
                     >
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </button>
-                </>
-              )}
-            </div>
-          ))}
-        </Slider>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-8 h-8 text-white"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </button>
+                  </>
+                )}
+              </div>
+            ))}
+          </Slider>
+        )}
       </div>
     </div>
   );

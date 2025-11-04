@@ -1,5 +1,4 @@
 import { useState } from "react";
-import bannerMask from "../../../assets/about_me/banner_mask.png";
 
 const BannerExp = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +12,7 @@ const BannerExp = () => {
             className="hidden lg:block cursor-pointer"
             onClick={() => setIsOpen(true)}
             style={{
-              backgroundImage: `url(${bannerMask})`,
+              backgroundImage: `url(/assets/about_me/banner_mask.png)`,
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
               height: "800px",

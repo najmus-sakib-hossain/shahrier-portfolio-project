@@ -2,10 +2,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Book, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
-import book from "../../../assets/books/book.png";
-import frame from "../../../assets/books/pattern_bg.png";
-
-import buy_now from "../../../assets/books/TextFlex_ Buy Now _ Buy Now _ Buy Now _.png";
 
 // Custom Left Arrow
 const PrevArrow = (props) => {
@@ -48,7 +44,7 @@ const Banner = () => {
   return (
     <div className="w-full mx-auto py-24 bg-slate-100 relative overflow-hidden">
       <div className="absolute right-4 hidden lg:block w-[700px]">
-        <img src={frame} alt="" className="w-full" />
+        <img src="/assets/books/pattern_bg.png" alt="" className="w-full" />
       </div>
       <div className="w-11/12 lg:w-9/12 mx-auto">
         <Slider {...settings}>
@@ -58,7 +54,7 @@ const Banner = () => {
               {/* Book Image Section */}
               <div className="flex-1">
                 <div>
-                  <img src={book} alt="Book" />
+                  <img src="/assets/books/book.png" alt="Book" />
                 </div>
                 <p className="flex items-center justify-center gap-4 text-lg px-4 py-2 rounded-xl border border-[#2E5AFF] text-[#2E5AFF] font-semibold mt-4 lg:w-1/3 mx-auto text-center">
                   Read a Little <Book />
@@ -95,7 +91,7 @@ const Banner = () => {
                           whiteSpace: "nowrap",
                         }}
                       >
-                        <img src={buy_now} alt="" />
+                        <img src="/assets/books/TextFlex_ Buy Now _ Buy Now _ Buy Now _.png" alt="" />
                       </span>
                     ))}
                   </div>
@@ -109,12 +105,12 @@ const Banner = () => {
           </div>
 
           {/* Additional Slides (if needed) */}
-          <div>
+          <div className="h-full w-full flex items-cener justify-center mt-56">
             <h2 className="text-3xl font-bold text-center">
-              Another Amazing Slide!
+              Thanks for coming here!
             </h2>
             <p className="text-center mt-4">
-              Customize the slider with more awesome content!
+              More contents coming soon...
             </p>
           </div>
         </Slider>

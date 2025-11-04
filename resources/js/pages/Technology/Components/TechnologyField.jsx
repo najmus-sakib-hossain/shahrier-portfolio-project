@@ -1,5 +1,3 @@
-import technology from "../../../assets/technology/contribute_field.png";
-import frame from "../../../assets/technology/frame.svg";
 import { AndroidIcon } from "../../../svgs/androidIcon";
 import { CursorLight } from "../../../svgs/cursorLight";
 import { GithubLight } from "../../../svgs/githubLight";
@@ -84,9 +82,9 @@ const TechnologyField = () => {
 
           <div>
             <div className="relative z-10">
-              <img src={technology} alt="" />
+              <img src="/assets/technology/contribute_field.png" alt="" />
               <div className="absolute hidden lg:block -bottom-4 -left-10 -z-10">
-                <img src={frame} alt="" />
+                <img src="/assets/technology/frame.svg" alt="" />
               </div>
             </div>
           </div>

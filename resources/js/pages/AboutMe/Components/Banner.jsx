@@ -1,6 +1,4 @@
 import { useState } from "react";
-import bannerImg from "../../../assets/about_me/about_me_banner.png";
-import videoImg from "../../../assets/about_me/video_img.png";
 
 const Banner = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +11,7 @@ const Banner = () => {
             <div className="mb-6">
               <img
                 className="cursor-pointer"
-                src={videoImg}
+                src="/assets/about_me/video_img.png"
                 onClick={() => setIsOpen(true)}
                 alt=""
               />
@@ -49,7 +47,7 @@ const Banner = () => {
 
           <div>
             <div>
-              <img src={bannerImg} alt="" />
+              <img src="/assets/about_me/about_me_banner.png" alt="" />
             </div>
           </div>
         </div>

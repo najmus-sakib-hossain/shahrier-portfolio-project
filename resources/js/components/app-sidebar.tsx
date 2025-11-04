@@ -2,22 +2,27 @@
 
 import * as React from "react"
 import {
-  AudioWaveform,
+  Home,
   BookOpen,
-  Bot,
-  Command,
-  Frame,
+  Newspaper,
+  Calendar,
+  Video,
+  Cpu,
+  Heart,
+  Sparkles,
+  Award,
+  User,
+  Briefcase,
+  BarChart3,
+  Layout,
   GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
 import { NavUser } from "@/components/nav-user"
 import { TeamSwitcher } from "@/components/team-switcher"
+import { ScrollArea } from "@/components/ui/scroll-area"
 import {
   Sidebar,
   SidebarContent,
@@ -25,6 +30,7 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
+import { usePage } from "@inertiajs/react"
 
 // This is sample data.
 const data = {
@@ -35,143 +41,214 @@ const data = {
   },
   teams: [
     {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
+      name: "Shahrier Portfolio",
+      logo: "/assets/about_me/about_me_banner.png",
+      plan: "Admin",
     },
   ],
   navMain: [
     {
-      title: "Playground",
+      title: "Content Management",
       url: "#",
-      icon: SquareTerminal,
+      icon: Layout,
       isActive: true,
       items: [
         {
-          title: "Shadcn dashboard",
-          url: "/shadcn-dashboard",
+          title: "Landing Page",
+          url: "/admin/index-page",
         },
         {
-          title: "History",
-          url: "#",
+          title: "Hero Sections",
+          url: "/admin/hero-sections",
         },
         {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
+          title: "Statistics",
+          url: "/admin/statistics",
         },
       ],
     },
     {
-      title: "Models",
+      title: "Blog & Articles",
       url: "#",
-      icon: Bot,
+      icon: Newspaper,
       items: [
         {
-          title: "Genesis",
-          url: "#",
+          title: "All Blog Posts",
+          url: "/admin/blogs",
         },
         {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
+          title: "Create New Post",
+          url: "/admin/blogs/create",
         },
       ],
     },
     {
-      title: "Documentation",
+      title: "Books",
       url: "#",
       icon: BookOpen,
       items: [
         {
-          title: "Introduction",
-          url: "#",
+          title: "All Books",
+          url: "/admin/books",
         },
         {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
+          title: "Add New Book",
+          url: "/admin/books/create",
         },
       ],
     },
     {
-      title: "Settings",
+      title: "Events",
       url: "#",
-      icon: Settings2,
+      icon: Calendar,
       items: [
         {
-          title: "General",
-          url: "#",
+          title: "All Events",
+          url: "/admin/events",
         },
         {
-          title: "Team",
-          url: "#",
+          title: "Create Event",
+          url: "/admin/events/create",
+        },
+      ],
+    },
+    {
+      title: "Videos",
+      url: "#",
+      icon: Video,
+      items: [
+        {
+          title: "All Videos",
+          url: "/admin/videos",
         },
         {
-          title: "Billing",
-          url: "#",
+          title: "Add Video",
+          url: "/admin/videos/create",
+        },
+      ],
+    },
+    {
+      title: "Technology",
+      url: "#",
+      icon: Cpu,
+      items: [
+        {
+          title: "All Technologies",
+          url: "/admin/technologies",
         },
         {
-          title: "Limits",
-          url: "#",
+          title: "Add Technology",
+          url: "/admin/technologies/create",
+        },
+      ],
+    },
+    {
+      title: "Donations",
+      url: "#",
+      icon: Heart,
+      items: [
+        {
+          title: "All Donations",
+          url: "/admin/donations",
+        },
+        {
+          title: "Create Donation",
+          url: "/admin/donations/create",
+        },
+      ],
+    },
+    {
+      title: "Life Events",
+      url: "#",
+      icon: Sparkles,
+      items: [
+        {
+          title: "All Life Events",
+          url: "/admin/life-events",
+        },
+        {
+          title: "Add Life Event",
+          url: "/admin/life-events/create",
+        },
+      ],
+    },
+    {
+      title: "About Me",
+      url: "#",
+      icon: User,
+      items: [
+        {
+          title: "About Sections",
+          url: "/admin/about-sections",
+        },
+        {
+          title: "Awards",
+          url: "/admin/awards",
+        },
+        {
+          title: "Certificates",
+          url: "/admin/certificates",
+        },
+      ],
+    },
+    {
+      title: "Entrepreneurship",
+      url: "#",
+      icon: Briefcase,
+      items: [
+        {
+          title: "All Content",
+          url: "/admin/entrepreneurship-content",
+        },
+        {
+          title: "Add Content",
+          url: "/admin/entrepreneurship-content/create",
         },
       ],
     },
   ],
   projects: [
     {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
+      name: "Frontend Pages",
+      url: "/",
+      icon: Home,
     },
     {
-      name: "Sales & Marketing",
+      name: "Analytics",
       url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
+      icon: BarChart3,
     },
   ],
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  // Get shared props from Inertia
+  const page = usePage()
+  const auth = (page.props as any).auth
+  const userTeams = (page.props as any).userTeams || []
+
+  const sidebarUser = {
+    name: auth?.user?.name || "Guest",
+    email: auth?.user?.email || "",
+    avatar: auth?.user?.avatar || null,
+  }
+
+  // Always show at least the default team
+  const teamsToShow = userTeams.length > 0 ? userTeams : data.teams
+
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+        <TeamSwitcher teams={teamsToShow} />
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+        <ScrollArea className="flex-1">
+          <NavMain items={data.navMain} />
+          {/* <NavProjects projects={data.projects} /> */}
+        </ScrollArea>
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser user={sidebarUser} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>

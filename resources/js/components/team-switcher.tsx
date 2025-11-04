@@ -20,20 +20,33 @@ import {
 } from "@/components/ui/sidebar"
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
 
+interface Team {
+  id: number
+  name: string
+  slug: string
+  logo: string | null
+  plan: string
+}
+
 export function TeamSwitcher({
   teams,
 }: {
-  teams: {
-    name: string
-    logo: React.ElementType
-    plan: string
-  }[]
+  teams: Team[]
 }) {
   const { isMobile } = useSidebar()
   const [activeTeam, setActiveTeam] = React.useState(teams[0])
 
-  if (!activeTeam) {
+  if (!activeTeam || teams.length === 0) {
     return null
+  }
+
+  const getInitials = (name: string) => {
+    return name
+      .split(' ')
+      .map(n => n[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 2)
   }
 
   return (
@@ -45,13 +58,10 @@ export function TeamSwitcher({
               size="lg"
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
             >
-              <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-                {/* <activeTeam.logo className="size-4" /> */}
-                <Avatar className="h-8 w-8 rounded-lg">
-                  <AvatarImage src="https://github.com/manfromexistence.png" alt="EssenceFromExistence" />
-                  <AvatarFallback className="rounded-lg">CN</AvatarFallback>
-                </Avatar>
-              </div>
+              <Avatar className="h-8 w-8 rounded-lg">
+                <AvatarImage src={activeTeam.logo || undefined} alt={activeTeam.name} />
+                <AvatarFallback className="rounded-lg">{getInitials(activeTeam.name)}</AvatarFallback>
+              </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-medium">{activeTeam.name}</span>
                 <span className="truncate text-xs">{activeTeam.plan}</span>
@@ -70,14 +80,18 @@ export function TeamSwitcher({
             </DropdownMenuLabel>
             {teams.map((team, index) => (
               <DropdownMenuItem
-                key={team.name}
+                key={team.id}
                 onClick={() => setActiveTeam(team)}
                 className="gap-2 p-2"
               >
-                <div className="flex size-6 items-center justify-center rounded-md border">
-                  <team.logo className="size-3.5 shrink-0" />
+                <Avatar className="h-6 w-6 rounded-md">
+                  <AvatarImage src={team.logo || undefined} alt={team.name} />
+                  <AvatarFallback className="rounded-md text-xs">{getInitials(team.name)}</AvatarFallback>
+                </Avatar>
+                <div className="flex flex-col">
+                  <span className="text-sm">{team.name}</span>
+                  <span className="text-xs text-muted-foreground">{team.plan}</span>
                 </div>
-                {team.name}
                 <DropdownMenuShortcut>⌘{index + 1}</DropdownMenuShortcut>
               </DropdownMenuItem>
             ))}

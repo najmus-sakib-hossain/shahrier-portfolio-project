@@ -1,46 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-import img1 from "../../../assets/entepreneourship/slider_1.jpeg";
-import img2 from "../../../assets/entepreneourship/slider_2.jpeg";
-import img3 from "../../../assets/entepreneourship/slider_3.jpeg";
-import img4 from "../../../assets/entepreneourship/slider_4.jpeg";
-import img5 from "../../../assets/entepreneourship/slider_5.jpeg";
 import { ChevronLeft, ChevronRight, Calendar, MapPin } from "lucide-react";
-
-const images = [
-  {
-    img: img1,
-    title: "Tech Innovations Conference 2024",
-    date: "June 10, 2024",
-    location: "San Francisco, CA",
-  },
-  {
-    img: img2,
-    title: "Tech Innovations Conference 2024",
-    date: "June 10, 2024",
-    location: "San Francisco, CA",
-  },
-  {
-    img: img3,
-    title: "Tech Innovations Conference 2024",
-    date: "June 10, 2024",
-    location: "San Francisco, CA",
-  },
-  {
-    img: img4,
-    title: "Tech Innovations Conference 2024",
-    date: "June 10, 2024",
-    location: "San Francisco, CA",
-  },
-  {
-    img: img5,
-    title: "Tech Innovations Conference 2024",
-    date: "June 10, 2024",
-    location: "San Francisco, CA",
-  },
-];
 
 const NextArrow = ({ onClick }) => (
   <div
@@ -60,75 +21,129 @@ const PrevArrow = ({ onClick }) => (
   </div>
 );
 
-const AllEvents = () => {
+const AllEvents = ({ pastEvents = [], upcomingEvents = [] }) => {
+  // Combine all events
+  const allEvents = [...upcomingEvents, ...pastEvents];
+  
+  // Default fallback events
+  const defaultEvents = [
+    {
+      image: "/assets/entepreneourship/slider_1.jpeg",
+      title: "Tech Innovations Conference 2024",
+      event_date: "2024-06-10",
+      location: "San Francisco, CA",
+    },
+    {
+      image: "/assets/entepreneourship/slider_2.jpeg",
+      title: "Tech Innovations Conference 2024",
+      event_date: "2024-06-10",
+      location: "San Francisco, CA",
+    },
+    {
+      image: "/assets/entepreneourship/slider_3.jpeg",
+      title: "Tech Innovations Conference 2024",
+      event_date: "2024-06-10",
+      location: "San Francisco, CA",
+    },
+    {
+      image: "/assets/entepreneourship/slider_4.jpeg",
+      title: "Tech Innovations Conference 2024",
+      event_date: "2024-06-10",
+      location: "San Francisco, CA",
+    },
+    {
+      image: "/assets/entepreneourship/slider_5.jpeg",
+      title: "Tech Innovations Conference 2024",
+      event_date: "2024-06-10",
+      location: "San Francisco, CA",
+    },
+  ];
+
+  const displayEvents = allEvents.length > 0 ? allEvents : defaultEvents;
+
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: Math.min(4, displayEvents.length),
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 1024, settings: { slidesToShow: Math.min(2, displayEvents.length) } },
       { breakpoint: 768, settings: { slidesToShow: 1 } },
     ],
   };
+
+  // Get unique years from events
+  const years = [...new Set(allEvents.map(event => 
+    new Date(event.event_date).getFullYear()
+  ))].sort((a, b) => b - a);
 
   return (
     <div className="bg-[#2E5AFF] py-18">
       <div className="w-11/12 lg:w-9/12 mx-auto">
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-5xl text-white font-semibold">Events</h1>
-          {/* <button className="bg-white text-slate-900 font-semibold px-4 py-2 border-none rounded-md transition duration-300 ease-in-out hover:bg-slate-900 hover:text-white active:scale-95 focus:ring-2 focus:ring-slate-500">
-            All Events
-          </button> */}
 
           <select className="block max-w-sm bg-white text-slate-900 px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-            <option selected>Years</option>
-            <option>2024</option>
-            <option>2023</option>
-            <option>2022</option>
-            <option>2021</option>
+            <option selected>All Years</option>
+            {years.map(year => (
+              <option key={year}>{year}</option>
+            ))}
+            {years.length === 0 && (
+              <>
+                <option>2024</option>
+                <option>2023</option>
+                <option>2022</option>
+                <option>2021</option>
+              </>
+            )}
           </select>
         </div>
 
-        <Slider {...settings}>
-          {images.map((image, index) => (
-            <div key={index} className="px-2">
-              <div className="w-full h-[500px] relative rounded-2xl overflow-hidden">
-                {/* Image */}
-                <img
-                  className="w-full h-full object-cover rounded-2xl"
-                  src={image.img}
-                  alt=""
-                />
+        {displayEvents.length > 0 && (
+          <Slider {...settings}>
+            {displayEvents.map((event, index) => (
+              <div key={event.id || index} className="px-2">
+                <div className="w-full h-[500px] relative rounded-2xl overflow-hidden">
+                  {/* Image */}
+                  <img
+                    className="w-full h-full object-cover rounded-2xl"
+                    src={event.image || "/assets/events/default.png"}
+                    alt={event.title}
+                  />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
 
-                {/* Text Overlay */}
-                <div className="absolute inset-0 flex flex-col items-start justify-end text-white p-4">
-                  <h1 className="text-3xl font-semibold mb-6">{image.title}</h1>
-                  <div className="flex items-center gap-2 mb-2">
-                    <p className="text-slate-300">
-                      {" "}
-                      <Calendar size={24} />
-                    </p>
-                    <p className="text-slate-300">{image.date}</p>
-                  </div>
+                  {/* Text Overlay */}
+                  <div className="absolute inset-0 flex flex-col items-start justify-end text-white p-4">
+                    <h1 className="text-3xl font-semibold mb-6">{event.title}</h1>
+                    <div className="flex items-center gap-2 mb-2">
+                      <p className="text-slate-300">
+                        <Calendar size={24} />
+                      </p>
+                      <p className="text-slate-300">
+                        {event.event_date ? new Date(event.event_date).toLocaleDateString('en-US', { 
+                          year: 'numeric', 
+                          month: 'long', 
+                          day: 'numeric' 
+                        }) : 'Date TBA'}
+                      </p>
+                    </div>
 
-                  <div className="flex items-center gap-2 mb-2">
-                    <p className="text-slate-300">
-                      {" "}
-                      <MapPin size={24} />
-                    </p>
-                    <p className="text-slate-300">{image.location}</p>
+                    <div className="flex items-center gap-2 mb-2">
+                      <p className="text-slate-300">
+                        <MapPin size={24} />
+                      </p>
+                      <p className="text-slate-300">{event.location || 'Location TBA'}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        )}
       </div>
     </div>
   );

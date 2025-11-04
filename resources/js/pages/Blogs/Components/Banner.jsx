@@ -1,20 +1,14 @@
-import img1 from "../../../assets/blogs/img1.png";
-import img2 from "../../../assets/blogs/img2.png";
-import img3 from "../../../assets/blogs/img3.png";
-import img4 from "../../../assets/blogs/img4.png";
-import img5 from "../../../assets/blogs/img5.png";
-import vector_right from "../../../assets/blogs/vector_right.svg";
-import vector_left from "../../../assets/blogs/vector_left.svg";
+import { useState } from "react";
 
 const Banner = () => {
   return (
     <div className="bg-slate-100 pt-48 pb-16 relative">
       <div className="absolute top-0 right-0 hidden lg:block">
-        <img src={vector_right} alt="" />
+        <img src="/assets/blogs/vector_right.svg" alt="" />
       </div>
 
       <div className="absolute bottom-0 left-0 hidden lg:block">
-        <img src={vector_left} alt="" />
+        <img src="/assets/blogs/vector_left.svg" alt="" />
       </div>
 
       <h1 className="text-slate-950 text-5xl font-semibold text-center mb-8">
@@ -26,7 +20,7 @@ const Banner = () => {
           <div className="lg:col-span-2 lg:row-span-2">
             <div>
               <div>
-                <img className="rounded-t-2xl" src={img1} alt="" />
+                <img className="rounded-t-2xl" src="/assets/blogs/img1.png" alt="" />
               </div>
 
               <div className="p-4 lg:p-8 ">
@@ -46,7 +40,7 @@ const Banner = () => {
           <div className="lg:col-span-1 lg:row-span-1">
             <div>
               <div className="w-full">
-                <img className="rounded-t-2xl w-full" src={img2} alt="" />
+                <img className="rounded-t-2xl w-full" src="/assets/blogs/img2.png" alt="" />
               </div>
 
               <div className="p-4">
@@ -65,7 +59,7 @@ const Banner = () => {
           <div className="lg:col-span-1 lg:row-span-1">
             <div>
               <div className="w-full">
-                <img className="rounded-t-2xl w-full" src={img3} alt="" />
+                <img className="rounded-t-2xl w-full" src="/assets/blogs/img3.png" alt="" />
               </div>
 
               <div className="p-4 ">
@@ -83,7 +77,7 @@ const Banner = () => {
           <div className="lg:col-span-1 lg:row-span-1">
             <div>
               <div className="w-full">
-                <img className="rounded-t-2xl w-full" src={img4} alt="" />
+                <img className="rounded-t-2xl w-full" src="/assets/blogs/img4.png" alt="" />
               </div>
 
               <div className="p-4 ">
@@ -102,7 +96,7 @@ const Banner = () => {
           <div className="lg:col-span-1 lg:row-span-1">
             <div>
               <div className="w-full">
-                <img className="rounded-t-2xl w-full" src={img5} alt="" />
+                <img className="rounded-t-2xl w-full" src="/assets/blogs/img5.png" alt="" />
               </div>
 
               <div className="p-4 ">
