@@ -11,6 +11,10 @@ use Laravel\Fortify\Features;
 // })->name('home');
 
 Route::get('/', function () {
+    return Inertia::render('Home/Page/Index');
+})->name('index');
+
+Route::get('/home', function () {
     return Inertia::render('Home/Page/Home');
 })->name('home');
 
