@@ -34,9 +34,14 @@ const Banner = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 h-full">
           {/* Background Image Section */}
           <div className="lg:col-span-2 h-full">
-            <div className="h-[500px] md:h-[600px] lg:h-[800px] bg-[url('/assets/home_banner.png')] bg-cover bg-center bg-no-repeat">
+            <div className="h-[500px] md:h-[600px] lg:h-[800px] relative">
+              <img
+                src="./home_banner.png"
+                alt="Home Banner"
+                className="w-full h-full object-cover"
+              />
               <div
-                className="w-full h-full flex items-end justify-start text-white"
+                className="absolute inset-0 w-full h-full flex items-end justify-start text-white"
                 style={{
                   background:
                     "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 41.23%, #000 99.94%)",
