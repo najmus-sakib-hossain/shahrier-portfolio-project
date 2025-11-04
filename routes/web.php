@@ -60,7 +60,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Profile Routes
     Route::get('/profile', [\App\Http\Controllers\dashboard\ProfileController::class, 'index'])->name('profile');
-    Route::post('/profile/update', [\App\Http\Controllers\dashboard\ProfileController::class, 'update'])->name('profile.update');
+    Route::post('/profile/update', [\App\Http\Controllers\dashboard\ProfileController::class, 'update'])->name('dashboard.profile.update');
     Route::post('/profile/update-theme', [\App\Http\Controllers\dashboard\ProfileController::class, 'updateTheme'])->name('profile.update-theme');
 
     // Admin Resource Routes
