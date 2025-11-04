@@ -2,7 +2,7 @@ import img1 from "../../../assets/technology/technology_banner.png";
 
 const Banner = () => {
   return (
-    <div className="bg-white p-2 lg:p-6">
+    <div className="bg-background w-full mx-auto p-2 lg:p-6 pt-0 lg:pt-0 relative overflow-hidden">
       <div
         style={{
           backgroundImage: `url(${img1})`,

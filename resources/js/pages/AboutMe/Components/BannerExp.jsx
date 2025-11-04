@@ -5,7 +5,7 @@ const BannerExp = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="bg-white w-full mx-auto p-2 lg:p-6">
+    <div className="bg-background w-full mx-auto p-2 lg:p-6 pt-0 lg:pt-0 relative overflow-hidden">
       <div className="bg-[#0035F9] rounded-2xl relative">
         <div className="px-5 pt-24 lg:ml-[10%]">
           {/* Banner Image */}

@@ -2,7 +2,7 @@ import img1 from "../../../assets/entepreneourship/shahriar_khan_banner.png";
 
 const Banner = () => {
   return (
-    <div className="bg-white w-full mx-auto p-2 lg:p-6">
+    <div className="bg-background w-full mx-auto p-2 lg:p-6 pt-0 lg:pt-0 relative overflow-hidden">
       <div className="relative flex flex-col lg:flex-row h-auto lg:h-[700px] rounded-3xl overflow-hidden">
         {/* Left Side - Dark Background */}
         <div className="w-full lg:w-1/2 h-auto lg:h-full bg-[#111827] flex items-center justify-center p-6 lg:p-8 text-white">
