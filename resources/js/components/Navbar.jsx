@@ -45,9 +45,7 @@ const Navbar = () => {
               className="text-4xl cursor-pointer px-4 py-2 rounded-lg"
               onClick={toggleDrawer}
             >
-              {/* <FaBars size={36} className={`text-2xl ${getIconColor()}`} /> */}
-              <MenuIcon className="h-8 w-8 text-[#f00]" />
-              {/* Navbar */}
+              <MenuIcon className="h-8 w-8 text-blue-500" />
             </p>
           </div>
         </div>
@@ -62,9 +60,7 @@ const Navbar = () => {
               className="text-4xl text-slate-950 cursor-pointer"
               onClick={toggleDrawer}
             >
-              {/* <IoClose /> */}
-              <X className="h-8 w-8 text-[#f00]" />
-              {/* Close */}
+              <X className="h-8 w-8 text-blue-500" />
             </button>
           </div>
           <div className="mt-10 text-3xl font-medium px-20">
@@ -92,10 +88,10 @@ const Navbar = () => {
                 <li className="mb-6">About Me</li>
               </a>
               <a
-                href="/resource/books"
+                href="/books"
                 onClick={toggleDrawer}
                 className={
-                  location.pathname === "/resource/books"
+                  location.pathname === "/books"
                     ? "text-blue-500 font-bold"
                     : "text-black hover:text-blue-500"
                 }
@@ -103,10 +99,10 @@ const Navbar = () => {
                 <li className="mb-6">Books</li>
               </a>
               <a
-                href="/resource/entepreneourship"
+                href="/entrepreneurship"
                 onClick={toggleDrawer}
                 className={
-                  location.pathname === "/resource/entepreneourship"
+                  location.pathname === "/entrepreneurship"
                     ? "text-blue-500 font-bold"
                     : "text-black hover:text-blue-500"
                 }
@@ -114,10 +110,10 @@ const Navbar = () => {
                 <li className="mb-6">Entepreneourship</li>
               </a>
               <a
-                href="/resource/events"
+                href="/events"
                 onClick={toggleDrawer}
                 className={
-                  location.pathname === "/resource/events"
+                  location.pathname === "/events"
                     ? "text-blue-500 font-bold"
                     : "text-black hover:text-blue-500"
                 }
@@ -125,10 +121,10 @@ const Navbar = () => {
                 <li className="mb-6">Events</li>
               </a>
               <a
-                href="/resource/blogs"
+                href="/blogs"
                 onClick={toggleDrawer}
                 className={
-                  location.pathname === "/resource/blogs"
+                  location.pathname === "/blogs"
                     ? "text-blue-500 font-bold"
                     : "text-black hover:text-blue-500"
                 }
@@ -136,10 +132,10 @@ const Navbar = () => {
                 <li className="mb-6">Blogs</li>
               </a>
               <a
-                href="/resource/technology"
+                href="/technology"
                 onClick={toggleDrawer}
                 className={
-                  location.pathname === "/resource/technology"
+                  location.pathname === "/technology"
                     ? "text-blue-500 font-bold"
                     : "text-black hover:text-blue-500"
                 }
@@ -147,10 +143,10 @@ const Navbar = () => {
                 <li className="mb-6">Technology</li>
               </a>
               <a
-                href="/resource/donation"
+                href="/donation"
                 onClick={toggleDrawer}
                 className={
-                  location.pathname === "/resource/donation"
+                  location.pathname === "/donation"
                     ? "text-blue-500 font-bold"
                     : "text-black hover:text-blue-500"
                 }
@@ -158,10 +154,10 @@ const Navbar = () => {
                 <li className="mb-6">Donation</li>
               </a>
               <a
-                href="/resource/videos"
+                href="/videos"
                 onClick={toggleDrawer}
                 className={
-                  location.pathname === "/resource/videos"
+                  location.pathname === "/videos"
                     ? "text-blue-500 font-bold"
                     : "text-black hover:text-blue-500"
                 }
@@ -169,10 +165,10 @@ const Navbar = () => {
                 <li className="mb-6">Videos</li>
               </a>
               <a
-                href="/main/life-event"
+                href="/life-events"
                 onClick={toggleDrawer}
                 className={
-                  location.pathname === "/main/life-event"
+                  location.pathname === "/life-events"
                     ? "text-blue-500 font-bold"
                     : "text-black hover:text-blue-500"
                 }
