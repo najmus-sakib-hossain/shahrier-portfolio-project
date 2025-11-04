@@ -10,16 +10,7 @@ class EntrepreneurshipContentSeeder extends Seeder
     public function run(): void
     {
         $content = [
-            [
-                'type' => 'blog',
-                'title' => 'Building a Startup Ecosystem',
-                'content' => 'How to create and nurture a thriving startup community in emerging markets.',
-                'image' => './assets/entepreneourship/blog1.png',
-                'author' => 'Shahriar Khan',
-                'publish_date' => now()->subDays(7),
-                'is_featured' => true,
-                'order' => 1,
-            ],
+            // Quotes
             [
                 'type' => 'quote',
                 'title' => 'Innovation Quote',
@@ -27,18 +18,104 @@ class EntrepreneurshipContentSeeder extends Seeder
                 'image' => null,
                 'author' => 'Alan Kay',
                 'publish_date' => null,
-                'is_featured' => false,
+                'is_featured' => true,
+                'order' => 1,
+            ],
+            
+            // Blogs
+            [
+                'type' => 'blog',
+                'title' => 'Building a Startup Ecosystem',
+                'content' => 'How to create and nurture a thriving startup community in emerging markets. Learn from years of experience building multiple successful ventures.',
+                'image' => '/assets/nex-fly.png',
+                'author' => 'Shahriar Khan',
+                'publish_date' => now()->subDays(7),
+                'is_featured' => true,
                 'order' => 1,
             ],
             [
+                'type' => 'blog',
+                'title' => 'The Future of EdTech',
+                'content' => 'Exploring how technology is revolutionizing education and making learning accessible to everyone.',
+                'image' => '/assets/nex-academy.png',
+                'author' => 'Shahriar Khan',
+                'publish_date' => now()->subDays(14),
+                'is_featured' => true,
+                'order' => 2,
+            ],
+            [
+                'type' => 'blog',
+                'title' => 'Scaling Your Business Globally',
+                'content' => 'Strategies for taking your local business to international markets successfully.',
+                'image' => '/assets/mechanix.png',
+                'author' => 'Shahriar Khan',
+                'publish_date' => now()->subDays(21),
+                'is_featured' => false,
+                'order' => 3,
+            ],
+            
+            // Innovations/Startups
+            [
                 'type' => 'innovation',
-                'title' => 'AI-Powered Business Solutions',
-                'content' => 'Leveraging artificial intelligence to solve real business problems.',
-                'image' => './assets/entepreneourship/innovation1.png',
+                'title' => 'NexKraft Solutions',
+                'content' => 'AI-Powered Business Solutions. Leveraging artificial intelligence to solve real business problems.',
+                'image' => '/assets/nex-fly.png',
                 'author' => null,
                 'publish_date' => now()->subDays(14),
                 'is_featured' => true,
                 'order' => 1,
+            ],
+            [
+                'type' => 'innovation',
+                'title' => 'Mechanix Pro',
+                'content' => 'Digital Platform for Automotive Services. Connecting vehicle owners with trusted mechanics and service providers.',
+                'image' => '/assets/mechanix.png',
+                'author' => null,
+                'publish_date' => now()->subMonths(2),
+                'is_featured' => true,
+                'order' => 2,
+            ],
+            [
+                'type' => 'innovation',
+                'title' => 'Huistle App',
+                'content' => 'Productivity & Task Management. A modern productivity app that helps teams collaborate better.',
+                'image' => '/assets/huecell.png',
+                'author' => null,
+                'publish_date' => now()->subMonths(3),
+                'is_featured' => true,
+                'order' => 3,
+            ],
+            [
+                'type' => 'innovation',
+                'title' => 'MindShaper',
+                'content' => 'Personal Development Platform. Empowering individuals to reach their full potential.',
+                'image' => '/assets/mindshaper.png',
+                'author' => null,
+                'publish_date' => now()->subMonths(4),
+                'is_featured' => true,
+                'order' => 4,
+            ],
+            
+            // Events
+            [
+                'type' => 'event',
+                'title' => 'Startup Summit 2024',
+                'content' => 'Annual gathering of entrepreneurs and investors. Network with fellow entrepreneurs and learn from industry leaders.',
+                'image' => '/assets/ict-olympiad-bangladesh.png',
+                'author' => null,
+                'publish_date' => now(),
+                'is_featured' => true,
+                'order' => 1,
+            ],
+            [
+                'type' => 'event',
+                'title' => 'Innovation Workshop Series',
+                'content' => 'Hands-on workshops on building innovative products. Learn from experienced entrepreneurs.',
+                'image' => '/assets/nex-academy.png',
+                'author' => null,
+                'publish_date' => now(),
+                'is_featured' => false,
+                'order' => 2,
             ],
         ];
 

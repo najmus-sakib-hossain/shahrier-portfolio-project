@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
 
         // Seed all content
         $this->call([
+            IndexPageSeeder::class,
             HeroSectionSeeder::class,
             StatisticSeeder::class,
             BlogPostSeeder::class,

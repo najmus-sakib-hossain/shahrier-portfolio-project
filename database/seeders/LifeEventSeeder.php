@@ -12,8 +12,8 @@ class LifeEventSeeder extends Seeder
         $lifeEvents = [
             [
                 'title' => 'Founded First Tech Startup',
-                'description' => 'Launched my first technology company',
-                'image' => './assets/life_events/startup.png',
+                'description' => 'Launched my first technology company with a vision to solve real-world problems through innovation',
+                'image' => '/assets/nex-fly.png',
                 'event_date' => now()->subYears(5),
                 'category' => 'Career',
                 'location' => 'Dhaka, Bangladesh',
@@ -22,8 +22,8 @@ class LifeEventSeeder extends Seeder
             ],
             [
                 'title' => 'Graduated from University',
-                'description' => 'Completed my degree in Computer Science',
-                'image' => './assets/life_events/graduation.png',
+                'description' => 'Completed my degree in Computer Science with honors. A milestone that shaped my career.',
+                'image' => '/assets/nex-academy.png',
                 'event_date' => now()->subYears(8),
                 'category' => 'Education',
                 'location' => 'Dhaka University',
@@ -32,13 +32,33 @@ class LifeEventSeeder extends Seeder
             ],
             [
                 'title' => 'International Conference Speaker',
-                'description' => 'Spoke at Tech Summit Asia',
-                'image' => './assets/life_events/conference.png',
+                'description' => 'Spoke at Tech Summit Asia on the future of entrepreneurship and innovation in emerging markets',
+                'image' => '/assets/ict-olympiad-bangladesh.png',
                 'event_date' => now()->subYears(2),
                 'category' => 'Achievement',
                 'location' => 'Singapore',
                 'is_featured' => true,
                 'order' => 3,
+            ],
+            [
+                'title' => 'Launched Education Initiative',
+                'description' => 'Started a program to provide free tech education to underprivileged youth',
+                'image' => '/assets/mindshaper.png',
+                'event_date' => now()->subYears(3),
+                'category' => 'Social Impact',
+                'location' => 'Bangladesh',
+                'is_featured' => true,
+                'order' => 4,
+            ],
+            [
+                'title' => 'Won Entrepreneur Award',
+                'description' => 'Recognized as Entrepreneur of the Year for innovation and social impact',
+                'image' => '/assets/my-brand-story.png',
+                'event_date' => now()->subYear(),
+                'category' => 'Achievement',
+                'location' => 'Dhaka, Bangladesh',
+                'is_featured' => true,
+                'order' => 5,
             ],
         ];
 

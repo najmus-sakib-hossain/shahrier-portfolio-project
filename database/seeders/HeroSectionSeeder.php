@@ -16,7 +16,7 @@ class HeroSectionSeeder extends Seeder
         HeroSection::create([
             'title' => 'Shahriar Khan',
             'subtitle' => 'Embrace the extraordinary. Live your fullest life.',
-            'image_url' => './assets/home_banner.png',
+            'image_url' => '/assets/home_banner.png',
             'tagline' => 'Entrepreneur',
             'description' => 'Connecting brands & people through experiences.',
             'social_links' => json_encode([
