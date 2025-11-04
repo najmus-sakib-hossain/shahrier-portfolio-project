@@ -3,63 +3,72 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Statistic;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class StatisticController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $statistics = Statistic::orderBy('order')->get();
+        
+        return Inertia::render('dashboard/statistics/index', [
+            'statistics' => $statistics
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return Inertia::render('dashboard/statistics/create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'label' => 'required|string|max:255',
+            'value' => 'required|string|max:255',
+            'is_active' => 'boolean',
+            'order' => 'integer',
+        ]);
+
+        Statistic::create($validated);
+
+        return redirect()->route('admin.statistics.index')
+            ->with('success', 'Statistic created successfully');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
-        //
+        $statistic = Statistic::findOrFail($id);
+        
+        return Inertia::render('dashboard/statistics/edit', [
+            'statistic' => $statistic
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
-        //
+        $validated = $request->validate([
+            'label' => 'required|string|max:255',
+            'value' => 'required|string|max:255',
+            'is_active' => 'boolean',
+            'order' => 'integer',
+        ]);
+
+        $statistic = Statistic::findOrFail($id);
+        $statistic->update($validated);
+
+        return redirect()->route('admin.statistics.index')
+            ->with('success', 'Statistic updated successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-        //
+        $statistic = Statistic::findOrFail($id);
+        $statistic->delete();
+
+        return redirect()->route('admin.statistics.index')
+            ->with('success', 'Statistic deleted successfully');
     }
 }

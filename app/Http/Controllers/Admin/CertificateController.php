@@ -3,63 +3,67 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Certificate;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class CertificateController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $certificates = Certificate::orderBy('issue_date', 'desc')->get();
+        return Inertia::render('dashboard/certificates/index', ['certificates' => $certificates]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return Inertia::render('dashboard/certificates/create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'issuing_organization' => 'required|string',
+            'issue_date' => 'required|date',
+            'expiry_date' => 'nullable|date',
+            'credential_id' => 'required|string',
+            'credential_url' => 'nullable|string',
+            'image' => 'nullable|string',
+            'order' => 'integer',
+        ]);
+
+        Certificate::create($validated);
+        return redirect()->route('admin.certificates.index')->with('success', 'Certificate created successfully');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
-        //
+        $certificate = Certificate::findOrFail($id);
+        return Inertia::render('dashboard/certificates/edit', ['certificate' => $certificate]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'issuing_organization' => 'required|string',
+            'issue_date' => 'required|date',
+            'expiry_date' => 'nullable|date',
+            'credential_id' => 'required|string',
+            'credential_url' => 'nullable|string',
+            'image' => 'nullable|string',
+            'order' => 'integer',
+        ]);
+
+        $certificate = Certificate::findOrFail($id);
+        $certificate->update($validated);
+        return redirect()->route('admin.certificates.index')->with('success', 'Certificate updated successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-        //
+        Certificate::findOrFail($id)->delete();
+        return redirect()->route('admin.certificates.index')->with('success', 'Certificate deleted successfully');
     }
 }

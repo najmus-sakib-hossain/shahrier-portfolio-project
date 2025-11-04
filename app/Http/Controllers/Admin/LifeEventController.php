@@ -3,63 +3,65 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\LifeEvent;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class LifeEventController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $lifeEvents = LifeEvent::orderBy('event_date', 'desc')->get();
+        return Inertia::render('dashboard/life-events/index', ['lifeEvents' => $lifeEvents]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return Inertia::render('dashboard/life-events/create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'nullable|string',
+            'event_date' => 'required|date',
+            'category' => 'required|string',
+            'location' => 'required|string',
+            'order' => 'integer',
+        ]);
+
+        LifeEvent::create($validated);
+        return redirect()->route('admin.life-events.index')->with('success', 'Life event created successfully');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
-        //
+        $lifeEvent = LifeEvent::findOrFail($id);
+        return Inertia::render('dashboard/life-events/edit', ['lifeEvent' => $lifeEvent]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'nullable|string',
+            'event_date' => 'required|date',
+            'category' => 'required|string',
+            'location' => 'required|string',
+            'order' => 'integer',
+        ]);
+
+        $lifeEvent = LifeEvent::findOrFail($id);
+        $lifeEvent->update($validated);
+        return redirect()->route('admin.life-events.index')->with('success', 'Life event updated successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-        //
+        LifeEvent::findOrFail($id)->delete();
+        return redirect()->route('admin.life-events.index')->with('success', 'Life event deleted successfully');
     }
 }

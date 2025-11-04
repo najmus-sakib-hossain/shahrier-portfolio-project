@@ -2,16 +2,20 @@
 
 import * as React from "react"
 import {
-  AudioWaveform,
+  Home,
   BookOpen,
-  Bot,
-  Command,
-  Frame,
+  Newspaper,
+  Calendar,
+  Video,
+  Cpu,
+  Heart,
+  Sparkles,
+  Award,
+  User,
+  Briefcase,
+  BarChart3,
+  Layout,
   GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -44,7 +48,7 @@ const data = {
     {
       title: "Content Management",
       url: "#",
-      icon: SquareTerminal,
+      icon: Layout,
       isActive: true,
       items: [
         {
@@ -60,7 +64,7 @@ const data = {
     {
       title: "Blog & Articles",
       url: "#",
-      icon: BookOpen,
+      icon: Newspaper,
       items: [
         {
           title: "All Blog Posts",
@@ -90,7 +94,7 @@ const data = {
     {
       title: "Events",
       url: "#",
-      icon: Frame,
+      icon: Calendar,
       items: [
         {
           title: "All Events",
@@ -105,7 +109,7 @@ const data = {
     {
       title: "Videos",
       url: "#",
-      icon: PieChart,
+      icon: Video,
       items: [
         {
           title: "All Videos",
@@ -120,7 +124,7 @@ const data = {
     {
       title: "Technology",
       url: "#",
-      icon: Bot,
+      icon: Cpu,
       items: [
         {
           title: "All Technologies",
@@ -135,7 +139,7 @@ const data = {
     {
       title: "Donations",
       url: "#",
-      icon: Map,
+      icon: Heart,
       items: [
         {
           title: "All Donations",
@@ -150,7 +154,7 @@ const data = {
     {
       title: "Life Events",
       url: "#",
-      icon: Map,
+      icon: Sparkles,
       items: [
         {
           title: "All Life Events",
@@ -165,7 +169,7 @@ const data = {
     {
       title: "About Me",
       url: "#",
-      icon: Settings2,
+      icon: User,
       items: [
         {
           title: "About Sections",
@@ -184,7 +188,7 @@ const data = {
     {
       title: "Entrepreneurship",
       url: "#",
-      icon: AudioWaveform,
+      icon: Briefcase,
       items: [
         {
           title: "All Content",
@@ -201,12 +205,12 @@ const data = {
     {
       name: "Frontend Pages",
       url: "/",
-      icon: Frame,
+      icon: Home,
     },
     {
       name: "Analytics",
       url: "#",
-      icon: PieChart,
+      icon: BarChart3,
     },
   ],
 }

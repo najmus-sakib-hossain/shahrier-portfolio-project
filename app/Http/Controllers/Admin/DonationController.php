@@ -3,63 +3,71 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Donation;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class DonationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $donations = Donation::orderBy('order')->get();
+        return Inertia::render('dashboard/donations/index', ['donations' => $donations]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return Inertia::render('dashboard/donations/create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'nullable|string',
+            'goal_amount' => 'required|numeric',
+            'raised_amount' => 'nullable|numeric',
+            'currency' => 'required|string',
+            'end_date' => 'required|date',
+            'is_active' => 'boolean',
+            'category' => 'required|string',
+            'order' => 'integer',
+        ]);
+
+        Donation::create($validated);
+        return redirect()->route('admin.donations.index')->with('success', 'Donation created successfully');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
-        //
+        $donation = Donation::findOrFail($id);
+        return Inertia::render('dashboard/donations/edit', ['donation' => $donation]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'nullable|string',
+            'goal_amount' => 'required|numeric',
+            'raised_amount' => 'nullable|numeric',
+            'currency' => 'required|string',
+            'end_date' => 'required|date',
+            'is_active' => 'boolean',
+            'category' => 'required|string',
+            'order' => 'integer',
+        ]);
+
+        $donation = Donation::findOrFail($id);
+        $donation->update($validated);
+        return redirect()->route('admin.donations.index')->with('success', 'Donation updated successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-        //
+        Donation::findOrFail($id)->delete();
+        return redirect()->route('admin.donations.index')->with('success', 'Donation deleted successfully');
     }
 }

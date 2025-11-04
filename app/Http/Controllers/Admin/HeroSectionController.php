@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\HeroSection;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class HeroSectionController extends Controller
 {
@@ -12,7 +14,11 @@ class HeroSectionController extends Controller
      */
     public function index()
     {
-        //
+        $heroSections = HeroSection::orderBy('order')->get();
+        
+        return Inertia::render('dashboard/hero-sections/index', [
+            'heroSections' => $heroSections
+        ]);
     }
 
     /**
@@ -20,7 +26,7 @@ class HeroSectionController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('dashboard/hero-sections/create');
     }
 
     /**
@@ -28,7 +34,20 @@ class HeroSectionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'subtitle' => 'required|string|max:255',
+            'description' => 'required|string',
+            'banner_image' => 'nullable|string',
+            'social_links' => 'nullable|json',
+            'is_active' => 'boolean',
+            'order' => 'integer',
+        ]);
+
+        HeroSection::create($validated);
+
+        return redirect()->route('admin.hero-sections.index')
+            ->with('success', 'Hero section created successfully');
     }
 
     /**
@@ -44,7 +63,11 @@ class HeroSectionController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $heroSection = HeroSection::findOrFail($id);
+        
+        return Inertia::render('dashboard/hero-sections/edit', [
+            'heroSection' => $heroSection
+        ]);
     }
 
     /**
@@ -52,7 +75,21 @@ class HeroSectionController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'subtitle' => 'required|string|max:255',
+            'description' => 'required|string',
+            'banner_image' => 'nullable|string',
+            'social_links' => 'nullable|json',
+            'is_active' => 'boolean',
+            'order' => 'integer',
+        ]);
+
+        $heroSection = HeroSection::findOrFail($id);
+        $heroSection->update($validated);
+
+        return redirect()->route('admin.hero-sections.index')
+            ->with('success', 'Hero section updated successfully');
     }
 
     /**
@@ -60,6 +97,10 @@ class HeroSectionController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $heroSection = HeroSection::findOrFail($id);
+        $heroSection->delete();
+
+        return redirect()->route('admin.hero-sections.index')
+            ->with('success', 'Hero section deleted successfully');
     }
 }

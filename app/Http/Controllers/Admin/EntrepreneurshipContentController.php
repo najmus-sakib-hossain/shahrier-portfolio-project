@@ -3,63 +3,67 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\EntrepreneurshipContent;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class EntrepreneurshipContentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $content = EntrepreneurshipContent::orderBy('publish_date', 'desc')->get();
+        return Inertia::render('dashboard/entrepreneurship-content/index', ['content' => $content]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return Inertia::render('dashboard/entrepreneurship-content/create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'type' => 'required|string',
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+            'image' => 'nullable|string',
+            'author' => 'nullable|string',
+            'publish_date' => 'required|date',
+            'is_featured' => 'boolean',
+            'order' => 'integer',
+        ]);
+
+        EntrepreneurshipContent::create($validated);
+        return redirect()->route('admin.entrepreneurship-content.index')->with('success', 'Content created successfully');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
-        //
+        $content = EntrepreneurshipContent::findOrFail($id);
+        return Inertia::render('dashboard/entrepreneurship-content/edit', ['content' => $content]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
-        //
+        $validated = $request->validate([
+            'type' => 'required|string',
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+            'image' => 'nullable|string',
+            'author' => 'nullable|string',
+            'publish_date' => 'required|date',
+            'is_featured' => 'boolean',
+            'order' => 'integer',
+        ]);
+
+        $content = EntrepreneurshipContent::findOrFail($id);
+        $content->update($validated);
+        return redirect()->route('admin.entrepreneurship-content.index')->with('success', 'Content updated successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-        //
+        EntrepreneurshipContent::findOrFail($id)->delete();
+        return redirect()->route('admin.entrepreneurship-content.index')->with('success', 'Content deleted successfully');
     }
 }
