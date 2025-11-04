@@ -1,7 +1,4 @@
 import { useState, useEffect } from "react";
-import linkedin from "./assets/home/linkedin.svg";
-import dribble from "./assets/home/dribble.svg";
-import behance from "./assets/home/behance.svg";
 
 const Banner = ({ hero, statistics }) => {
   const [showSplash, setShowSplash] = useState(false);
@@ -86,7 +83,7 @@ const Banner = ({ hero, statistics }) => {
               </h1>
             </div>
 
-            <div className="py-[46px] bg-slate-900">
+            <div className="py-[46px] bg-slate-900 h-[16.7vh]">
               <div className="flex items-center justify-center gap-6 flex-wrap px-4">
                 <h1 className="text-lg font-bold text-white">Social Media:</h1>
 
@@ -97,7 +94,7 @@ const Banner = ({ hero, statistics }) => {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 hover:opacity-80 transition-opacity"
                   >
-                    <img src={linkedin} alt="LinkedIn" className="w-5 h-5" />
+                    <img src="/assets/home/linkedin.svg" alt="LinkedIn" className="w-5 h-5" />
                     <span className="text-lg text-white font-normal">LinkedIn</span>
                   </a>
                 )}
@@ -109,7 +106,7 @@ const Banner = ({ hero, statistics }) => {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 hover:opacity-80 transition-opacity"
                   >
-                    <img src={dribble} alt="Dribbble" className="w-5 h-5" />
+                    <img src="/assets/home/dribble.svg" alt="Dribbble" className="w-5 h-5" />
                     <span className="text-lg text-white font-normal">Dribbble</span>
                   </a>
                 )}
@@ -121,7 +118,7 @@ const Banner = ({ hero, statistics }) => {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 hover:opacity-80 transition-opacity"
                   >
-                    <img src={behance} alt="Behance" className="w-5 h-5" />
+                    <img src="/assets/home/behance.svg" alt="Behance" className="w-5 h-5" />
                     <span className="text-lg text-white font-normal">Behance</span>
                   </a>
                 )}

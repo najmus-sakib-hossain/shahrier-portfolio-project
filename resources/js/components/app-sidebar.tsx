@@ -233,10 +233,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     avatar: auth?.user?.avatar || null,
   }
 
+  // Always show at least the default team
+  const teamsToShow = userTeams.length > 0 ? userTeams : data.teams
+
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        {userTeams.length > 0 && <TeamSwitcher teams={userTeams} />}
+        <TeamSwitcher teams={teamsToShow} />
       </SidebarHeader>
       <SidebarContent>
         <ScrollArea className="flex-1">

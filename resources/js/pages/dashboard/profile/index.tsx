@@ -58,7 +58,7 @@ export default function Profile({ user }: Props) {
       <AppSidebar />
       <SidebarInset>
         <SiteHeader />
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
+        <div className="flex flex-1 flex-col gap-4 p-4 pt-0 h-screen items-center justify-center">
           <div className="mx-auto w-full max-w-2xl">
             <Card>
               <CardHeader>
