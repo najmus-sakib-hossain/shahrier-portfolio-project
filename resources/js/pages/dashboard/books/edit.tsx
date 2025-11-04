@@ -11,11 +11,11 @@ import { Switch } from '@/components/ui/switch'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { ArrowLeft } from 'lucide-react'
 
-interface Video {
+interface Book {
   id: number
   title: string
   description: string | null
-  video_url: string
+  book_url: string
   thumbnail: string | null
   platform: string | null
   category: string | null
@@ -26,31 +26,31 @@ interface Video {
 }
 
 interface Props {
-  video: Video
+  book: Book
 }
 
-export default function EditVideo({ video }: Props) {
+export default function EditBook({ book }: Props) {
   const { data, setData, put, processing, errors } = useForm({
-    title: video.title || '',
-    description: video.description || '',
-    video_url: video.video_url || '',
-    thumbnail: video.thumbnail || '',
-    platform: video.platform || 'YouTube',
-    category: video.category || '',
-    duration: video.duration || '',
-    is_short: video.is_short || false,
-    views: video.views || 0,
-    published_at: video.published_at || '',
+    title: book.title || '',
+    description: book.description || '',
+    book_url: book.book_url || '',
+    thumbnail: book.thumbnail || '',
+    platform: book.platform || 'YouTube',
+    category: book.category || '',
+    duration: book.duration || '',
+    is_short: book.is_short || false,
+    views: book.views || 0,
+    published_at: book.published_at || '',
   })
 
   const handleSubmit: FormEventHandler = (e) => {
     e.preventDefault()
-    put(`/admin/videos/${video.id}`)
+    put(`/admin/books/${book.id}`)
   }
 
   return (
     <>
-      <Head title={`Edit ${video.title} - Admin`} />
+      <Head title={`Edit ${book.title} - Admin`} />
       <SidebarProvider
         style={
           {
@@ -64,22 +64,22 @@ export default function EditVideo({ video }: Props) {
           <SiteHeader />
           <div className="flex flex-1 flex-col gap-4 p-4 md:gap-6 md:p-6">
             <div className="flex items-center gap-4">
-              <Link href="/admin/videos">
+              <Link href="/admin/books">
                 <Button variant="ghost" size="icon">
                   <ArrowLeft className="h-4 w-4" />
                 </Button>
               </Link>
               <div>
-                <h1 className="text-3xl font-bold tracking-tight">Edit Video</h1>
-                <p className="text-muted-foreground">Update your video</p>
+                <h1 className="text-3xl font-bold tracking-tight">Edit Book</h1>
+                <p className="text-muted-foreground">Update your book</p>
               </div>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <Card>
                 <CardHeader>
-                  <CardTitle>Video Details</CardTitle>
-                  <CardDescription>Edit the details of your video</CardDescription>
+                  <CardTitle>Book Details</CardTitle>
+                  <CardDescription>Edit the details of your book</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
@@ -88,7 +88,7 @@ export default function EditVideo({ video }: Props) {
                       id="title"
                       value={data.title}
                       onChange={(e) => setData('title', e.target.value)}
-                      placeholder="Enter video title"
+                      placeholder="Enter book title"
                       required
                     />
                     {errors.title && (
@@ -102,17 +102,17 @@ export default function EditVideo({ video }: Props) {
                       id="description"
                       value={data.description}
                       onChange={(e) => setData('description', e.target.value)}
-                      placeholder="Enter video description"
+                      placeholder="Enter book description"
                       rows={4}
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="video_url">Video URL</Label>
+                    <Label htmlFor="book_url">Book URL</Label>
                     <Input
-                      id="video_url"
-                      value={data.video_url}
-                      onChange={(e) => setData('video_url', e.target.value)}
+                      id="book_url"
+                      value={data.book_url}
+                      onChange={(e) => setData('book_url', e.target.value)}
                       placeholder="https://youtube.com/watch?v=..."
                       required
                     />
@@ -188,16 +188,16 @@ export default function EditVideo({ video }: Props) {
                       checked={data.is_short}
                       onCheckedChange={(checked) => setData('is_short', checked)}
                     />
-                    <Label htmlFor="is_short">Short Video (&lt; 60 seconds)</Label>
+                    <Label htmlFor="is_short">Short Book (&lt; 60 seconds)</Label>
                   </div>
                 </CardContent>
               </Card>
 
               <div className="flex gap-4">
                 <Button type="submit" disabled={processing}>
-                  {processing ? 'Updating...' : 'Update Video'}
+                  {processing ? 'Updating...' : 'Update Book'}
                 </Button>
-                <Link href="/admin/videos">
+                <Link href="/admin/books">
                   <Button type="button" variant="outline">
                     Cancel
                   </Button>

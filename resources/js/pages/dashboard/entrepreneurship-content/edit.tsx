@@ -11,28 +11,46 @@ import { Switch } from '@/components/ui/switch'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { ArrowLeft } from 'lucide-react'
 
-export default function CreateCertificate() {
-  const { data, setData, post, processing, errors } = useForm({
-    title: '',
-    description: '',
-    certificate_url: '',
-    thumbnail: '',
-    platform: 'YouTube',
-    category: '',
-    duration: '',
-    is_short: false,
-    views: 0,
-    published_at: '',
+interface EntrepreneurshipContent {
+  id: number
+  title: string
+  description: string | null
+  entrepreneurshipcontent_url: string
+  thumbnail: string | null
+  platform: string | null
+  category: string | null
+  duration: string | null
+  is_short: boolean
+  views: number
+  published_at: string | null
+}
+
+interface Props {
+  entrepreneurshipcontent: EntrepreneurshipContent
+}
+
+export default function EditEntrepreneurshipContent({ entrepreneurshipcontent }: Props) {
+  const { data, setData, put, processing, errors } = useForm({
+    title: entrepreneurshipcontent.title || '',
+    description: entrepreneurshipcontent.description || '',
+    entrepreneurshipcontent_url: entrepreneurshipcontent.entrepreneurshipcontent_url || '',
+    thumbnail: entrepreneurshipcontent.thumbnail || '',
+    platform: entrepreneurshipcontent.platform || 'YouTube',
+    category: entrepreneurshipcontent.category || '',
+    duration: entrepreneurshipcontent.duration || '',
+    is_short: entrepreneurshipcontent.is_short || false,
+    views: entrepreneurshipcontent.views || 0,
+    published_at: entrepreneurshipcontent.published_at || '',
   })
 
   const handleSubmit: FormEventHandler = (e) => {
     e.preventDefault()
-    post('/admin/certificates')
+    put(`/admin/entrepreneurshipcontents/${entrepreneurshipcontent.id}`)
   }
 
   return (
     <>
-      <Head title="Create Certificate - Admin" />
+      <Head title={`Edit ${entrepreneurshipcontent.title} - Admin`} />
       <SidebarProvider
         style={
           {
@@ -46,22 +64,22 @@ export default function CreateCertificate() {
           <SiteHeader />
           <div className="flex flex-1 flex-col gap-4 p-4 md:gap-6 md:p-6">
             <div className="flex items-center gap-4">
-              <Link href="/admin/certificates">
+              <Link href="/admin/entrepreneurshipcontents">
                 <Button variant="ghost" size="icon">
                   <ArrowLeft className="h-4 w-4" />
                 </Button>
               </Link>
               <div>
-                <h1 className="text-3xl font-bold tracking-tight">Create Certificate</h1>
-                <p className="text-muted-foreground">Add a new certificate to your website</p>
+                <h1 className="text-3xl font-bold tracking-tight">Edit EntrepreneurshipContent</h1>
+                <p className="text-muted-foreground">Update your entrepreneurshipcontent</p>
               </div>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <Card>
                 <CardHeader>
-                  <CardTitle>Certificate Details</CardTitle>
-                  <CardDescription>Enter the details of your certificate</CardDescription>
+                  <CardTitle>EntrepreneurshipContent Details</CardTitle>
+                  <CardDescription>Edit the details of your entrepreneurshipcontent</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
@@ -70,7 +88,7 @@ export default function CreateCertificate() {
                       id="title"
                       value={data.title}
                       onChange={(e) => setData('title', e.target.value)}
-                      placeholder="Enter certificate title"
+                      placeholder="Enter entrepreneurshipcontent title"
                       required
                     />
                     {errors.title && (
@@ -84,17 +102,17 @@ export default function CreateCertificate() {
                       id="description"
                       value={data.description}
                       onChange={(e) => setData('description', e.target.value)}
-                      placeholder="Enter certificate description"
+                      placeholder="Enter entrepreneurshipcontent description"
                       rows={4}
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="certificate_url">Certificate URL</Label>
+                    <Label htmlFor="entrepreneurshipcontent_url">EntrepreneurshipContent URL</Label>
                     <Input
-                      id="certificate_url"
-                      value={data.certificate_url}
-                      onChange={(e) => setData('certificate_url', e.target.value)}
+                      id="entrepreneurshipcontent_url"
+                      value={data.entrepreneurshipcontent_url}
+                      onChange={(e) => setData('entrepreneurshipcontent_url', e.target.value)}
                       placeholder="https://youtube.com/watch?v=..."
                       required
                     />
@@ -170,16 +188,16 @@ export default function CreateCertificate() {
                       checked={data.is_short}
                       onCheckedChange={(checked) => setData('is_short', checked)}
                     />
-                    <Label htmlFor="is_short">Short Certificate (&lt; 60 seconds)</Label>
+                    <Label htmlFor="is_short">Short EntrepreneurshipContent (&lt; 60 seconds)</Label>
                   </div>
                 </CardContent>
               </Card>
 
               <div className="flex gap-4">
                 <Button type="submit" disabled={processing}>
-                  {processing ? 'Creating...' : 'Create Certificate'}
+                  {processing ? 'Updating...' : 'Update EntrepreneurshipContent'}
                 </Button>
-                <Link href="/admin/certificates">
+                <Link href="/admin/entrepreneurshipcontents">
                   <Button type="button" variant="outline">
                     Cancel
                   </Button>
