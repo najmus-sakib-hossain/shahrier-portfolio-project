@@ -29,22 +29,22 @@ const ShortVideos = ({ videos = [] }) => {
   const defaultVideos = [
     {
       id: 1,
-      thumbnail_url: "/assets/videos/video_thumbline.png",
+      thumbnail: "/assets/videos/video_thumbline.png",
       video_url: "https://www.youtube.com/embed/gzzRFU8CcG8?si=N8P-kmSGfbyjp6jB",
     },
     {
       id: 2,
-      thumbnail_url: "/assets/videos/video_thumbline.png",
+      thumbnail: "/assets/videos/video_thumbline.png",
       video_url: "https://www.youtube.com/embed/gzzRFU8CcG8?si=N8P-kmSGfbyjp6jB",
     },
     {
       id: 3,
-      thumbnail_url: "/assets/videos/video_thumbline.png",
+      thumbnail: "/assets/videos/video_thumbline.png",
       video_url: "https://www.youtube.com/embed/gzzRFU8CcG8?si=N8P-kmSGfbyjp6jB",
     },
     {
       id: 4,
-      thumbnail_url: "/assets/videos/video_thumbline.png",
+      thumbnail: "/assets/videos/video_thumbline.png",
       video_url: "https://www.youtube.com/embed/gzzRFU8CcG8?si=N8P-kmSGfbyjp6jB",
     },
   ];
@@ -104,7 +104,7 @@ const ShortVideos = ({ videos = [] }) => {
                 ) : (
                   <>
                     <img
-                      src={video.thumbnail_url || "/assets/videos/video_thumbline.png"}
+                      src={video.thumbnail || "/assets/videos/video_thumbline.png"}
                       alt={video.title || `Thumbnail for video ${video.id}`}
                       className="w-full h-full object-cover rounded-xl shadow-lg"
                     />

@@ -8,17 +8,17 @@ const Banner = ({ videos = [] }) => {
     {
       id: 1,
       title: "Transplant gives patient a second chance",
-      thumbnail_url: "/assets/videos/video_thumbline.png"
+      thumbnail: "/assets/videos/video_thumbline.png"
     },
     {
       id: 2,
       title: "A new hope for patients in need",
-      thumbnail_url: "/assets/videos/video_thumbline.png"
+      thumbnail: "/assets/videos/video_thumbline.png"
     },
     {
       id: 3,
       title: "The future of medical innovations",
-      thumbnail_url: "/assets/videos/video_thumbline.png"
+      thumbnail: "/assets/videos/video_thumbline.png"
     },
   ];
 
@@ -46,7 +46,7 @@ const Banner = ({ videos = [] }) => {
               <div className="w-full h-full relative">
                 <img
                   className="w-full h-full object-cover rounded-lg"
-                  src={displayVideos[0].thumbnail_url || "/assets/videos/video_thumbline.png"}
+                  src={displayVideos[0].thumbnail || "/assets/videos/video_thumbline.png"}
                   alt={displayVideos[0].title}
                 />
                 <div className="flex items-center gap-2 absolute bottom-10 left-4">
@@ -66,7 +66,7 @@ const Banner = ({ videos = [] }) => {
               <div className="w-full h-full relative">
                 <img
                   className="w-full h-full object-cover rounded-lg"
-                  src={video.thumbnail_url || "/assets/videos/video_thumbline.png"}
+                  src={video.thumbnail || "/assets/videos/video_thumbline.png"}
                   alt={video.title}
                 />
                 <div className="absolute inset-0 flex items-center justify-center">

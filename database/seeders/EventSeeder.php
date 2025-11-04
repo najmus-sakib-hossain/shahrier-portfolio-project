@@ -13,7 +13,7 @@ class EventSeeder extends Seeder
             [
                 'title' => 'Tech Innovation Summit 2024',
                 'description' => 'Annual technology and innovation conference bringing together leaders in tech and business',
-                'image' => '/assets/ict-olympiad-bangladesh.png',
+                'image' => '/assets/events/event_activites_1.png',
                 'location' => 'Dhaka, Bangladesh',
                 'event_date' => now()->addDays(30),
                 'event_time' => '09:00:00',
@@ -25,7 +25,7 @@ class EventSeeder extends Seeder
             [
                 'title' => 'Startup Networking Meetup',
                 'description' => 'Connect with fellow entrepreneurs and investors. Share ideas and build partnerships.',
-                'image' => '/assets/nex-fly.png',
+                'image' => '/assets/events/event_activities_2.png',
                 'location' => 'Gulshan, Dhaka',
                 'event_date' => now()->addDays(15),
                 'event_time' => '18:00:00',
@@ -37,7 +37,7 @@ class EventSeeder extends Seeder
             [
                 'title' => 'Digital Marketing Workshop',
                 'description' => 'Learn advanced digital marketing strategies from industry experts',
-                'image' => '/assets/nex-academy.png',
+                'image' => '/assets/events/event_activites_3.png',
                 'location' => 'Online',
                 'event_date' => now()->subDays(10),
                 'event_time' => '14:00:00',
@@ -49,7 +49,7 @@ class EventSeeder extends Seeder
             [
                 'title' => 'AI and Machine Learning Conference',
                 'description' => 'Exploring the future of AI and its applications in business',
-                'image' => '/assets/mechanix.png',
+                'image' => '/assets/events/event_activites_4.png',
                 'location' => 'Singapore',
                 'event_date' => now()->subMonths(2),
                 'event_time' => '10:00:00',
@@ -61,7 +61,7 @@ class EventSeeder extends Seeder
             [
                 'title' => 'Entrepreneurship Bootcamp',
                 'description' => 'Intensive 3-day program for aspiring entrepreneurs',
-                'image' => '/assets/mindshaper.png',
+                'image' => '/assets/events/event_activites_1.png',
                 'location' => 'Dhaka, Bangladesh',
                 'event_date' => now()->addMonths(2),
                 'event_time' => '09:00:00',

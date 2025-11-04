@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import linkedin from "../../../assets/home/linkedin.svg";
-import dribble from "../../../assets/home/dribble.svg";
-import behance from "../../../assets/home/behance.svg";
+import linkedin from "./assets/home/linkedin.svg";
+import dribble from "./assets/home/dribble.svg";
+import behance from "./assets/home/behance.svg";
 
 const Banner = ({ hero, statistics }) => {
   const [showSplash, setShowSplash] = useState(false);

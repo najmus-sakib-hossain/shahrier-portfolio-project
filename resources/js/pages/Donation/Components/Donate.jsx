@@ -5,12 +5,12 @@ const Donate = ({ donations = [] }) => {
   const defaultDonations = [
     { 
       id: 1, 
-      featured_image: "/assets/donation/donate_card1.png", 
+      image: "/assets/donation/donate_card1.png", 
       title: "Donate to homeless children" 
     },
     { 
       id: 2, 
-      featured_image: "/assets/donation/donate_card2.png", 
+      image: "/assets/donation/donate_card2.png", 
       title: "Donate to Gazans in Palestine" 
     },
   ];
@@ -32,7 +32,7 @@ const Donate = ({ donations = [] }) => {
             <div
               key={donation.id}
               style={{
-                backgroundImage: `url(${donation.featured_image || "/assets/donation/default.png"})`,
+                backgroundImage: `url(${donation.image || "/assets/donation/default.png"})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 height: "400px",

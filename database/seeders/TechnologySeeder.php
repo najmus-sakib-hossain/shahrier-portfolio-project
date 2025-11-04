@@ -13,7 +13,7 @@ class TechnologySeeder extends Seeder
             [
                 'title' => 'Cloud Architecture Best Practices',
                 'description' => 'Building scalable cloud infrastructure with modern tools and frameworks',
-                'image' => '/assets/csg.png',
+                'image' => '/assets/technology/cyber_security_image.png',
                 'category' => 'cloud',
                 'content' => 'Comprehensive guide to cloud architecture patterns and best practices. Learn about microservices, serverless, and container orchestration.',
                 'is_featured' => true,
@@ -22,7 +22,7 @@ class TechnologySeeder extends Seeder
             [
                 'title' => 'Cybersecurity Essentials',
                 'description' => 'Protecting your digital assets from modern threats',
-                'image' => '/assets/mechanix.png',
+                'image' => '/assets/technology/cyber_security_image.png',
                 'category' => 'cybersecurity',
                 'content' => 'Essential cybersecurity practices for modern businesses. From encryption to zero-trust architecture.',
                 'is_featured' => true,
@@ -31,7 +31,7 @@ class TechnologySeeder extends Seeder
             [
                 'title' => 'AI and Machine Learning',
                 'description' => 'Introduction to AI technologies and practical applications',
-                'image' => '/assets/huecell.png',
+                'image' => '/assets/technology/contribute_field.png',
                 'category' => 'ai',
                 'content' => 'Getting started with artificial intelligence and machine learning. Understand neural networks, deep learning, and practical AI applications.',
                 'is_featured' => true,
@@ -40,7 +40,7 @@ class TechnologySeeder extends Seeder
             [
                 'title' => 'Modern Web Development',
                 'description' => 'Full-stack development with React and Laravel',
-                'image' => '/assets/nex-fly.png',
+                'image' => '/assets/technology/contribute_field.png',
                 'category' => 'web-development',
                 'content' => 'Building modern web applications with React, Laravel, and Inertia.js. A complete guide to full-stack development.',
                 'is_featured' => true,
@@ -49,7 +49,7 @@ class TechnologySeeder extends Seeder
             [
                 'title' => 'DevOps and CI/CD',
                 'description' => 'Automating deployment and infrastructure management',
-                'image' => '/assets/nex-academy.png',
+                'image' => '/assets/technology/cyber_security_image.png',
                 'category' => 'devops',
                 'content' => 'Learn about continuous integration, continuous deployment, and infrastructure as code.',
                 'is_featured' => false,
