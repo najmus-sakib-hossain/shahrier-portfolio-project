@@ -29,7 +29,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <h1 className="text-9xl md:text-[200px] font-bold text-muted-foreground select-none whitespace-nowrap z-10">
+                <h1 className="text-7xl md:text-[150px] lg:text-[200px] font-bold text-muted-foreground select-none whitespace-nowrap z-10">
                     SHAHRIAR
                 </h1>
             </div>
@@ -41,7 +41,6 @@ const Home = () => {
                 maxOpacity={0.1}
                 duration={3}
                 repeatDelay={1}
-            // className="z-0"
             />
 
             <Button className="border absolute bottom-4 mt-8 px-16 py-7 bg-background text-foreground hover:bg-muted font-semibold text-lg rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl z-30">
@@ -50,7 +49,7 @@ const Home = () => {
                 </a>
             </Button>
 
-            <img src="assets/shahrier.png" alt="Shahrier" className="absolute bottom-0 h-[750px] object-cover z-20" />
+            <img src="assets/shahrier.png" alt="Shahrier" className="absolute bottom-0 h-[60vh] max-h-[75vh] lg:h-[750px] object-cover z-20" />
 
         </div>
     );
