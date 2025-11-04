@@ -1,5 +1,6 @@
-import { Button } from "@/components/ui/button";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
+import { motion } from "motion/react";
+import { useRef } from "react";
 
 const LOGOS = [
     { id: 1, name: "ICT Olympiad", path: "assets/ict-olympiad-bangladesh.png" },
@@ -13,6 +14,8 @@ const LOGOS = [
 ]
 
 const Home = () => {
+    const timeoutRef = useRef<number | null>(null);
+
     return (
         <div className="bg-background relative flex min-h-screen w-full items-center justify-center overflow-hidden">
 
@@ -43,11 +46,20 @@ const Home = () => {
                 repeatDelay={1}
             />
 
-            <Button className="border absolute bottom-4 mt-8 px-16 py-7 bg-background text-foreground hover:bg-muted font-semibold text-lg rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl z-30">
-                <a href="/home">
-                    Play Now
-                </a>
-            </Button>
+            <motion.button onClick={() => {
+                if (timeoutRef.current) {
+                    clearTimeout(timeoutRef.current);
+                    timeoutRef.current = null;
+                    window.location.href = '/dashboard';
+                } else {
+                    timeoutRef.current = setTimeout(() => {
+                        window.location.href = '/home';
+                        timeoutRef.current = null;
+                    }, 300) as any;
+                }
+            }} className="border absolute bottom-4 py-4 px-8 bg-background text-foreground hover:bg-muted font-semibold text-lg rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl z-30">
+                Play Now
+            </motion.button>
 
             <img src="assets/shahrier.png" alt="Shahrier" className="absolute bottom-0 h-[60vh] max-h-[75vh] lg:h-[750px] object-cover z-20" />
 
