@@ -10,9 +10,10 @@ import BannerExp from "../Components/BannerExp";
 import Navbar from "@/components/Navbar";
 
 const Aboutus = ({ sections, awards }) => {
-  const storySection = sections?.find(s => s.type === 'story');
-  const impactSection = sections?.find(s => s.type === 'impact');
-  const travelSection = sections?.find(s => s.type === 'travel');
+  // sections is grouped by section_type, so it's an object like { story: [...], impact: [...], travel: [...] }
+  const storySection = sections?.story?.[0];
+  const impactSection = sections?.impact?.[0];
+  const travelSection = sections?.travel?.[0];
 
   return (
     <div>

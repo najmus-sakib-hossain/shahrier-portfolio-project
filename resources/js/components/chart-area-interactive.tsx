@@ -325,6 +325,7 @@ export function ChartAreaInteractive() {
                 axisLine={false}
                 tickMargin={8}
                 minTickGap={32}
+                reversed={false}
                 tickFormatter={(value) => {
                   const date = new Date(value)
                   return date.toLocaleDateString("en-US", {
@@ -347,54 +348,12 @@ export function ChartAreaInteractive() {
                   />
                 }
               />
-              {/* Reversed order - bottom to top, so they stack from left */}
+              {/* Order matters: First Area = bottom of stack (left side), Last Area = top (right side) */}
               <Area
-                dataKey="team"
+                dataKey="blogs"
                 type="natural"
-                fill="url(#fillTeam)"
-                stroke="var(--color-team)"
-                stackId="a"
-              />
-              <Area
-                dataKey="lifeEvents"
-                type="natural"
-                fill="url(#fillLifeEvents)"
-                stroke="var(--color-lifeEvents)"
-                stackId="a"
-              />
-              <Area
-                dataKey="certificates"
-                type="natural"
-                fill="url(#fillCertificates)"
-                stroke="var(--color-certificates)"
-                stackId="a"
-              />
-              <Area
-                dataKey="awards"
-                type="natural"
-                fill="url(#fillAwards)"
-                stroke="var(--color-awards)"
-                stackId="a"
-              />
-              <Area
-                dataKey="donations"
-                type="natural"
-                fill="url(#fillDonations)"
-                stroke="var(--color-donations)"
-                stackId="a"
-              />
-              <Area
-                dataKey="books"
-                type="natural"
-                fill="url(#fillBooks)"
-                stroke="var(--color-books)"
-                stackId="a"
-              />
-              <Area
-                dataKey="events"
-                type="natural"
-                fill="url(#fillEvents)"
-                stroke="var(--color-events)"
+                fill="url(#fillBlogs)"
+                stroke="var(--color-blogs)"
                 stackId="a"
               />
               <Area
@@ -405,10 +364,52 @@ export function ChartAreaInteractive() {
                 stackId="a"
               />
               <Area
-                dataKey="blogs"
+                dataKey="events"
                 type="natural"
-                fill="url(#fillBlogs)"
-                stroke="var(--color-blogs)"
+                fill="url(#fillEvents)"
+                stroke="var(--color-events)"
+                stackId="a"
+              />
+              <Area
+                dataKey="books"
+                type="natural"
+                fill="url(#fillBooks)"
+                stroke="var(--color-books)"
+                stackId="a"
+              />
+              <Area
+                dataKey="donations"
+                type="natural"
+                fill="url(#fillDonations)"
+                stroke="var(--color-donations)"
+                stackId="a"
+              />
+              <Area
+                dataKey="awards"
+                type="natural"
+                fill="url(#fillAwards)"
+                stroke="var(--color-awards)"
+                stackId="a"
+              />
+              <Area
+                dataKey="certificates"
+                type="natural"
+                fill="url(#fillCertificates)"
+                stroke="var(--color-certificates)"
+                stackId="a"
+              />
+              <Area
+                dataKey="lifeEvents"
+                type="natural"
+                fill="url(#fillLifeEvents)"
+                stroke="var(--color-lifeEvents)"
+                stackId="a"
+              />
+              <Area
+                dataKey="team"
+                type="natural"
+                fill="url(#fillTeam)"
+                stroke="var(--color-team)"
                 stackId="a"
               />
             </AreaChart>

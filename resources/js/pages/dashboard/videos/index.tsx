@@ -95,7 +95,7 @@ export default function VideosIndex({ videos }: Props) {
                       <TableCell>
                         <Badge variant="outline">{video.category}</Badge>
                       </TableCell>
-                      <TableCell>{video.views_count.toLocaleString()}</TableCell>
+                      <TableCell>{video.views_count ? video.views_count.toLocaleString() : '0'}</TableCell>
                       <TableCell className="text-right">
                         <DropdownMenu>
                           <DropdownMenuTrigger asChild>
