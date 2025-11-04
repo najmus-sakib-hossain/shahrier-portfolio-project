@@ -22,12 +22,6 @@ interface DashboardStats {
   donations_change: number
 }
 
-interface ActivityData {
-  date: string
-  creates: number
-  updates: number
-}
-
 interface Activity {
   id: number
   resource: string
@@ -39,13 +33,12 @@ interface Activity {
 
 interface DashboardProps {
   stats: DashboardStats
-  activityData: ActivityData[]
   recentActivity: Activity[]
 }
 
-export default function Page({ stats, activityData, recentActivity }: DashboardProps) {
+export default function Page({ stats, recentActivity }: DashboardProps) {
   // Log data for debugging
-  console.log('Dashboard Data:', { stats, activityData, recentActivity })
+  console.log('Dashboard Data:', { stats, recentActivity })
   
   return (
     <>
@@ -66,7 +59,7 @@ export default function Page({ stats, activityData, recentActivity }: DashboardP
               <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
                 <SectionCards stats={stats} />
                 <div className="px-4 lg:px-6">
-                  <ChartAreaInteractive activityData={activityData} />
+                  <ChartAreaInteractive />
                 </div>
                 <div className="px-4 lg:px-6">
                   <RecentActivityTable data={recentActivity} />
