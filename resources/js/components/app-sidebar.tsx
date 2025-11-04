@@ -22,6 +22,7 @@ import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
 import { NavUser } from "@/components/nav-user"
 import { TeamSwitcher } from "@/components/team-switcher"
+import { ScrollArea } from "@/components/ui/scroll-area"
 import {
   Sidebar,
   SidebarContent,
@@ -234,8 +235,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         {userTeams.length > 0 && <TeamSwitcher teams={userTeams} />}
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        {/* <NavProjects projects={data.projects} /> */}
+        <ScrollArea className="flex-1">
+          <NavMain items={data.navMain} />
+          {/* <NavProjects projects={data.projects} /> */}
+        </ScrollArea>
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={sidebarUser} />
