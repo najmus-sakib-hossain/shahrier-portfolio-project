@@ -1,5 +1,31 @@
 @import 'tailwindcss';
 
+body {
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+li {
+  font-family: "Oswald", sans-serif;
+}
+
+.special-text {
+  font-family: "Kolker Brush", cursive;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 5s linear infinite;
+}
+
 @import "tw-animate-css";
 
 @source '../views';
