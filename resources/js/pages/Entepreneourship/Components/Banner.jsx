@@ -1,5 +1,3 @@
-import img1 from "../../../assets/entepreneourship/shahriar_khan_banner.png";
-
 const Banner = () => {
   return (
     <div className="bg-background w-full mx-auto p-2 lg:p-6 pt-0 lg:pt-0 relative overflow-hidden">
@@ -13,9 +11,9 @@ const Banner = () => {
               <h4 className="text-2xl lg:text-3xl font-medium">My Thoughts</h4>
             </div>
             <h1 className="text-3xl lg:text-5xl font-semibold mt-4 leading-relaxed">
-              “We are now in the era of the 4th industrial revolution, where
+              "We are now in the era of the 4th industrial revolution, where
               everything depends on technology. So we also have to depend on
-              technology”
+              technology"
             </h1>
           </div>
         </div>
@@ -24,7 +22,7 @@ const Banner = () => {
         <div
           className="w-full lg:w-1/2 h-[300px] lg:h-full bg-cover bg-right"
           style={{
-            backgroundImage: `linear-gradient(to left, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.3), rgba(0, 0, 0, 0)), url(${img1})`,
+            backgroundImage: `linear-gradient(to left, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.3), rgba(0, 0, 0, 0)), url(/assets/entepreneourship/shahriar_khan_banner.png)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}

@@ -1,6 +1,4 @@
 import { Calendar, MapPin } from "lucide-react";
-import pattern from "../../../assets/events/banner_vector.png";
-import pattern_bottom from "../../../assets/events/bottom_vector.png";
 
 const Banner = ({ featuredEvents = [] }) => {
   // Default events if none provided
