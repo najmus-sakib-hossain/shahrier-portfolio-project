@@ -1,27 +1,17 @@
 import { useState } from "react";
-import img1 from "../../../assets/blogs/img6.png";
-import img2 from "../../../assets/blogs/img2.png";
-import img3 from "../../../assets/blogs/img3.png";
-import img4 from "../../../assets/blogs/img4.png";
-import img5 from "../../../assets/blogs/img5.png";
-import img6 from "../../../assets/blogs/img6.png";
-import img7 from "../../../assets/blogs/img7.png";
-import img8 from "../../../assets/blogs/img8.png";
-import img9 from "../../../assets/blogs/img9.png";
-import img10 from "../../../assets/blogs/img10.png";
 
 const Blogs = () => {
   const images = [
-    { img: img1, title: "The Future of AI in Bangladeshi Businesses" },
-    { img: img2, title: "Cybersecurity Best Practices for SMEs" },
-    { img: img3, title: "Digital Transformation Strategies" },
-    { img: img4, title: "Cloud Computing Trends in 2024" },
-    { img: img5, title: "Building Scalable Tech Startups" },
-    { img: img6, title: "The Impact of 5G on Business Innovation" },
-    { img: img7, title: "Data Analytics for Competitive Advantage" },
-    { img: img8, title: "Sustainable Technology Solutions" },
-    { img: img9, title: "Blockchain Applications in Finance" },
-    { img: img10, title: "UX Design Principles for Tech Products" },
+    { img: "/assets/blogs/img6.png", title: "The Future of AI in Bangladeshi Businesses" },
+    { img: "/assets/blogs/img2.png", title: "Cybersecurity Best Practices for SMEs" },
+    { img: "/assets/blogs/img3.png", title: "Digital Transformation Strategies" },
+    { img: "/assets/blogs/img4.png", title: "Cloud Computing Trends in 2024" },
+    { img: "/assets/blogs/img5.png", title: "Building Scalable Tech Startups" },
+    { img: "/assets/blogs/img6.png", title: "The Impact of 5G on Business Innovation" },
+    { img: "/assets/blogs/img7.png", title: "Data Analytics for Competitive Advantage" },
+    { img: "/assets/blogs/img8.png", title: "Sustainable Technology Solutions" },
+    { img: "/assets/blogs/img9.png", title: "Blockchain Applications in Finance" },
+    { img: "/assets/blogs/img10.png", title: "UX Design Principles for Tech Products" },
   ];
 
   const [visibleCount, setVisibleCount] = useState(4);

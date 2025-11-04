@@ -1,11 +1,5 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import card1 from "../../../assets/donation/donate_card1.png";
-import card2 from "../../../assets/donation/donate_card2.png";
-import bkash from "../../../assets/donation/bkash.svg";
-import nagad from "../../../assets/donation/nagad.svg";
-import rocket from "../../../assets/donation/rocket.svg";
-import visa from "../../../assets/donation/visa.svg";
 
 const Proceed = () => {
   const [selected, setSelected] = useState(null);
@@ -15,31 +9,31 @@ const Proceed = () => {
       id: "bkash",
       name: "BKash",
       description: "Pay from your bKash account",
-      img: bkash,
+      img: "/assets/donation/bkash.svg",
     },
     {
       id: "rocket",
       name: "Rocket",
       description: "Pay from your Rocket account",
-      img: rocket,
+      img: "/assets/donation/rocket.svg",
     },
     {
       id: "nagad",
       name: "Nagad",
       description: "Pay from your Nagad account",
-      img: nagad,
+      img: "/assets/donation/nagad.svg",
     },
     {
       id: "visa",
       name: "Visa",
       description: "Pay using credit/debit card",
-      img: visa,
+      img: "/assets/donation/visa.svg",
     },
   ];
 
   const donationCards = [
-    { id: 1, image: card1, title: "Donate to homeless children" },
-    { id: 2, image: card2, title: "Donate to Gazans in Palestine" },
+    { id: 1, image: "/assets/donation/donate_card1.png", title: "Donate to homeless children" },
+    { id: 2, image: "/assets/donation/donate_card2.png", title: "Donate to Gazans in Palestine" },
   ];
   const [selectedAccount, setSelectedAccount] = useState("user");
   const [selectedAmount, setSelectedAmount] = useState(null);

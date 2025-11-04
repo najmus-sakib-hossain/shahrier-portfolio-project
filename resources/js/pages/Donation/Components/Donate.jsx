@@ -1,5 +1,3 @@
-import pattern from "../../../assets/donation/vector_pattern.svg";
-
 const Donate = ({ donations = [] }) => {
   // Default donation cards if none provided
   const defaultDonations = [
@@ -23,7 +21,7 @@ const Donate = ({ donations = [] }) => {
         Donation
       </h1>
       <div className="absolute right-0 top-0 hidden lg:block">
-        <img src={pattern} alt="" />
+        <img src="/assets/donation/vector_pattern.svg" alt="" />
       </div>
 
       <div className="w-11/12 lg:w-9/12 mx-auto">

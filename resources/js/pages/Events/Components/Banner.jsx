@@ -35,11 +35,11 @@ const Banner = ({ featuredEvents = [] }) => {
     <div className="bg-slate-50 relative min-h-screen">
       {/* Background Patterns */}
       <div className="absolute right-0 p-1 hidden lg:block">
-        <img src={pattern} alt="" className="w-full h-full object-cover" />
+        <img src="/assets/events/banner_vector.png" alt="" className="w-full h-full object-cover" />
       </div>
 
       <div className="absolute left-0 bottom-0 hidden lg:block">
-        <img src={pattern_bottom} alt="" />
+        <img src="/assets/events/bottom_vector.png" alt="" />
       </div>
 
       <div className="pt-24">
@@ -84,7 +84,7 @@ const Banner = ({ featuredEvents = [] }) => {
                   src={event?.featured_image || "/assets/events/default.png"}
                   alt={event?.title || "Event"}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-black to-transparent"></div>
                 {/* Text Overlay */}
                 <div className="absolute inset-0 flex flex-col items-start justify-end text-white p-4">
                   <a href="/ai-summit">

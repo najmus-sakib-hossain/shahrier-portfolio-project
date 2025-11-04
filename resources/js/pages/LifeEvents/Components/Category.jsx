@@ -1,21 +1,14 @@
 import { useState } from "react";
-import all from "../../../assets/life_events/all.svg";
-import work from "../../../assets/life_events/work.svg";
-import education from "../../../assets/life_events/education.svg";
-import meetup from "../../../assets/life_events/meetup.svg";
-import family from "../../../assets/life_events/family.svg";
-import travel from "../../../assets/life_events/travel.svg";
-import achievement from "../../../assets/life_events/achievement.svg";
 import All from "./All";
 
 const categoryIcons = [
-  { id: "all", label: "All", icon: all },
-  { id: "work", label: "Work", icon: work },
-  { id: "education", label: "Education", icon: education },
-  { id: "meetup", label: "Meetup", icon: meetup },
-  { id: "family", label: "Family", icon: family },
-  { id: "travel", label: "Travel", icon: travel },
-  { id: "achievement", label: "Achievement", icon: achievement },
+  { id: "all", label: "All", icon: "/assets/life_events/all.svg" },
+  { id: "work", label: "Work", icon: "/assets/life_events/work.svg" },
+  { id: "education", label: "Education", icon: "/assets/life_events/education.svg" },
+  { id: "meetup", label: "Meetup", icon: "/assets/life_events/meetup.svg" },
+  { id: "family", label: "Family", icon: "/assets/life_events/family.svg" },
+  { id: "travel", label: "Travel", icon: "/assets/life_events/travel.svg" },
+  { id: "achievement", label: "Achievement", icon: "/assets/life_events/achievement.svg" },
 ];
 
 const Category = ({ lifeEvents = [], categories = [] }) => {
@@ -23,12 +16,12 @@ const Category = ({ lifeEvents = [], categories = [] }) => {
 
   // Build categories from database if available, otherwise use default icons
   const availableCategories = categories.length > 0 
-    ? [{ id: "all", label: "All", icon: all }, ...categories.map(cat => {
+    ? [{ id: "all", label: "All", icon: "/assets/life_events/all.svg" }, ...categories.map(cat => {
         const iconData = categoryIcons.find(c => c.id.toLowerCase() === cat.toLowerCase());
         return {
           id: cat.toLowerCase(),
           label: cat,
-          icon: iconData?.icon || all
+          icon: iconData?.icon || "/assets/life_events/all.svg"
         };
       })]
     : categoryIcons;
