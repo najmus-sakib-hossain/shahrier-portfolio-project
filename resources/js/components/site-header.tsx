@@ -41,7 +41,7 @@ export function SiteHeader() {
               target="_blank"
               className="dark:text-foreground"
             >
-              HomePage
+              Home Page
             </a>
           </Button>
         </div>
