@@ -14,9 +14,9 @@ Route::get('/', function () {
     return Inertia::render('Home/Page/Home');
 })->name('home');
 
-Route::get('/aboutus', function () {
-    return Inertia::render('Aboutus/Page/Aboutus');
-})->name('aboutus');
+Route::get('/aboutme', function () {
+    return Inertia::render('AboutMe/Page/AboutMe');
+})->name('aboutme');
 
 Route::get('/blogs', function () {
     return Inertia::render('Blogs/Page/Blogs');

@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const getTextColor = () => {
     if (location.pathname === "/") return "text-slate-950";
-    if (location.pathname === "/aboutus") return "text-white";
+    if (location.pathname === "/aboutme") return "text-white";
     if (location.pathname === "/life-events") return "text-white";
     if (location.pathname === "/entrepreneurship") return "text-white";
     if (location.pathname === "/technology") return "text-white";
@@ -22,7 +22,7 @@ const Navbar = () => {
 
   const getIconColor = () => {
     if (location.pathname === "/") return "text-slate-950";
-    if (location.pathname === "/aboutus") return "text-white";
+    if (location.pathname === "/aboutme") return "text-white";
     if (location.pathname === "/life-events") return "text-white";
     if (location.pathname === "/entrepreneurship") return "text-white";
     if (location.pathname === "/technology") return "text-white";
@@ -45,7 +45,7 @@ const Navbar = () => {
               className="text-4xl cursor-pointer px-4 py-2 rounded-lg"
               onClick={toggleDrawer}
             >
-              <MenuIcon className="h-8 w-8 text-blue-500" />
+              <MenuIcon className="h-8 w-8 text-black" />
             </p>
           </div>
         </div>
@@ -60,7 +60,7 @@ const Navbar = () => {
               className="text-4xl text-slate-950 cursor-pointer"
               onClick={toggleDrawer}
             >
-              <X className="h-8 w-8 text-blue-500" />
+              <X className="h-8 w-8 text-black" />
             </button>
           </div>
           <div className="mt-10 text-3xl font-medium px-20">
@@ -77,10 +77,10 @@ const Navbar = () => {
                 <li className="mb-6">Home</li>
               </a>
               <a
-                href="/aboutus"
+                href="/aboutme"
                 onClick={toggleDrawer}
                 className={
-                  location.pathname === "/aboutus"
+                  location.pathname === "/aboutme"
                     ? "text-blue-500 font-bold"
                     : "text-black hover:text-blue-500"
                 }
