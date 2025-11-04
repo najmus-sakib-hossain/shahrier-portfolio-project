@@ -12,11 +12,11 @@ class VideoController extends Controller
     public function index()
     {
         $regularVideos = Video::where('is_short', false)
-            ->orderBy('published_at', 'desc')
+            ->orderBy('created_at', 'desc')
             ->get();
 
         $shortVideos = Video::where('is_short', true)
-            ->orderBy('published_at', 'desc')
+            ->orderBy('created_at', 'desc')
             ->get();
 
         return Inertia::render('Videos/Page/Videos', [

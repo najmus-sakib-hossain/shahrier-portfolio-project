@@ -27,6 +27,7 @@ use App\Http\Controllers\Admin\AboutSectionController;
 use App\Http\Controllers\Admin\AwardController;
 use App\Http\Controllers\Admin\CertificateController;
 use App\Http\Controllers\Admin\EntrepreneurshipContentController;
+use App\Http\Controllers\Api\ActivityController;
 
 // Frontend Routes
 Route::get('/', [HomeController::class, 'index'])->name('index');
@@ -44,6 +45,13 @@ Route::get('/events', [EventController::class, 'index'])->name('events');
 Route::get('/life-events', [LifeEventController::class, 'index'])->name('life-events');
 Route::get('/technology', [TechnologyController::class, 'index'])->name('technology');
 Route::get('/videos', [VideoController::class, 'index'])->name('videos');
+
+// API Routes for Chart Data
+Route::prefix('api')->name('api.')->group(function () {
+    Route::get('/activity/recent', [ActivityController::class, 'getRecentActivity'])->name('activity.recent');
+    Route::get('/activity/visitors', [ActivityController::class, 'getVisitorStats'])->name('activity.visitors');
+    Route::get('/activity/content-stats', [ActivityController::class, 'getContentStats'])->name('activity.content-stats');
+});
 
 // Admin Dashboard Routes
 Route::middleware(['auth', 'verified'])->group(function () {
