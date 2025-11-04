@@ -1,4 +1,4 @@
-import { Menu, MenuIcon, Settings2, X } from "lucide-react";
+import { MenuIcon, X } from "lucide-react";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -11,21 +11,21 @@ const Navbar = () => {
 
   const getTextColor = () => {
     if (location.pathname === "/") return "text-slate-950";
-    if (location.pathname === "/aboutme") return "text-white";
-    if (location.pathname === "/life-events") return "text-white";
-    if (location.pathname === "/entrepreneurship") return "text-white";
-    if (location.pathname === "/technology") return "text-white";
-    if (location.pathname === "/donation") return "text-white";
+    if (location.pathname === "/aboutme") return "text-slate-950";
+    if (location.pathname === "/life-events") return "text-slate-950";
+    if (location.pathname === "/entrepreneurship") return "text-slate-950";
+    if (location.pathname === "/technology") return "text-slate-950";
+    if (location.pathname === "/donation") return "text-slate-950";
     if (location.pathname === "/contact") return "text-white";
     return "text-black";
   };
 
   const getIconColor = () => {
     if (location.pathname === "/") return "text-slate-950";
-    if (location.pathname === "/aboutme") return "text-white";
-    if (location.pathname === "/life-events") return "text-white";
-    if (location.pathname === "/entrepreneurship") return "text-white";
-    if (location.pathname === "/technology") return "text-white";
+    if (location.pathname === "/aboutme") return "text-slate-950";
+    if (location.pathname === "/life-events") return "text-slate-950";
+    if (location.pathname === "/entrepreneurship") return "text-slate-950";
+    if (location.pathname === "/technology") return "text-slate-950";
     if (location.pathname === "/donation") return "text-slate-900";
     if (location.pathname === "/contact") return "text-white";
     return "text-black";
@@ -42,10 +42,10 @@ const Navbar = () => {
           </a>
           <div>
             <p
-              className="text-4xl cursor-pointer px-4 py-2 rounded-lg"
+              className={`text-4xl cursor-pointer px-4 py-2 rounded-lg`}
               onClick={toggleDrawer}
             >
-              <MenuIcon className="h-8 w-8 text-black" />
+              <MenuIcon className={`h-8 w-8 ${getIconColor()}`} />
             </p>
           </div>
         </div>
