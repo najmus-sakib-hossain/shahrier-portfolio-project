@@ -51,6 +51,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return Inertia::render('dashboard');
     })->name('dashboard');
 
+    // Profile Routes
+    Route::get('/profile', [\App\Http\Controllers\dashboard\ProfileController::class, 'index'])->name('profile');
+    Route::post('/profile/update', [\App\Http\Controllers\dashboard\ProfileController::class, 'update'])->name('profile.update');
+    Route::post('/profile/update-theme', [\App\Http\Controllers\dashboard\ProfileController::class, 'updateTheme'])->name('profile.update-theme');
+
     // Admin Resource Routes
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('blogs', BlogPostController::class);

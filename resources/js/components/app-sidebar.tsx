@@ -29,6 +29,7 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
+import { usePage } from "@inertiajs/react"
 
 // This is sample data.
 const data = {
@@ -216,17 +217,28 @@ const data = {
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  // Get shared props from Inertia
+  const page = usePage()
+  const auth = (page.props as any).auth
+  const userTeams = (page.props as any).userTeams || []
+
+  const sidebarUser = {
+    name: auth?.user?.name || "Guest",
+    email: auth?.user?.email || "",
+    avatar: auth?.user?.avatar || null,
+  }
+
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+        {userTeams.length > 0 && <TeamSwitcher teams={userTeams} />}
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
         {/* <NavProjects projects={data.projects} /> */}
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser user={sidebarUser} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
