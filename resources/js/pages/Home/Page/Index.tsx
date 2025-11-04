@@ -45,7 +45,9 @@ const Home = () => {
             />
 
             <Button className="border absolute bottom-4 mt-8 px-16 py-7 bg-white text-gray-900 hover:bg-gray-100 font-semibold text-lg rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl z-30">
-                Play Now
+                <a href="/home">
+                    Play Now
+                </a>
             </Button>
 
             <img src="assets/shahrier.png" alt="Shahrier" className="absolute bottom-0 h-[750px] object-cover z-20" />
