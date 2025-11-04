@@ -9,7 +9,7 @@ import img8 from "../../../assets/blogs/img8.png";
 import img9 from "../../../assets/blogs/img9.png";
 import img10 from "../../../assets/blogs/img10.png";
 
-import { FaSearch } from "react-icons/fa";
+import { Search } from "lucide-react";
 
 const AllBlog = () => {
   const images = [
@@ -37,7 +37,7 @@ const AllBlog = () => {
           />
 
           <div className="absolute top-3 left-4 text-lg">
-            <FaSearch className="text-gray-500" />
+            <Search className="text-gray-500" />
           </div>
         </div>
       </div>

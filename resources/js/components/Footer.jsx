@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaArrowUp } from "react-icons/fa";
+import { ArrowUp } from "lucide-react";
 import "./footer.css";
 
 const Footer = () => {
@@ -29,7 +29,7 @@ const Footer = () => {
           onClick={scrollToTop}
           className="absolute bottom-6 right-6 px-6 py-6 bg-gray-700 hover:bg-gray-600 rounded-full"
         >
-          <FaArrowUp className="text-xl" />
+          <ArrowUp className="text-xl" />
         </button>
       </div>
 

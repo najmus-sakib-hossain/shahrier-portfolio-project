@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import card1 from "../../../assets/donation/donate_card1.png";
 import card2 from "../../../assets/donation/donate_card2.png";
 import pattern from "../../../assets/donation/vector_pattern.svg";
@@ -40,14 +39,11 @@ const Donate = () => {
               <h1 className="text-2xl lg:text-5xl text-white font-semibold mb-6">
                 {card.title}
               </h1>
-              <Link
-                to={`/resource/donation/${card.id}`}
-                state={({ image: card.image }, { title: card.title })}
-              >
+              <a href={`/resource/donation/${card.id}`}>
                 <button className=" text-[#2E5AFF] bg-white px-4 py-2 rounded-md hover:bg-blue-600 hover:text-white mb-8">
                   Donate Now
                 </button>
-              </Link>
+              </a>
             </div>
           ))}
         </div>

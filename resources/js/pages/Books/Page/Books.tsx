@@ -1,4 +1,3 @@
-import React from "react";
 import Banner from "../Components/Banner";
 import Highlights from "../Components/Highlights";
 import Summary from "../Components/Summary";

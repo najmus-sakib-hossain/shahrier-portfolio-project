@@ -3,14 +3,14 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import img from "../../../assets/videos/video_thumbline.png";
-import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
+import { ChevronRight, ChevronLeft } from "lucide-react";
 
 const NextArrow = ({ onClick }) => (
   <div
     className="absolute top-1/2 right-[-20px] transform -translate-y-1/2 bg-gray-100 text-slate-950 rounded-full p-3 cursor-pointer shadow-lg z-10"
     onClick={onClick}
   >
-    <MdKeyboardArrowRight size={24} />
+    <ChevronRight size={24} />
   </div>
 );
 
@@ -19,7 +19,7 @@ const PrevArrow = ({ onClick }) => (
     className="absolute top-1/2 left-[-20px] transform -translate-y-1/2 bg-gray-100 text-slate-950 rounded-full p-3 cursor-pointer shadow-lg z-10"
     onClick={onClick}
   >
-    <MdKeyboardArrowLeft size={24} />
+    <ChevronLeft size={24} />
   </div>
 );
 

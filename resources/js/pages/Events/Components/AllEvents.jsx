@@ -7,9 +7,7 @@ import img2 from "../../../assets/entepreneourship/slider_2.jpeg";
 import img3 from "../../../assets/entepreneourship/slider_3.jpeg";
 import img4 from "../../../assets/entepreneourship/slider_4.jpeg";
 import img5 from "../../../assets/entepreneourship/slider_5.jpeg";
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-import { SlCalender } from "react-icons/sl";
-import { CiLocationOn } from "react-icons/ci";
+import { ChevronLeft, ChevronRight, Calendar, MapPin } from "lucide-react";
 
 const images = [
   {
@@ -49,7 +47,7 @@ const NextArrow = ({ onClick }) => (
     className="absolute top-1/2 right-[-20px] transform -translate-y-1/2 bg-gray-100 text-slate-950 rounded-full p-3 cursor-pointer shadow-lg z-10"
     onClick={onClick}
   >
-    <MdKeyboardArrowRight size={24} />
+    <ChevronRight size={24} />
   </div>
 );
 
@@ -58,7 +56,7 @@ const PrevArrow = ({ onClick }) => (
     className="absolute top-1/2 left-[-20px] transform -translate-y-1/2 bg-gray-100 text-slate-950 rounded-full p-3 cursor-pointer shadow-lg z-10"
     onClick={onClick}
   >
-    <MdKeyboardArrowLeft size={24} />
+    <ChevronLeft size={24} />
   </div>
 );
 
@@ -114,7 +112,7 @@ const AllEvents = () => {
                   <div className="flex items-center gap-2 mb-2">
                     <p className="text-slate-300">
                       {" "}
-                      <SlCalender size={24} />
+                      <Calendar size={24} />
                     </p>
                     <p className="text-slate-300">{image.date}</p>
                   </div>
@@ -122,7 +120,7 @@ const AllEvents = () => {
                   <div className="flex items-center gap-2 mb-2">
                     <p className="text-slate-300">
                       {" "}
-                      <CiLocationOn size={24} />
+                      <MapPin size={24} />
                     </p>
                     <p className="text-slate-300">{image.location}</p>
                   </div>

@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import certificate_1 from "../../../assets/technology/certificate_1.png";
 import certificate_2 from "../../../assets/technology/certificate_2.png";
 import certificate_3 from "../../../assets/technology/certificate_3.png";
@@ -18,7 +18,7 @@ const Certificates = () => {
       className="absolute top-1/2 right-[-20px] transform -translate-y-1/2 bg-indigo-300 text-white rounded-full p-3 cursor-pointer shadow-lg z-10"
       onClick={onClick}
     >
-      <MdKeyboardArrowRight size={24} />
+      <ChevronRight size={24} />
     </div>
   );
 
@@ -27,7 +27,7 @@ const Certificates = () => {
       className="absolute top-1/2 left-[-20px] transform -translate-y-1/2 bg-indigo-300 text-white rounded-full p-3 cursor-pointer shadow-lg z-10"
       onClick={onClick}
     >
-      <MdKeyboardArrowLeft size={24} />
+      <ChevronLeft size={24} />
     </div>
   );
 

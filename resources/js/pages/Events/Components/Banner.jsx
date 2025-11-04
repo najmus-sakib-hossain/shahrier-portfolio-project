@@ -1,12 +1,10 @@
-import { SlCalender } from "react-icons/sl";
+import { Calendar, MapPin } from "lucide-react";
 import pattern from "../../../assets/events/banner_vector.png";
 import pattern_bottom from "../../../assets/events/bottom_vector.png";
-import { CiLocationOn } from "react-icons/ci";
 import img1 from "../../../assets/entepreneourship/slider_1.jpeg";
 import img2 from "../../../assets/entepreneourship/slider_2.jpeg";
 import img3 from "../../../assets/entepreneourship/slider_3.jpeg";
 import img4 from "../../../assets/entepreneourship/slider_4.jpeg";
-import { Link } from "react-router-dom";
 
 const Banner = () => {
   const images = [img1, img3, img4, img2];
@@ -64,21 +62,21 @@ const Banner = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
               {/* Text Overlay */}
               <div className="absolute inset-0 flex flex-col items-start justify-end text-white p-4">
-                <Link to="/ai-summit">
+                <a href="/ai-summit">
                   {" "}
                   <h1 className="text-3xl font-semibold mb-6">
                     Tech Innovations Conference 2024
                   </h1>
-                </Link>
+                </a>
                 <div className="flex items-center gap-2 mb-2">
                   <p className="text-slate-300">
-                    <SlCalender size={24} />
+                    <Calendar size={24} />
                   </p>
                   <p className="text-slate-300">June 10, 2024</p>
                 </div>
                 <div className="flex items-center gap-2 mb-2">
                   <p className="text-slate-300">
-                    <CiLocationOn size={24} />
+                    <MapPin size={24} />
                   </p>
                   <p className="text-slate-300">San Francisco, CA</p>
                 </div>

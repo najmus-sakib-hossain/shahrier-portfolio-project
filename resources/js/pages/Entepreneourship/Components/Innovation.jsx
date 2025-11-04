@@ -4,7 +4,7 @@ import huistle from "../../../assets/entepreneourship/huistle.png";
 import mindshaper from "../../../assets/entepreneourship/mindshaper.png";
 import { useState } from "react";
 
-import { RxCross1 } from "react-icons/rx";
+import { X } from "lucide-react";
 const Innovation = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -64,7 +64,7 @@ const Innovation = () => {
               className="absolute top-3 right-3 text-xl text-gray-700 hover:text-red-500"
               onClick={() => setIsModalOpen(false)}
             >
-              <RxCross1 size={32} />
+              <X size={32} />
             </button>
 
             <div className="w-11/12 lg:w-9/12 mx-auto py-16">

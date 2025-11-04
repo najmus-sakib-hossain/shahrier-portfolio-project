@@ -1,10 +1,8 @@
-import { MdOutlineCategory } from "react-icons/md";
+import { Tag, Clock, MapPin } from "lucide-react";
 import img from "../../../assets/life_events/winning_strategy.png";
 import img1 from "../../../assets/life_events/winning_strategy_mini1.png";
 import img2 from "../../../assets/life_events/winning_strategy_mini2.png";
 import img3 from "../../../assets/life_events/winning_strategy_mini3.png";
-import { IoTimeOutline } from "react-icons/io5";
-import { CiLocationOn } from "react-icons/ci";
 
 const All = () => {
   return (
@@ -33,21 +31,21 @@ const All = () => {
             <div className="flex items-center flex-wrap lg:flex-nowrap gap-4 mb-6">
               <div className="bg-[#5C7EFF] px-6 py-2 rounded-lg text-white flex items-center gap-2">
                 <p>
-                  <MdOutlineCategory />
+                  <Tag />
                 </p>
                 <p>Category</p>
               </div>
 
               <div className="bg-[#5C7EFF] px-6 py-2 rounded-lg text-white flex items-center gap-2">
                 <p>
-                  <IoTimeOutline />
+                  <Clock />
                 </p>
                 <p>Time</p>
               </div>
 
               <div className="bg-[#5C7EFF] px-6 py-2 rounded-lg text-white flex items-center gap-2">
                 <p>
-                  <CiLocationOn />
+                  <MapPin />
                 </p>
                 <p>Location</p>
               </div>
@@ -77,21 +75,21 @@ const All = () => {
             <div className="flex items-center flex-wrap lg:flex-nowrap gap-4 mb-6">
               <div className="bg-[#5C7EFF] px-6 py-2 rounded-lg text-white flex items-center gap-2">
                 <p>
-                  <MdOutlineCategory />
+                  <Tag />
                 </p>
                 <p>Category</p>
               </div>
 
               <div className="bg-[#5C7EFF] px-6 py-2 rounded-lg text-white flex items-center gap-2">
                 <p>
-                  <IoTimeOutline />
+                  <Clock />
                 </p>
                 <p>Time</p>
               </div>
 
               <div className="bg-[#5C7EFF] px-6 py-2 rounded-lg text-white flex items-center gap-2">
                 <p>
-                  <CiLocationOn />
+                  <MapPin />
                 </p>
                 <p>Location</p>
               </div>
@@ -149,21 +147,21 @@ const All = () => {
             <div className="flex items-center flex-wrap lg:flex-nowrap gap-4 mb-6">
               <div className="bg-[#5C7EFF] px-6 py-2 rounded-lg text-white flex items-center gap-2">
                 <p>
-                  <MdOutlineCategory />
+                  <Tag />
                 </p>
                 <p>Category</p>
               </div>
 
               <div className="bg-[#5C7EFF] px-6 py-2 rounded-lg text-white flex items-center gap-2">
                 <p>
-                  <IoTimeOutline />
+                  <Clock />
                 </p>
                 <p>Time</p>
               </div>
 
               <div className="bg-[#5C7EFF] px-6 py-2 rounded-lg text-white flex items-center gap-2">
                 <p>
-                  <CiLocationOn />
+                  <MapPin />
                 </p>
                 <p>Location</p>
               </div>
