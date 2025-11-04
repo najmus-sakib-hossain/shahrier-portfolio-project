@@ -47,9 +47,7 @@ Route::get('/videos', [VideoController::class, 'index'])->name('videos');
 
 // Admin Dashboard Routes
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('dashboard', function () {
-        return Inertia::render('dashboard');
-    })->name('dashboard');
+    Route::get('dashboard', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard');
 
     // Profile Routes
     Route::get('/profile', [\App\Http\Controllers\dashboard\ProfileController::class, 'index'])->name('profile');
