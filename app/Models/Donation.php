@@ -16,6 +16,7 @@ class Donation extends Model
         'end_date',
         'is_active',
         'beneficiary_info',
+        'order',
     ];
 
     protected $casts = [

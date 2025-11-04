@@ -17,10 +17,13 @@ class Video extends Model
         'is_short',
         'views',
         'published_at',
+        'publish_date',
+        'order',
     ];
 
     protected $casts = [
         'published_at' => 'date',
+        'publish_date' => 'date',
         'is_short' => 'boolean',
     ];
 }
