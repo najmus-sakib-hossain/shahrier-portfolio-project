@@ -10,7 +10,7 @@ const All = ({ lifeEvents = [] }) => {
       event_date: "2024-01-15",
       location: "Dhaka, Bangladesh",
       description: "The SWOT analysis framework has been instrumental in my strategic planning, helping me identify strengths, weaknesses, opportunities, and threats in various aspects of my life and career. By leveraging this tool, I've developed winning strategies that have led to successful outcomes in entrepreneurship, technology innovation, and personal growth.",
-      featured_image: "/assets/life_events/winning_strategy.png",
+      image: "/assets/life_events/winning_strategy.png",
       gallery: [
         "/assets/life_events/winning_strategy_mini1.png",
         "/assets/life_events/winning_strategy_mini2.png",
@@ -34,7 +34,7 @@ const All = ({ lifeEvents = [] }) => {
                 <>
                   <div>
                     <div className="w-full relative">
-                      <img className="w-full" src={event.featured_image || "/assets/life_events/default.png"} alt={event.title} />
+                      <img className="w-full" src={event.image || "/assets/life_events/default.png"} alt={event.title} />
                       {gallery.length > 0 && (
                         <div className="hidden lg:block">
                           <div className="grid grid-cols-3 gap-x-3 absolute bottom-4 px-4">
@@ -103,7 +103,7 @@ const All = ({ lifeEvents = [] }) => {
                   </div>
                   <div>
                     <div className="w-full relative">
-                      <img className="w-full" src={event.featured_image || "/assets/life_events/default.png"} alt={event.title} />
+                      <img className="w-full" src={event.image || "/assets/life_events/default.png"} alt={event.title} />
                       {gallery.length > 0 && (
                         <div className="hidden lg:block">
                           <div className="grid grid-cols-3 gap-x-3 absolute bottom-4 px-4">

@@ -4,25 +4,25 @@ const Banner = ({ featuredEvents = [] }) => {
   // Default events if none provided
   const defaultEvents = [
     {
-      featured_image: "/assets/entepreneourship/slider_1.jpeg",
+      image: "/assets/entepreneourship/slider_1.jpeg",
       title: "Tech Innovations Conference 2024",
       event_date: "2024-06-10",
       location: "San Francisco, CA"
     },
     {
-      featured_image: "/assets/entepreneourship/slider_3.jpeg",
+      image: "/assets/entepreneourship/slider_3.jpeg",
       title: "Tech Innovations Conference 2024",
       event_date: "2024-06-10",
       location: "San Francisco, CA"
     },
     {
-      featured_image: "/assets/entepreneourship/slider_4.jpeg",
+      image: "/assets/entepreneourship/slider_4.jpeg",
       title: "Tech Innovations Conference 2024",
       event_date: "2024-06-10",
       location: "San Francisco, CA"
     },
     {
-      featured_image: "/assets/entepreneourship/slider_2.jpeg",
+      image: "/assets/entepreneourship/slider_2.jpeg",
       title: "Tech Innovations Conference 2024",
       event_date: "2024-06-10",
       location: "San Francisco, CA"
@@ -81,7 +81,7 @@ const Banner = ({ featuredEvents = [] }) => {
                 {/* Image */}
                 <img
                   className="w-full h-full object-cover rounded-2xl"
-                  src={event?.featured_image || "/assets/events/default.png"}
+                  src={event?.image || "/assets/events/default.png"}
                   alt={event?.title || "Event"}
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black to-transparent"></div>

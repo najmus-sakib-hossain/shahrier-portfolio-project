@@ -28,31 +28,31 @@ const AllEvents = ({ pastEvents = [], upcomingEvents = [] }) => {
   // Default fallback events
   const defaultEvents = [
     {
-      featured_image: "/assets/entepreneourship/slider_1.jpeg",
+      image: "/assets/entepreneourship/slider_1.jpeg",
       title: "Tech Innovations Conference 2024",
       event_date: "2024-06-10",
       location: "San Francisco, CA",
     },
     {
-      featured_image: "/assets/entepreneourship/slider_2.jpeg",
+      image: "/assets/entepreneourship/slider_2.jpeg",
       title: "Tech Innovations Conference 2024",
       event_date: "2024-06-10",
       location: "San Francisco, CA",
     },
     {
-      featured_image: "/assets/entepreneourship/slider_3.jpeg",
+      image: "/assets/entepreneourship/slider_3.jpeg",
       title: "Tech Innovations Conference 2024",
       event_date: "2024-06-10",
       location: "San Francisco, CA",
     },
     {
-      featured_image: "/assets/entepreneourship/slider_4.jpeg",
+      image: "/assets/entepreneourship/slider_4.jpeg",
       title: "Tech Innovations Conference 2024",
       event_date: "2024-06-10",
       location: "San Francisco, CA",
     },
     {
-      featured_image: "/assets/entepreneourship/slider_5.jpeg",
+      image: "/assets/entepreneourship/slider_5.jpeg",
       title: "Tech Innovations Conference 2024",
       event_date: "2024-06-10",
       location: "San Francisco, CA",
@@ -110,7 +110,7 @@ const AllEvents = ({ pastEvents = [], upcomingEvents = [] }) => {
                   {/* Image */}
                   <img
                     className="w-full h-full object-cover rounded-2xl"
-                    src={event.featured_image || "/assets/events/default.png"}
+                    src={event.image || "/assets/events/default.png"}
                     alt={event.title}
                   />
 

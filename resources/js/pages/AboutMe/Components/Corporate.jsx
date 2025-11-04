@@ -1,13 +1,4 @@
 import React from "react";
-import bag from "../../../assets/about_me/bag.svg";
-import nexkraft from "../../../assets/about_me/nexkraft.svg";
-import shahriarKhan from "../../../assets/about_me/shahriar_khan_philosophy.png";
-import line from "../../../assets/about_me/line.png";
-import graduation_hat from "../../../assets/about_me/graduation_hat.png";
-import first_job from "../../../assets/about_me/search.png";
-import last_job from "../../../assets/about_me/rotate_bag.png";
-import entropronour from "../../../assets/about_me/bag.svg";
-import backgroundBg from "../../../assets/about_me/corporate_journey.png";
 
 const Corporate = () => {
   return (
@@ -31,7 +22,7 @@ const Corporate = () => {
           </div>
 
           <div>
-            <img src={graduation_hat} alt="" />
+            <img src="/assets/about_me/graduation_hat.png" alt="" />
           </div>
         </div>
 
@@ -48,7 +39,7 @@ const Corporate = () => {
           </div>
 
           <div>
-            <img src={first_job} alt="" />
+            <img src="/assets/about_me/search.png" alt="" />
           </div>
         </div>
 
@@ -63,7 +54,7 @@ const Corporate = () => {
           </div>
 
           <div>
-            <img src={last_job} alt="" />
+            <img src="/assets/about_me/rotate_bag.png" alt="" />
           </div>
         </div>
 
@@ -78,7 +69,7 @@ const Corporate = () => {
           </div>
 
           <div className="mb-4">
-            <img src={entropronour} alt="" />
+            <img src="/assets/about_me/bag.svg" alt="" />
           </div>
         </div>
 
@@ -95,7 +86,7 @@ const Corporate = () => {
           </div>
 
           <div className="mb-4">
-            <img src={nexkraft} alt="" />
+            <img src="/assets/about_me/nexkraft.svg" alt="" />
           </div>
         </div>
       </div>
@@ -103,7 +94,7 @@ const Corporate = () => {
       <div
         className="w-full mx-auto"
         style={{
-          backgroundImage: ` url(${backgroundBg})`,
+          backgroundImage: ` url(/assets/about_me/corporate_journey.png)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -126,7 +117,7 @@ const Corporate = () => {
             <div className="w-fit h-fit">
               <img
                 className="w-fit h-fit rounded-b-full"
-                src={shahriarKhan}
+                src="/assets/about_me/shahriar_khan_philosophy.png"
                 alt=""
               />
             </div>
@@ -143,7 +134,7 @@ const Corporate = () => {
             </div>
           </div>
           <div className="absolute top-64 right-10 z-20 hidden lg:block">
-            <img src={line} alt="" />
+            <img src="/assets/about_me/line.png" alt="" />
           </div>
         </div>
       </div>

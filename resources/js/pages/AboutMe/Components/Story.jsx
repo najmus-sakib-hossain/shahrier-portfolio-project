@@ -1,5 +1,3 @@
-import frame from "../../../assets/about_me/frame.svg";
-
 const Story = ({ section }) => {
   // Get story sections from props, or use default fallback
   const storySections = section || [];
@@ -55,7 +53,7 @@ const Story = ({ section }) => {
               </div>
 
               <div className="absolute -top-8 -right-8 hidden lg:block">
-                <img src={frame} alt="" />
+                <img src="/assets/about_me/frame.svg" alt="" />
               </div>
             </div>
           </div>

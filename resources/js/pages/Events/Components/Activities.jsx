@@ -28,7 +28,7 @@ const Activities = ({ upcomingEvents = [] }) => {
                 <div className="w-full h-72">
                   <img
                     className="w-full h-full object-cover rounded-xl"
-                    src={events[0]?.featured_image || defaultImages[0]}
+                    src={events[0]?.image || defaultImages[0]}
                     alt={events[0]?.title || "Event"}
                   />
                 </div>
@@ -38,7 +38,7 @@ const Activities = ({ upcomingEvents = [] }) => {
               <div className="w-full h-36">
                 <img
                   className="w-full h-full object-cover rounded-xl"
-                  src={events[1]?.featured_image || defaultImages[1]}
+                  src={events[1]?.image || defaultImages[1]}
                   alt={events[1]?.title || "Event"}
                 />
               </div>
@@ -50,7 +50,7 @@ const Activities = ({ upcomingEvents = [] }) => {
               <div className="w-full h-36">
                 <img
                   className="w-full h-full object-cover rounded-xl"
-                  src={events[2]?.featured_image || defaultImages[2]}
+                  src={events[2]?.image || defaultImages[2]}
                   alt={events[2]?.title || "Event"}
                 />
               </div>
@@ -59,7 +59,7 @@ const Activities = ({ upcomingEvents = [] }) => {
               <div className="w-full h-72">
                 <img
                   className="w-full h-full object-cover rounded-xl"
-                  src={events[3]?.featured_image || defaultImages[3]}
+                  src={events[3]?.image || defaultImages[3]}
                   alt={events[3]?.title || "Event"}
                 />
               </div>
