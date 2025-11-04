@@ -12,15 +12,11 @@ const Story = () => {
           </h3>
 
           <p className="text-slate-950 mb-8">
-            Lorem ipsum dolor sit amet consectetur.
+            Shahriar Khan's journey began with a passion for technology and business. Graduating from East West University with a Master of Business Administration in Banking, Corporate, Finance, and Securities Law, he embarked on a path that would lead him to become a prominent figure in the tech industry.
           </p>
 
           <p className="text-slate-950">
-            Lorem ipsum dolor sit amet consectetur. Viverra interdum at
-            elementum adipiscing placerat dignissim sagittis. Morbi donec etiam
-            cursus nunc odio non eu eu. Ultricies nulla at neque tortor aliquet
-            sit. Sed urna convallis donec nullam tellus posuere amet. Nisi ac
-            nunc sit augue massa massa sollicitudin aliquam.
+            His early experiences shaped his vision for innovative solutions that bridge technology with real-world business challenges. Through perseverance and strategic thinking, Shahriar transformed ideas into successful ventures, establishing himself as a leader in digital transformation.
           </p>
         </div>
 
@@ -51,15 +47,11 @@ const Story = () => {
           </h3>
 
           <p className="text-slate-950 mb-8">
-            Lorem ipsum dolor sit amet consectetur.
+            Shahriar believes that true success comes from giving back to the community. Through his entrepreneurial ventures and philanthropic efforts, he has supported numerous initiatives in education, technology, and social development.
           </p>
 
           <p className="text-slate-950">
-            Lorem ipsum dolor sit amet consectetur. Viverra interdum at
-            elementum adipiscing placerat dignissim sagittis. Morbi donec etiam
-            cursus nunc odio non eu eu. Ultricies nulla at neque tortor aliquet
-            sit. Sed urna convallis donec nullam tellus posuere amet. Nisi ac
-            nunc sit augue massa massa sollicitudin aliquam.
+            His commitment to mentorship and knowledge sharing has helped countless young professionals enter the tech industry. By founding Nexkraft LTD in 2011, Shahriar has created opportunities for innovation and growth, proving that business success and social responsibility can go hand in hand.
           </p>
         </div>
       </div>
@@ -71,15 +63,11 @@ const Story = () => {
           </h3>
 
           <p className="text-slate-950 mb-8">
-            Lorem ipsum dolor sit amet consectetur.
+            Shahriar Khan's life is driven by a greater purpose: to harness technology for positive change. As CEO of Nexkraft LTD, he leads initiatives that promote digital literacy, cybersecurity awareness, and sustainable business practices.
           </p>
 
           <p className="text-slate-950">
-            Lorem ipsum dolor sit amet consectetur. Viverra interdum at
-            elementum adipiscing placerat dignissim sagittis. Morbi donec etiam
-            cursus nunc odio non eu eu. Ultricies nulla at neque tortor aliquet
-            sit. Sed urna convallis donec nullam tellus posuere amet. Nisi ac
-            nunc sit augue massa massa sollicitudin aliquam.
+            His work extends beyond business, encompassing education through ICT Olympiad Bangladesh, innovative solutions through various ventures, and thought leadership through publications and speaking engagements. Shahriar continues to inspire others to pursue excellence with integrity and purpose.
           </p>
         </div>
 

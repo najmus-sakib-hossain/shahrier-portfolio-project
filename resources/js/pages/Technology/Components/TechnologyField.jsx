@@ -25,13 +25,13 @@ const TechnologyField = () => {
             </h1>
 
             <p>Lorem ipsum dolor sit amet consectetur.</p>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p>Shahriar Khan has pioneered innovative technology solutions through Nexkraft LTD, focusing on AI integration, cloud migration, and digital transformation.</p>
+            <p>He has led research initiatives in emerging technologies and contributed to the development of user-centric digital platforms.</p>
+            <p>His work in process optimization has helped businesses improve efficiency and reduce operational costs through technology adoption.</p>
+            <p>Shahriar actively participates in technology communities, sharing knowledge through publications and speaking engagements.</p>
+            <p>His leadership in digital transformation has positioned Bangladesh as a growing hub for technology innovation.</p>
+            <p>Through ICT Olympiad Bangladesh, he has nurtured the next generation of technology leaders.</p>
+            <p>Shahriar's commitment to ethical technology development ensures sustainable and responsible innovation.</p>
           </div>
 
           <div>
@@ -53,11 +53,7 @@ const TechnologyField = () => {
             </h1>
 
             <p className="text-slate-900">
-              Lorem ipsum dolor sit amet consectetur. Viverra interdum at
-              elementum adipiscing placerat dignissim sagittis. Morbi donec
-              etiam cursus nunc odio non eu eu. Ultricies nulla at neque tortor
-              aliquet sit. Sed urna convallis donec nullam tellus posuere amet.
-              Nisi ac nunc sit augue massa massa sollicitudin aliquam.
+              Shahriar Khan is proficient in various technology tools and platforms essential for modern software development and system administration. His expertise includes containerization technologies like Docker and Kubernetes for scalable deployments, along with comprehensive knowledge of cloud platforms and development frameworks.
             </p>
           </div>
 

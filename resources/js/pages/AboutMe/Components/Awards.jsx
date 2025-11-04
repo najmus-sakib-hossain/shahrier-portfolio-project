@@ -4,24 +4,24 @@ const Awards = () => {
   const awards = [
     {
       img: award,
-      time: "Jan, 2016 to Jan, 2021",
-      title: "Best National Event Planning Company Award",
+      time: "2016 - 2021",
+      title: "ICT Olympiad Bangladesh Excellence Award",
       description:
-        "Recognized for excellence in delivering top-tier event planning services across the country, setting industry standards in creativity, organization, and client satisfaction.",
+        "Recognized for outstanding leadership in promoting ICT education and innovation among Bangladeshi youth through the ICT Olympiad Bangladesh program.",
     },
     {
       img: award,
-      time: "Jan, 2016 to Jan, 2021",
-      title: "Best National Event Planning Company Award",
+      time: "2018 - Present",
+      title: "Entrepreneur of the Year - Technology Sector",
       description:
-        "Recognized for excellence in delivering top-tier event planning services across the country, setting industry standards in creativity, organization, and client satisfaction.",
+        "Awarded for pioneering digital transformation initiatives and establishing successful tech ventures that have impacted the Bangladesh technology landscape.",
     },
     {
       img: award,
-      time: "Jan, 2016 to Jan, 2021",
-      title: "Best National Event Planning Company Award",
+      time: "2020 - 2023",
+      title: "Cybersecurity Innovation Award",
       description:
-        "Recognized for excellence in delivering top-tier event planning services across the country, setting industry standards in creativity, organization, and client satisfaction.",
+        "Honored for developing advanced cybersecurity solutions and promoting digital security awareness across industries in Bangladesh.",
     },
   ];
 
@@ -31,7 +31,7 @@ const Awards = () => {
         Awards
       </h3>
       <p className="text-center text-slate-950 mb-8">
-        Lorem ipsum dolor sit amet consectetur.
+        Celebrating achievements and recognitions that highlight Shahriar Khan's contributions to technology, entrepreneurship, and education.
       </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">

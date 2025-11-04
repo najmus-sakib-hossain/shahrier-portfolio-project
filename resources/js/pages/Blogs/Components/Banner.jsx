@@ -51,7 +51,7 @@ const Banner = () => {
 
               <div className="p-4">
                 <h1 className="text-xl font-semibold text-slate-950 mb-4">
-                  7 Tips for Custom Enterprise Software Development in 2023
+                  Cybersecurity Best Practices for SMEs
                 </h1>
 
                 <div className="flex items-center gap-8 text-gray-600">
@@ -70,7 +70,7 @@ const Banner = () => {
 
               <div className="p-4 ">
                 <h1 className="text-xl font-semibold text-slate-950 mb-2">
-                  7 Tips for Custom Enterprise Software Development in 2023
+                  Digital Transformation Strategies
                 </h1>
 
                 <div className="flex items-center gap-8 text-gray-600">
@@ -88,7 +88,7 @@ const Banner = () => {
 
               <div className="p-4 ">
                 <h1 className="text-xl font-semibold text-slate-950 mb-2">
-                  7 Tips for Custom Enterprise Software Development in 2023
+                  Cloud Computing Trends in 2024
                 </h1>
 
                 <div className="flex items-center gap-8 text-gray-600">
@@ -107,7 +107,7 @@ const Banner = () => {
 
               <div className="p-4 ">
                 <h1 className="text-xl font-semibold text-slate-950 mb-2">
-                  7 Tips for Custom Enterprise Software Development in 2023
+                  Building Scalable Tech Startups
                 </h1>
 
                 <div className="flex items-center gap-8 text-gray-600">

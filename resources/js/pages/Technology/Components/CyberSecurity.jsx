@@ -12,15 +12,11 @@ const CyberSecurity = () => {
             </h1>
 
             <p className="text-white mb-8">
-              Lorem ipsum dolor sit amet consectetur.
+              Cybersecurity is a critical component of modern business operations. Shahriar Khan has extensive experience in implementing robust security measures, conducting risk assessments, and developing strategies to protect digital assets.
             </p>
 
             <p className="text-base">
-              Lorem ipsum dolor sit amet consectetur. Viverra interdum at
-              elementum adipiscing placerat dignissim sagittis. Morbi donec
-              etiam cursus nunc odio non eu eu. Ultricies nulla at neque tortor
-              aliquet sit. Sed urna convallis donec nullam tellus posuere amet.
-              Nisi ac nunc sit augue massa massa sollicitudin aliquam.
+              His expertise includes network security, data protection, compliance frameworks, and incident response planning. Through Nexkraft LTD, he has helped numerous organizations strengthen their cybersecurity posture and navigate the evolving threat landscape.
             </p>
           </div>
 

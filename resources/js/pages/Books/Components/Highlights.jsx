@@ -15,12 +15,10 @@ const Highlights = () => {
 
             <div className="flex-1">
               <p className="text-lg font-semibold mb-4">
-                Best National Event Planning Company Award
+                Best-Selling Technology Book Award
               </p>
               <p className="w-3/4">
-                Recognized for excellence in delivering top-tier event planning
-                services across the country, setting industry standards in
-                creativity, organization, and client satisfaction.
+                "Chat GPT: Risk or Opportunity?" has been recognized as a pioneering work in exploring the implications of AI technology for businesses and society in Bangladesh.
               </p>
             </div>
           </div>
@@ -34,12 +32,10 @@ const Highlights = () => {
 
             <div className="flex-1">
               <p className="text-lg font-semibold mb-4">
-                Best National Event Planning Company Award
+                Innovation in Business Literature Award
               </p>
               <p className="lg:w-3/4">
-                Recognized for excellence in delivering top-tier event planning
-                services across the country, setting industry standards in
-                creativity, organization, and client satisfaction.
+                Honored for breaking new ground in business literature by addressing contemporary challenges of AI adoption and digital transformation in emerging markets.
               </p>
             </div>
           </div>

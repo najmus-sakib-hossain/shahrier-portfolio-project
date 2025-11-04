@@ -49,10 +49,7 @@ const Impact = () => {
             Entrepreneur Impact
           </h1>
           <p className="font-light text-gray-300 text-lg text-center">
-            Lorem ipsum dolor sit amet consectetur. Placerat suspendisse enim
-            quam nibh nulla aenean pellentesque. Ac aliquet sed sit proin ac
-            integer massa praesent sit. Eu mauris vitae nec massa quis. Gravida
-            tellus pharetra tortor faucibus cras odio non vel.
+            As a visionary entrepreneur, Shahriar Khan has pioneered multiple successful ventures including Nexkraft LTD, Nexfly, Mechanix, and NexAcademy. His leadership has driven innovation in event planning, education technology, and digital solutions, creating jobs and fostering economic growth in Bangladesh and beyond.
           </p>
         </div>
 
@@ -83,11 +80,7 @@ const Impact = () => {
             </h1>
 
             <p className="text-gray-300">
-              Lorem ipsum dolor sit amet consectetur. Viverra interdum at
-              elementum adipiscing placerat dignissim sagittis. Morbi donec
-              etiam cursus nunc odio non eu eu. Ultricies nulla at neque tortor
-              aliquet sit. Sed urna convallis donec nullam tellus posuere amet.
-              Nisi ac nunc sit augue massa massa sollicitudin aliquam.
+              Shahriar Khan has been at the forefront of technological advancement, specializing in AI-driven solutions, cloud-based systems, and cybersecurity. His expertise spans research and development, user experience design, and digital transformation strategies that have revolutionized how businesses operate in the modern digital landscape.
             </p>
           </div>
 

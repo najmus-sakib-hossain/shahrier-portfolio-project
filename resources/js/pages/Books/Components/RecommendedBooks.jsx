@@ -38,18 +38,10 @@ const RecommendedBooks = () => {
                 Publication Summary
               </h1>
               <p className="text-slate-950 text-lg mb-8">
-                The Nightingale has easily found its way to one of my favorite
-                books to recommend. Although some may feel daunted by the over
-                300 page book, it is worth every page. The characters are well
-                written and relatable. Isabelle is definitely one of my all time
-                favorite heroes.
+                "Chat GPT: Risk or Opportunity?" has been widely acclaimed for its insightful analysis of artificial intelligence's role in modern business. The book provides practical guidance for entrepreneurs and business leaders navigating the AI revolution.
               </p>
               <p className="text-slate-950 text-lg">
-                The Nightingale has easily found its way to one of my favorite
-                books to recommend. Although some may feel daunted by the over
-                300 page book, it is worth every page. The characters are well
-                written and relatable. Isabelle is definitely one of my all time
-                favorite heroes.
+                Through real-world examples and strategic frameworks, Shahriar Khan offers a balanced perspective on leveraging AI opportunities while managing associated risks, making it an essential read for anyone interested in the future of technology and business.
               </p>
             </div>
 

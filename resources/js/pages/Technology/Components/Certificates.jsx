@@ -51,8 +51,7 @@ const Certificates = () => {
         Certificates
       </h1>
       <p className="text-slate-600 text-center mb-12">
-        Lorem ipsum dolor sit amet consectetur. Malesuada orci molestie blandit
-        quam risus. Et aliquam sed diam dui sem morbi ornare etiam.
+        Shahriar Khan holds various professional certifications in technology, cybersecurity, and business management. These credentials validate his expertise and commitment to staying current with industry standards and best practices.
       </p>
 
       <Slider {...settings}>

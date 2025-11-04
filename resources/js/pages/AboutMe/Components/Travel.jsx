@@ -10,11 +10,7 @@ const Travel = () => {
         Travel countries for business purposes
       </h1>
       <p className="text-gray-300 text-center w-11/12 lg:w-6/12 mx-auto">
-        Lorem ipsum dolor sit amet consectetur. Viverra interdum at elementum
-        adipiscing placerat dignissim sagittis. Morbi donec etiam cursus nunc
-        odio non eu eu. Ultricies nulla at neque tortor aliquet sit. Sed urna
-        convallis donec nullam tellus posuere amet. Nisi ac nunc sit augue massa
-        massa sollicitudin aliquam.
+        As a global entrepreneur and technology leader, Shahriar Khan has traveled extensively for business purposes, establishing partnerships and exploring opportunities in Turkey, Canada, China, and the United States. These journeys have enriched his perspective and strengthened international collaborations.
       </p>
 
       <div className="relative">

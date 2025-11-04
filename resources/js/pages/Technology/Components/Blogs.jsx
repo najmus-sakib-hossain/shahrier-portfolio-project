@@ -12,16 +12,16 @@ import img10 from "../../../assets/blogs/img10.png";
 
 const Blogs = () => {
   const images = [
-    { img: img1 },
-    { img: img2 },
-    { img: img3 },
-    { img: img4 },
-    { img: img5 },
-    { img: img6 },
-    { img: img7 },
-    { img: img8 },
-    { img: img9 },
-    { img: img10 },
+    { img: img1, title: "The Future of AI in Bangladeshi Businesses" },
+    { img: img2, title: "Cybersecurity Best Practices for SMEs" },
+    { img: img3, title: "Digital Transformation Strategies" },
+    { img: img4, title: "Cloud Computing Trends in 2024" },
+    { img: img5, title: "Building Scalable Tech Startups" },
+    { img: img6, title: "The Impact of 5G on Business Innovation" },
+    { img: img7, title: "Data Analytics for Competitive Advantage" },
+    { img: img8, title: "Sustainable Technology Solutions" },
+    { img: img9, title: "Blockchain Applications in Finance" },
+    { img: img10, title: "UX Design Principles for Tech Products" },
   ];
 
   const [visibleCount, setVisibleCount] = useState(4);
@@ -49,7 +49,7 @@ const Blogs = () => {
 
               <div className="p-4">
                 <h1 className="text-xl font-semibold text-slate-950 mb-4">
-                  7 Tips for Custom Enterprise Software Development in 2023
+                  {image.title}
                 </h1>
 
                 <div className="flex items-center gap-8 text-gray-600">

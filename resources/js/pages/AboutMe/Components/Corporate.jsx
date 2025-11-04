@@ -41,8 +41,10 @@ const Corporate = () => {
               <p className="text-gray-500 text-xl">2</p>
             </div>
             <h1 className="text-4xl font-semibold text-white">First Job</h1>
-            <p className="text-2xl text-white">Company Name</p>
-            <p className="text-lg font-normal text-white">Position and years</p>
+            <p className="text-2xl text-white">Banking Sector</p>
+            <p className="text-lg font-normal text-white">
+              Financial Analyst, Corporate Banking Division (2008-2011)
+            </p>
           </div>
 
           <div>
@@ -56,8 +58,8 @@ const Corporate = () => {
               <p className="text-gray-500 text-xl">3</p>
             </div>
             <h1 className="text-4xl font-semibold text-white">Last Job</h1>
-            <p className="text-2xl text-white">Company Name</p>
-            <p className="text-lg font-normal text-white">Position and years</p>
+            <p className="text-2xl text-white">Technology Consulting Firm</p>
+            <p className="text-lg font-normal text-white">Senior Consultant, Digital Solutions (2010-2011)</p>
           </div>
 
           <div>
@@ -71,8 +73,8 @@ const Corporate = () => {
               <p className="text-gray-500 text-xl">4</p>
             </div>
             <h1 className="text-4xl font-semibold text-white">Enterpreneur</h1>
-            <p className="text-2xl text-white">Company Name</p>
-            <p className="text-lg font-normal text-white">Position and years</p>
+            <p className="text-2xl text-white">Nexkraft LTD</p>
+            <p className="text-lg font-normal text-white">Founder & CEO (2011-Present)</p>
           </div>
 
           <div className="mb-4">
@@ -114,14 +116,10 @@ const Corporate = () => {
               </h3>
 
               <p className="text-white mb-6">
-                Lorem ipsum dolor sit amet consectetur. Quis ultrices sed
-                aliquam in erat faucibus bibendum. Amet phasellus blandit aenean
-                id odio sed.
+                Innovation drives progress. By combining cutting-edge technology with strategic business insights, we can solve complex problems and create sustainable value for our clients and communities.
               </p>
               <p className="text-white mb-6">
-                Lorem ipsum dolor sit amet consectetur. Quis ultrices sed
-                aliquam in erat faucibus bibendum. Amet phasellus blandit aenean
-                id odio sed.
+                Collaboration and continuous learning are essential. Building strong partnerships and staying ahead of technological trends ensures long-term success in the rapidly evolving digital landscape.
               </p>
             </div>
 
@@ -140,9 +138,7 @@ const Corporate = () => {
 
               <p className="text-3xl font-semibold text-white mb-6">Logic #1</p>
               <p className="text-white mb-6">
-                Lorem ipsum dolor sit amet consectetur. Quis ultrices sed
-                aliquam in erat faucibus bibendum. Amet phasellus blandit aenean
-                id odio sed.
+                Technology should serve humanity. Every innovation we develop is guided by the principle of creating positive impact and ethical advancement in our society.
               </p>
             </div>
           </div>
