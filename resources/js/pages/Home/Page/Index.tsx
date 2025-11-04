@@ -21,7 +21,7 @@ const Home = () => {
                     {LOGOS.map((logo) => (
                         <div
                             key={logo.id}
-                            className="flex items-center justify-center p-4 rounded-lg hover:bg-gray-800/20 transition-colors duration-300"
+                            className="flex items-center justify-center p-4 rounded-lg hover:bg-muted/20 transition-colors duration-300"
                         >
                             <img src={logo.path} alt={logo.name} className="w-24 h-12 object-contain" />
                         </div>
@@ -34,7 +34,7 @@ const Home = () => {
                 </h1>
             </div>
 
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-gray-700/50 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-muted-foreground/50 to-transparent" />
 
             <AnimatedGridPattern
                 numSquares={30}
@@ -44,7 +44,7 @@ const Home = () => {
             // className="z-0"
             />
 
-            <Button className="border absolute bottom-4 mt-8 px-16 py-7 bg-white text-gray-900 hover:bg-gray-100 font-semibold text-lg rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl z-30">
+            <Button className="border absolute bottom-4 mt-8 px-16 py-7 bg-background text-foreground hover:bg-muted font-semibold text-lg rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl z-30">
                 <a href="/home">
                     Play Now
                 </a>

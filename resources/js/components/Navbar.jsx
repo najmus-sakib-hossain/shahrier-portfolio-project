@@ -66,10 +66,10 @@ const Navbar = () => {
           <div className="mt-10 text-3xl font-medium px-20">
             <ul>
               <a
-                href="/"
+                href="/home"
                 onClick={toggleDrawer}
                 className={
-                  location.pathname === "/"
+                  location.pathname === "/home"
                     ? "text-blue-500 font-bold"
                     : "text-black hover:text-blue-500"
                 }
